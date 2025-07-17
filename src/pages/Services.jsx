@@ -14,8 +14,7 @@ const Services = () => {
         'SEO-optimized structure',
         'Easy content management',
         'Professional photography integration'
-      ],
-      price: 'Starting at $1,200'
+      ]
     },
     {
       icon: Settings,
@@ -28,8 +27,7 @@ const Services = () => {
         'Backup and recovery',
         'Technical support',
         'Monthly performance reports'
-      ],
-      price: 'Starting at $99/month'
+      ]
     },
     {
       icon: TrendingUp,
@@ -42,8 +40,7 @@ const Services = () => {
         'Content marketing strategy',
         'Online review management',
         'Analytics and reporting'
-      ],
-      price: 'Starting at $299/month'
+      ]
     },
     {
       icon: Mail,
@@ -56,8 +53,7 @@ const Services = () => {
         'Newsletter creation',
         'Performance tracking',
         'A/B testing optimization'
-      ],
-      price: 'Starting at $149/month'
+      ]
     }
   ]
 
@@ -91,9 +87,6 @@ const Services = () => {
                     <h3 className="text-2xl font-bold text-foreground">
                       {service.title}
                     </h3>
-                    <p className="text-primary font-semibold text-lg">
-                      {service.price}
-                    </p>
                   </div>
                 </div>
                 
@@ -189,4 +182,3 @@ const Services = () => {
 }
 
 export default Services
-

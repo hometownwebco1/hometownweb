@@ -1,4 +1,5 @@
 import { Heart, Users, Target, Award } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
 const About = () => {
   const values = [
@@ -139,12 +140,12 @@ const About = () => {
             Let's discuss how we can help your business establish a strong online presence 
             and connect with more customers in your community.
           </p>
-          <a
-            href="/contact"
+          <Link
+            to="/contact"
             className="inline-flex items-center px-8 py-4 bg-primary text-primary-foreground font-semibold text-lg rounded-lg hover:bg-primary/90 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200"
           >
             Get Started Today
-          </a>
+          </Link>
         </div>
       </div>
     </div>
@@ -152,4 +153,3 @@ const About = () => {
 }
 
 export default About
-

@@ -20,7 +20,7 @@ const Footer = () => {
             <div className="flex space-x-4">
               <div className="flex items-center space-x-2 text-sm text-muted-foreground">
                 <Mail size={16} />
-                <span>hello@hometownwebco.com</span>
+                <span>woody@hometownwebco.com</span>
               </div>
             </div>
           </div>
@@ -56,10 +56,26 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold text-foreground mb-4">Services</h3>
             <ul className="space-y-2">
-              <li className="text-muted-foreground">Website Design</li>
-              <li className="text-muted-foreground">Website Management</li>
-              <li className="text-muted-foreground">Digital Marketing</li>
-              <li className="text-muted-foreground">Email Marketing</li>
+              <li>
+                <Link to="/services" className="text-muted-foreground hover:text-primary transition-colors">
+                  Website Design
+                </Link>
+              </li>
+              <li>
+                <Link to="/services" className="text-muted-foreground hover:text-primary transition-colors">
+                  Website Management
+                </Link>
+              </li>
+              <li>
+                <Link to="/services" className="text-muted-foreground hover:text-primary transition-colors">
+                  Digital Marketing
+                </Link>
+              </li>
+              <li>
+                <Link to="/services" className="text-muted-foreground hover:text-primary transition-colors">
+                  Email Marketing
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
@@ -75,4 +91,3 @@ const Footer = () => {
 }
 
 export default Footer
-
