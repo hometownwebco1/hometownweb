@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Helmet } from 'react-helmet'
-import { Mail, MapPin, Send, CheckCircle } from 'lucide-react'
+import { Mail, MapPin, Send, CheckCircle, Facebook } from 'lucide-react'
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -59,11 +59,20 @@ const Contact = () => {
     <div className="min-h-screen py-20">
       <Helmet>
         <title>Contact Us | Hometown Web Co</title>
-        <meta
-          name="description"
-          content="Get in touch with Hometown Web Co for a free consultation or demo. We help local businesses across the U.S. grow online."
-        />
+        <meta name="description" content="Get in touch with Hometown Web Co for a free consultation or demo. We help local businesses across the U.S. grow online." />
         <link rel="canonical" href="https://www.hometownwebco.com/contact" />
+        <link rel="icon" href="/favicon.ico" />
+        {/* Open Graph */}
+        <meta property="og:title" content="Contact Us | Hometown Web Co" />
+        <meta property="og:description" content="Get in touch with Hometown Web Co for a free consultation or demo. We help local businesses across the U.S. grow online." />
+        <meta property="og:url" content="https://www.hometownwebco.com/contact" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://www.hometownwebco.com/og-image.jpg" />
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Contact Us | Hometown Web Co" />
+        <meta name="twitter:description" content="Get in touch with Hometown Web Co for a free consultation or demo. We help local businesses across the U.S. grow online." />
+        <meta name="twitter:image" content="https://www.hometownwebco.com/og-image.jpg" />
       </Helmet>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -84,7 +93,7 @@ const Contact = () => {
               <h2 className="text-2xl font-bold text-foreground mb-6">
                 Request Your Free Website Demo
               </h2>
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6" role="form">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
                     Your Name *
@@ -242,6 +251,20 @@ const Contact = () => {
                     <span>We build your online presence</span>
                   </li>
                 </ul>
+              </div>
+
+              {/* Facebook Link */}
+              <div className="text-center pt-6">
+                <p className="text-muted-foreground mb-2">Follow Us:</p>
+                <a
+                  href="https://www.facebook.com/profile.php?id=61578313660385"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center text-primary hover:text-primary/80"
+                >
+                  <Facebook className="mr-2" size={20} />
+                  Facebook
+                </a>
               </div>
             </div>
           </div>

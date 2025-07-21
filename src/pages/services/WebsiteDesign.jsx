@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet'
 import { Check, ArrowRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
@@ -13,8 +14,26 @@ const WebsiteDesign = () => {
 
   return (
     <div className="min-h-screen py-20">
+      <Helmet>
+        <title>Website Design Services | Hometown Web Co</title>
+        <meta
+          name="description"
+          content="Get a beautiful, professional website built to help your local business grow. Fast, mobile-ready, SEO-optimized design tailored to you."
+        />
+        <link rel="canonical" href="https://www.hometownwebco.com/services/website-design" />
+        <link rel="icon" href="/favicon.ico" />
+        <meta property="og:title" content="Website Design Services | Hometown Web Co" />
+        <meta property="og:description" content="Get a beautiful, professional website built to help your local business grow. Fast, mobile-ready, SEO-optimized design tailored to you." />
+        <meta property="og:url" content="https://www.hometownwebco.com/services/website-design" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://www.hometownwebco.com/og-image.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Website Design Services | Hometown Web Co" />
+        <meta name="twitter:description" content="Get a beautiful, professional website built to help your local business grow. Fast, mobile-ready, SEO-optimized design tailored to you." />
+        <meta name="twitter:image" content="https://www.hometownwebco.com/og-image.jpg" />
+      </Helmet>
+
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
         <div className="text-center mb-16">
           <h1 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
             Website Design Services
@@ -24,7 +43,6 @@ const WebsiteDesign = () => {
           </p>
         </div>
 
-        {/* Details Section */}
         <div className="mb-20">
           <h2 className="text-2xl font-bold text-foreground mb-4">
             What’s Included in Our Web Design Services:
@@ -41,7 +59,6 @@ const WebsiteDesign = () => {
           </ul>
         </div>
 
-        {/* SEO Text Block */}
         <div className="mb-20 space-y-6 text-muted-foreground leading-relaxed text-lg">
           <p>
             A well-designed website is more than just a digital brochure — it’s your business’s first impression.
@@ -54,7 +71,6 @@ const WebsiteDesign = () => {
           </p>
         </div>
 
-        {/* CTA */}
         <div className="text-center">
           <h2 className="text-3xl font-bold text-foreground mb-4">
             Let’s Build Your Website

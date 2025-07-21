@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Mail } from 'lucide-react'
+import { Mail, Facebook } from 'lucide-react'
 import logo from '../assets/HometownWebCo.png'
 
 const Footer = () => {
@@ -9,17 +9,15 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo and Description */}
           <div className="col-span-1 md:col-span-2">
-            <Link to="/" className="flex items-center space-x-2 mb-4">
+            <Link to="/" className="flex items-center space-x-2 mb-4" aria-label="Hometown Web Co Home">
               <img
                 src={logo}
-                alt="Hometown Web Co logo - Local Website Design"
+                alt="Hometown Web Co logo - Website Design for Local Businesses"
                 className="h-8 w-auto"
               />
             </Link>
             <p className="text-muted-foreground mb-4 max-w-md">
-              Helping hometown businesses get online with professional websites, 
-              digital marketing, and ongoing support. We make the web accessible 
-              for every local business.
+              We help hometown businesses build a better online presence through professional web design, digital marketing, and reliable support — tailored for local success.
             </p>
             <div className="flex flex-col space-y-2 text-sm text-muted-foreground">
               <div className="flex items-center space-x-2">
@@ -34,6 +32,18 @@ const Footer = () => {
                   Contact Us
                 </a>
               </div>
+              <div className="pt-2">
+                <a
+                  href="https://www.facebook.com/profile.php?id=61578313660385"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-muted-foreground hover:text-primary transition-colors"
+                  aria-label="Hometown Web Co Facebook"
+                >
+                  <Facebook className="mr-1" size={16} />
+                  Facebook
+                </a>
+              </div>
             </div>
           </div>
 
@@ -41,41 +51,13 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold text-foreground mb-4">Quick Links</h3>
             <ul className="space-y-2">
-              <li>
-                <Link to="/about" className="text-muted-foreground hover:text-primary transition-colors">
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link to="/services" className="text-muted-foreground hover:text-primary transition-colors">
-                  Our Services
-                </Link>
-              </li>
-              <li>
-                <Link to="/results" className="text-muted-foreground hover:text-primary transition-colors">
-                  Results
-                </Link>
-              </li>
-              <li>
-                <Link to="/blog" className="text-muted-foreground hover:text-primary transition-colors">
-                  Blog
-                </Link>
-              </li>
-              <li>
-                <Link to="/privacy-policy" className="text-muted-foreground hover:text-primary transition-colors">
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link to="/terms-of-service" className="text-muted-foreground hover:text-primary transition-colors">
-                  Terms of Service
-                </Link>
-              </li>
-              <li>
-                <Link to="/affiliate-disclosure" className="text-muted-foreground hover:text-primary transition-colors">
-                  Affiliate Disclosure
-                </Link>
-              </li>
+              <li><Link to="/about" className="text-muted-foreground hover:text-primary transition-colors">About Us</Link></li>
+              <li><Link to="/services" className="text-muted-foreground hover:text-primary transition-colors">Our Services</Link></li>
+              <li><Link to="/results" className="text-muted-foreground hover:text-primary transition-colors">Results</Link></li>
+              <li><Link to="/blog" className="text-muted-foreground hover:text-primary transition-colors">Blog</Link></li>
+              <li><Link to="/privacy-policy" className="text-muted-foreground hover:text-primary transition-colors">Privacy Policy</Link></li>
+              <li><Link to="/terms-of-service" className="text-muted-foreground hover:text-primary transition-colors">Terms of Service</Link></li>
+              <li><Link to="/affiliate-disclosure" className="text-muted-foreground hover:text-primary transition-colors">Affiliate Disclosure</Link></li>
             </ul>
           </div>
 
@@ -83,30 +65,15 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold text-foreground mb-4">Services</h3>
             <ul className="space-y-2">
-              <li>
-                <Link to="/services/website-design" className="text-muted-foreground hover:text-primary transition-colors">
-                  Website Design
-                </Link>
-              </li>
-              <li>
-                <Link to="/services/website-management" className="text-muted-foreground hover:text-primary transition-colors">
-                  Website Management
-                </Link>
-              </li>
-              <li>
-                <Link to="/services/digital-marketing" className="text-muted-foreground hover:text-primary transition-colors">
-                  Digital Marketing
-                </Link>
-              </li>
-              <li>
-                <Link to="/services/email-marketing" className="text-muted-foreground hover:text-primary transition-colors">
-                  Email Marketing
-                </Link>
-              </li>
+              <li><Link to="/services/website-design" className="text-muted-foreground hover:text-primary transition-colors">Website Design</Link></li>
+              <li><Link to="/services/website-management" className="text-muted-foreground hover:text-primary transition-colors">Website Management</Link></li>
+              <li><Link to="/services/digital-marketing" className="text-muted-foreground hover:text-primary transition-colors">Digital Marketing</Link></li>
+              <li><Link to="/services/email-marketing" className="text-muted-foreground hover:text-primary transition-colors">Email Marketing</Link></li>
             </ul>
           </div>
         </div>
 
+        {/* Footer Bottom */}
         <div className="border-t border-border mt-8 pt-8 text-center">
           <p className="text-muted-foreground text-sm">
             © 2025 Hometown Web Co. All rights reserved.

@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet'
 import { Check, ArrowRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
@@ -13,8 +14,26 @@ const DigitalMarketing = () => {
 
   return (
     <div className="min-h-screen py-20">
+      <Helmet>
+        <title>Digital Marketing Services | Hometown Web Co</title>
+        <meta
+          name="description"
+          content="Our digital marketing services help small businesses grow online visibility through SEO, Google My Business, social media, content, and more."
+        />
+        <link rel="canonical" href="https://www.hometownwebco.com/services/digital-marketing" />
+        <link rel="icon" href="/favicon.ico" />
+        <meta property="og:title" content="Digital Marketing Services | Hometown Web Co" />
+        <meta property="og:description" content="Our digital marketing services help small businesses grow online visibility through SEO, Google My Business, social media, content, and more." />
+        <meta property="og:url" content="https://www.hometownwebco.com/services/digital-marketing" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://www.hometownwebco.com/og-image.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Digital Marketing Services | Hometown Web Co" />
+        <meta name="twitter:description" content="Our digital marketing services help small businesses grow online visibility through SEO, Google My Business, social media, content, and more." />
+        <meta name="twitter:image" content="https://www.hometownwebco.com/og-image.jpg" />
+      </Helmet>
+
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
         <div className="text-center mb-16">
           <h1 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
             Digital Marketing Services
@@ -24,7 +43,6 @@ const DigitalMarketing = () => {
           </p>
         </div>
 
-        {/* Features */}
         <div className="mb-20">
           <h2 className="text-2xl font-bold text-foreground mb-4">
             What We Offer in Digital Marketing:
@@ -41,7 +59,6 @@ const DigitalMarketing = () => {
           </ul>
         </div>
 
-        {/* SEO Text Block */}
         <div className="mb-20 space-y-6 text-muted-foreground leading-relaxed text-lg">
           <p>
             If your business isn’t showing up online, you're missing out on customers who are actively looking for services like yours.
@@ -53,7 +70,6 @@ const DigitalMarketing = () => {
           </p>
         </div>
 
-        {/* CTA */}
         <div className="text-center">
           <h2 className="text-3xl font-bold text-foreground mb-4">
             Let’s Grow Your Reach

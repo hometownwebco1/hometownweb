@@ -1,4 +1,5 @@
-import { Globe, TrendingUp, Users, Lightbulb, Target, Wrench, Smile } from 'lucide-react'
+import { Helmet } from 'react-helmet'
+import { Globe, TrendingUp, Users, Lightbulb, Target, Wrench, Smile, Facebook } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
 const Results = () => {
@@ -27,6 +28,27 @@ const Results = () => {
 
   return (
     <div className="min-h-screen py-20">
+      <Helmet>
+        <title>Website Results | Hometown Web Co</title>
+        <meta
+          name="description"
+          content="See how Hometown Web Co builds strategic, high-performing websites that drive real results for local businesses. Discover what sets our work apart."
+        />
+        <link rel="canonical" href="https://www.hometownwebco.com/results" />
+        <link rel="icon" href="/favicon.ico" />
+        {/* Open Graph */}
+        <meta property="og:title" content="Website Results | Hometown Web Co" />
+        <meta property="og:description" content="See how Hometown Web Co builds strategic, high-performing websites that drive real results for local businesses." />
+        <meta property="og:url" content="https://www.hometownwebco.com/results" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://www.hometownwebco.com/og-image.jpg" />
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Website Results | Hometown Web Co" />
+        <meta name="twitter:description" content="Discover what makes our websites stand out — and why small businesses trust us to help them grow online." />
+        <meta name="twitter:image" content="https://www.hometownwebco.com/og-image.jpg" />
+      </Helmet>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
@@ -75,6 +97,20 @@ const Results = () => {
           >
             Request Free Website Demo
           </Link>
+        </div>
+
+        {/* Facebook CTA */}
+        <div className="mt-20 text-center">
+          <p className="text-muted-foreground mb-4">Follow Us:</p>
+          <a
+            href="https://www.facebook.com/profile.php?id=61578313660385"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center text-primary hover:text-primary/80"
+          >
+            <Facebook className="mr-2" size={20} />
+            Facebook
+          </a>
         </div>
       </div>
     </div>

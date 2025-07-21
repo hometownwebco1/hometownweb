@@ -1,5 +1,13 @@
 import { Helmet } from 'react-helmet'
-import { Globe, Settings, TrendingUp, Mail, Check, ArrowRight } from 'lucide-react'
+import {
+  Globe,
+  Settings,
+  TrendingUp,
+  Mail,
+  Check,
+  ArrowRight,
+  Facebook
+} from 'lucide-react'
 import { Link } from 'react-router-dom'
 
 const Services = () => {
@@ -71,20 +79,28 @@ const Services = () => {
           content="Explore our professional web services — including design, management, SEO, and email marketing — crafted specifically for small local businesses."
         />
         <link rel="canonical" href="https://www.hometownwebco.com/services" />
+        <link rel="icon" href="/favicon.ico" />
+        <meta property="og:title" content="Our Services | Hometown Web Co" />
+        <meta property="og:description" content="Explore our professional web services — including design, management, SEO, and email marketing — crafted specifically for small local businesses." />
+        <meta property="og:url" content="https://www.hometownwebco.com/services" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://www.hometownwebco.com/og-image.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Our Services | Hometown Web Co" />
+        <meta name="twitter:description" content="Explore our professional web services — including design, management, SEO, and email marketing — crafted specifically for small local businesses." />
+        <meta name="twitter:image" content="https://www.hometownwebco.com/og-image.jpg" />
       </Helmet>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
         <header className="text-center mb-16">
           <h1 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
             Our Services
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Comprehensive digital solutions designed specifically for local businesses
+            Comprehensive digital solutions built to help small businesses grow online.
           </p>
         </header>
 
-        {/* Services Grid */}
         <section className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20">
           {services.map((service, index) => {
             const IconComponent = service.icon
@@ -107,7 +123,7 @@ const Services = () => {
                 </p>
 
                 <div className="space-y-3 mb-6">
-                  <h3 className="font-semibold text-foreground mb-3">What's Included:</h3>
+                  <h3 className="font-semibold text-foreground mb-3">What’s Included:</h3>
                   {service.features.map((feature, featureIndex) => (
                     <div key={featureIndex} className="flex items-start space-x-3">
                       <Check className="text-primary mt-0.5 flex-shrink-0" size={16} />
@@ -131,14 +147,13 @@ const Services = () => {
           })}
         </section>
 
-        {/* Process Section */}
         <section className="bg-muted p-12 rounded-lg mb-20">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
               Our Process
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              We make getting online simple with our proven step-by-step approach
+              We make getting online simple with our step-by-step approach.
             </p>
           </div>
 
@@ -180,13 +195,12 @@ const Services = () => {
           </div>
         </section>
 
-        {/* CTA */}
-        <section className="text-center">
+        <section className="text-center mb-20">
           <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-6">
             Ready to Get Started?
           </h2>
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Let’s discuss which services are right for your business and build a custom plan that fits your goals.
+            Let’s talk about your goals and how we can help. Schedule a free consultation today.
           </p>
           <Link
             to="/contact"
@@ -196,6 +210,19 @@ const Services = () => {
             <ArrowRight className="ml-2" size={20} />
           </Link>
         </section>
+
+        <div className="text-center">
+          <p className="text-muted-foreground mb-4">Follow Us:</p>
+          <a
+            href="https://www.facebook.com/profile.php?id=61578313660385"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center text-primary hover:text-primary/80"
+          >
+            <Facebook className="mr-2" size={20} />
+            Facebook
+          </a>
+        </div>
       </div>
     </div>
   )

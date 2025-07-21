@@ -1,4 +1,5 @@
-import { Heart, Users, Target, Award } from 'lucide-react'
+import { Helmet } from 'react-helmet'
+import { Heart, Users, Target, Award, Facebook } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
 const About = () => {
@@ -27,8 +28,29 @@ const About = () => {
 
   return (
     <div className="min-h-screen py-20">
+      <Helmet>
+        <title>About Us | Hometown Web Co</title>
+        <meta
+          name="description"
+          content="Hometown Web Co builds high-quality websites for small businesses. Learn how our team helps local businesses grow online with professional, affordable design."
+        />
+        <link rel="canonical" href="https://www.hometownwebco.com/about" />
+        <link rel="icon" href="/favicon.ico" />
+        {/* Open Graph */}
+        <meta property="og:title" content="About Us | Hometown Web Co" />
+        <meta property="og:description" content="Hometown Web Co builds high-quality websites for small businesses. Learn how our team helps local businesses grow online with professional, affordable design." />
+        <meta property="og:url" content="https://www.hometownwebco.com/about" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://www.hometownwebco.com/og-image.jpg" />
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="About Us | Hometown Web Co" />
+        <meta name="twitter:description" content="Hometown Web Co builds high-quality websites for small businesses. Learn how our team helps local businesses grow online with professional, affordable design." />
+        <meta name="twitter:image" content="https://www.hometownwebco.com/og-image.jpg" />
+      </Helmet>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* SEO-Friendly Header */}
+        {/* Header */}
         <div className="text-center mb-16">
           <h1 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
             About Hometown Web Co — Local Business Website Experts
@@ -38,7 +60,7 @@ const About = () => {
           </p>
         </div>
 
-        {/* Main Content */}
+        {/* Content */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
           <div>
             <h2 className="text-3xl font-bold text-foreground mb-6">
@@ -88,7 +110,7 @@ const About = () => {
           </div>
         </div>
 
-        {/* Core Values */}
+        {/* Values Section */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
           {values.map((value, index) => (
             <div key={index} className="p-6 bg-muted rounded-lg shadow-md">
@@ -98,9 +120,24 @@ const About = () => {
             </div>
           ))}
         </div>
+
+        {/* Social Footer */}
+        <div className="mt-20 text-center">
+          <p className="text-muted-foreground mb-4">Follow Us:</p>
+          <a
+            href="https://www.facebook.com/profile.php?id=61578313660385"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center text-primary hover:text-primary/80"
+          >
+            <Facebook className="mr-2" size={20} />
+            Facebook
+          </a>
+        </div>
       </div>
     </div>
   )
 }
 
 export default About
+
