@@ -10,6 +10,11 @@ import Blog from './pages/Blog'
 import Contact from './pages/Contact'
 import BlogPost from './pages/BlogPost'
 
+import WebsiteDesign from './pages/services/WebsiteDesign'
+import WebsiteManagement from './pages/services/WebsiteManagement'
+import SeoOptimization from './pages/services/SeoOptimization'
+import LocalListings from './pages/services/LocalListings'
+
 function App() {
   return (
     <Router>
@@ -24,6 +29,12 @@ function App() {
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/contact" element={<Contact />} />
+
+            {/* NEW: Individual service detail pages */}
+            <Route path="/services/website-design" element={<WebsiteDesign />} />
+            <Route path="/services/website-management" element={<WebsiteManagement />} />
+            <Route path="/services/seo-optimization" element={<SeoOptimization />} />
+            <Route path="/services/local-listings" element={<LocalListings />} />
           </Routes>
         </main>
         <Footer />
@@ -33,4 +44,3 @@ function App() {
 }
 
 export default App
-
