@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet'
 import { Globe, Settings, TrendingUp, Mail, Check, ArrowRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
@@ -63,23 +64,32 @@ const Services = () => {
 
   return (
     <div className="min-h-screen py-20">
+      <Helmet>
+        <title>Our Services | Hometown Web Co</title>
+        <meta
+          name="description"
+          content="Explore our professional web services — including design, management, SEO, and email marketing — crafted specifically for small local businesses."
+        />
+        <link rel="canonical" href="https://www.hometownwebco.com/services" />
+      </Helmet>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
+        <header className="text-center mb-16">
           <h1 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
             Our Services
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Comprehensive digital solutions designed specifically for local businesses
           </p>
-        </div>
+        </header>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20">
+        <section className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20">
           {services.map((service, index) => {
             const IconComponent = service.icon
             return (
-              <div
+              <article
                 key={index}
                 className="bg-background border border-border rounded-lg p-8 hover:shadow-lg transition-shadow duration-200"
               >
@@ -87,11 +97,9 @@ const Services = () => {
                   <div className="flex items-center justify-center w-16 h-16 bg-primary/10 rounded-lg mr-4">
                     <IconComponent className="text-primary" size={32} />
                   </div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-foreground">
-                      {service.title}
-                    </h3>
-                  </div>
+                  <h2 className="text-2xl font-bold text-foreground">
+                    {service.title}
+                  </h2>
                 </div>
 
                 <p className="text-muted-foreground mb-6 leading-relaxed">
@@ -99,7 +107,7 @@ const Services = () => {
                 </p>
 
                 <div className="space-y-3 mb-6">
-                  <h4 className="font-semibold text-foreground mb-3">What's Included:</h4>
+                  <h3 className="font-semibold text-foreground mb-3">What's Included:</h3>
                   {service.features.map((feature, featureIndex) => (
                     <div key={featureIndex} className="flex items-start space-x-3">
                       <Check className="text-primary mt-0.5 flex-shrink-0" size={16} />
@@ -113,17 +121,18 @@ const Services = () => {
                 <Link
                   to={service.path}
                   className="inline-flex items-center text-primary hover:text-primary/80 font-medium transition-colors"
+                  aria-label={`Learn more about ${service.title}`}
                 >
                   Learn More
                   <ArrowRight className="ml-2" size={18} />
                 </Link>
-              </div>
+              </article>
             )
           })}
-        </div>
+        </section>
 
         {/* Process Section */}
-        <div className="bg-muted p-12 rounded-lg mb-20">
+        <section className="bg-muted p-12 rounded-lg mb-20">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
               Our Process
@@ -169,10 +178,10 @@ const Services = () => {
               </div>
             ))}
           </div>
-        </div>
+        </section>
 
         {/* CTA */}
-        <div className="text-center">
+        <section className="text-center">
           <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-6">
             Ready to Get Started?
           </h2>
@@ -186,7 +195,7 @@ const Services = () => {
             Request Free Consultation
             <ArrowRight className="ml-2" size={20} />
           </Link>
-        </div>
+        </section>
       </div>
     </div>
   )

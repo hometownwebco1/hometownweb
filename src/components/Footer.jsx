@@ -4,23 +4,35 @@ import logo from '../assets/HometownWebCo.png'
 
 const Footer = () => {
   return (
-    <footer className="bg-muted border-t border-border">
+    <footer className="bg-muted border-t border-border" role="contentinfo">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo and Description */}
           <div className="col-span-1 md:col-span-2">
             <Link to="/" className="flex items-center space-x-2 mb-4">
-              <img src={logo} alt="HomeTown Web Co" className="h-8 w-auto" />
+              <img
+                src={logo}
+                alt="Hometown Web Co logo - Local Website Design"
+                className="h-8 w-auto"
+              />
             </Link>
             <p className="text-muted-foreground mb-4 max-w-md">
               Helping hometown businesses get online with professional websites, 
               digital marketing, and ongoing support. We make the web accessible 
               for every local business.
             </p>
-            <div className="flex space-x-4">
-              <div className="flex items-center space-x-2 text-sm text-muted-foreground">
+            <div className="flex flex-col space-y-2 text-sm text-muted-foreground">
+              <div className="flex items-center space-x-2">
                 <Mail size={16} />
                 <span>woody@hometownwebco.com</span>
+              </div>
+              <div>
+                <a
+                  href="mailto:woody@hometownwebco.com"
+                  className="hover:text-primary transition-colors"
+                >
+                  Contact Us
+                </a>
               </div>
             </div>
           </div>
@@ -52,6 +64,11 @@ const Footer = () => {
               <li>
                 <Link to="/privacy-policy" className="text-muted-foreground hover:text-primary transition-colors">
                   Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link to="/terms-of-service" className="text-muted-foreground hover:text-primary transition-colors">
+                  Terms of Service
                 </Link>
               </li>
               <li>
@@ -92,7 +109,7 @@ const Footer = () => {
 
         <div className="border-t border-border mt-8 pt-8 text-center">
           <p className="text-muted-foreground text-sm">
-            © 2025 HomeTown Web Co. All rights reserved.
+            © 2025 Hometown Web Co. All rights reserved.
           </p>
         </div>
       </div>

@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Helmet } from 'react-helmet'
 import { Mail, MapPin, Send, CheckCircle } from 'lucide-react'
 
 const Contact = () => {
@@ -6,19 +7,22 @@ const Contact = () => {
     name: '',
     email: '',
     businessName: '',
-    message: ''
+    message: '',
+    consent: false
   })
   const [isSubmitted, setIsSubmitted] = useState(false)
 
   const handleChange = (e) => {
+    const { name, value, type, checked } = e.target
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [name]: type === 'checkbox' ? checked : value
     })
   }
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    if (!formData.consent) return
     console.log('Form submitted:', formData)
     setIsSubmitted(true)
 
@@ -28,26 +32,24 @@ const Contact = () => {
         name: '',
         email: '',
         businessName: '',
-        message: ''
+        message: '',
+        consent: false
       })
     }, 3000)
   }
 
   if (isSubmitted) {
     return (
-      <div className="min-h-screen py-20 flex items-center justify-center">
+      <div className="min-h-screen py-20 flex items-center justify-center" role="status" aria-live="polite">
         <div className="max-w-md mx-auto text-center">
           <CheckCircle className="text-primary mx-auto mb-4" size={64} />
           <h2 className="text-3xl font-bold text-foreground mb-4">
             Thank You!
           </h2>
           <p className="text-lg text-muted-foreground mb-6">
-            We've received your request for a free website demo. 
-            We'll get back to you within 24 hours to schedule your consultation.
+            We've received your request. We'll get back to you within 24 hours.
           </p>
-          <p className="text-muted-foreground">
-            Redirecting you back to the form...
-          </p>
+          <p className="text-muted-foreground">You’ll be redirected shortly...</p>
         </div>
       </div>
     )
@@ -55,8 +57,17 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen py-20">
+      <Helmet>
+        <title>Contact Us | Hometown Web Co</title>
+        <meta
+          name="description"
+          content="Get in touch with Hometown Web Co for a free consultation or demo. We help local businesses across the U.S. grow online."
+        />
+        <link rel="canonical" href="https://www.hometownwebco.com/contact" />
+      </Helmet>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* SEO-Optimized Header */}
+        {/* Header */}
         <div className="text-center mb-16">
           <h1 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
             Contact Hometown Web Co
@@ -73,7 +84,6 @@ const Contact = () => {
               <h2 className="text-2xl font-bold text-foreground mb-6">
                 Request Your Free Website Demo
               </h2>
-              
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
@@ -83,10 +93,11 @@ const Contact = () => {
                     type="text"
                     id="name"
                     name="name"
+                    autoComplete="name"
+                    required
                     value={formData.name}
                     onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-background text-foreground"
+                    className="w-full px-4 py-3 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-primary focus:border-transparent"
                     placeholder="Enter your full name"
                   />
                 </div>
@@ -99,10 +110,11 @@ const Contact = () => {
                     type="email"
                     id="email"
                     name="email"
+                    autoComplete="email"
+                    required
                     value={formData.email}
                     onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-background text-foreground"
+                    className="w-full px-4 py-3 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-primary focus:border-transparent"
                     placeholder="Enter your email address"
                   />
                 </div>
@@ -115,10 +127,10 @@ const Contact = () => {
                     type="text"
                     id="businessName"
                     name="businessName"
+                    required
                     value={formData.businessName}
                     onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-background text-foreground"
+                    className="w-full px-4 py-3 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-primary focus:border-transparent"
                     placeholder="Enter your business name"
                   />
                 </div>
@@ -130,17 +142,38 @@ const Contact = () => {
                   <textarea
                     id="message"
                     name="message"
+                    rows={5}
                     value={formData.message}
                     onChange={handleChange}
-                    rows={5}
-                    className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-background text-foreground resize-none"
-                    placeholder="Tell us about your business and what you're looking for in a website..."
+                    className="w-full px-4 py-3 border border-border rounded-lg bg-background text-foreground resize-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                    placeholder="Tell us what you're looking for in a website..."
                   />
+                </div>
+
+                {/* Consent Checkbox */}
+                <div className="flex items-start space-x-3">
+                  <input
+                    type="checkbox"
+                    id="consent"
+                    name="consent"
+                    checked={formData.consent}
+                    onChange={handleChange}
+                    required
+                    className="mt-1"
+                  />
+                  <label htmlFor="consent" className="text-sm text-muted-foreground">
+                    I agree to the{' '}
+                    <a href="/privacy-policy" className="text-primary underline hover:text-primary/80">
+                      Privacy Policy
+                    </a>{' '}
+                    and give consent to be contacted about my inquiry.
+                  </label>
                 </div>
 
                 <button
                   type="submit"
                   className="w-full flex items-center justify-center px-6 py-4 bg-primary text-primary-foreground font-semibold text-lg rounded-lg hover:bg-primary/90 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200"
+                  disabled={!formData.consent}
                 >
                   <Send className="mr-2" size={20} />
                   Request Free Website Demo
@@ -149,55 +182,52 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* Contact Information */}
+          {/* Contact Info Panel */}
           <div>
             <div className="space-y-8">
               <div>
                 <h2 className="text-2xl font-bold text-foreground mb-6">
                   Get In Touch
                 </h2>
-                <p className="text-muted-foreground leading-relaxed mb-8">
-                  Whether you need a brand-new website or a refresh of your current one,
-                  Hometown Web Co supports small business owners nationwide with simple, results-driven web solutions.
+                <p className="text-muted-foreground mb-8">
+                  Whether you need a new site or a refresh, we help small businesses nationwide with results-driven web solutions.
                 </p>
               </div>
 
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
-                  <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg flex-shrink-0">
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
                     <Mail className="text-primary" size={24} />
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground mb-1">Email Us</h3>
                     <p className="text-muted-foreground">woody@hometownwebco.com</p>
                     <p className="text-sm text-muted-foreground mt-1">
-                      We typically respond within 24 hours
+                      Typically replies within 24 hours
                     </p>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg flex-shrink-0">
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
                     <MapPin className="text-primary" size={24} />
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground mb-1">Nationwide Service</h3>
-                    <p className="text-muted-foreground">Headquartered in the U.S.</p>
+                    <p className="text-muted-foreground">Based in the U.S.</p>
                     <p className="text-sm text-muted-foreground mt-1">
-                      Supporting local businesses coast to coast
+                      Helping businesses coast to coast
                     </p>
                   </div>
                 </div>
               </div>
 
               <div className="bg-muted p-6 rounded-lg">
-                <h3 className="font-semibold text-foreground mb-3">
-                  What Happens Next?
-                </h3>
+                <h3 className="font-semibold text-foreground mb-3">What Happens Next?</h3>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start space-x-2">
                     <span className="text-primary font-bold">1.</span>
-                    <span>We review your request and respond within 24 hours</span>
+                    <span>We review your request</span>
                   </li>
                   <li className="flex items-start space-x-2">
                     <span className="text-primary font-bold">2.</span>
@@ -222,5 +252,3 @@ const Contact = () => {
 }
 
 export default Contact
-
-

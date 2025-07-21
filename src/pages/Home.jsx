@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet'
 import { ArrowRight, Globe, Settings, TrendingUp, Mail } from 'lucide-react'
 import logo from '../assets/HometownWebCo.png'
 
@@ -23,13 +24,22 @@ const Home = () => {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Hometown Web Co | Affordable Website Design for Local Businesses</title>
+        <meta
+          name="description"
+          content="We build professional websites for small businesses that want to grow online. Fast, affordable, and optimized for local success."
+        />
+        <link rel="canonical" href="https://www.hometownwebco.com/" />
+      </Helmet>
+
       {/* Hero Section */}
       <section className="bg-background py-20 lg:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             {/* Logo */}
             <div className="flex justify-center mb-8">
-              <img src={logo} alt="HomeTown Web Co logo" className="h-24 w-auto" />
+              <img src={logo} alt="Hometown Web Co logo" className="h-24 w-auto" />
             </div>
 
             {/* Main SEO H1 Heading */}

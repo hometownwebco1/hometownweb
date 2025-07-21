@@ -1,4 +1,5 @@
 import { useParams, Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet'
 import { Calendar, Clock, ArrowLeft, ArrowRight } from 'lucide-react'
 import { blogPosts } from '../data/blogPosts'
 
@@ -28,13 +29,49 @@ const BlogPost = () => {
     )
   }
 
+  const formattedDate = new Date(post.date).toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  })
+
   return (
     <div className="min-h-screen py-20">
+      <Helmet>
+        <title>{post.title} | Hometown Web Co Blog</title>
+        <meta name="description" content={post.excerpt || 'Read our latest post about small business web strategy.'} />
+        <link rel="canonical" href={`https://www.hometownwebco.com/blog/${post.slug}`} />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BlogPosting',
+            headline: post.title,
+            description: post.excerpt,
+            datePublished: post.date,
+            dateModified: post.date,
+            author: {
+              '@type': 'Organization',
+              name: 'Hometown Web Co'
+            },
+            publisher: {
+              '@type': 'Organization',
+              name: 'Hometown Web Co',
+              logo: {
+                '@type': 'ImageObject',
+                url: 'https://www.hometownwebco.com/logo.png' // Optional: Replace with real logo path
+              }
+            },
+            mainEntityOfPage: `https://www.hometownwebco.com/blog/${post.slug}`
+          })}
+        </script>
+      </Helmet>
+
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Back to Blog */}
         <Link
           to="/blog"
           className="inline-flex items-center text-primary hover:text-primary/80 font-medium mb-8 transition-colors"
+          aria-label="Back to blog index"
         >
           <ArrowLeft className="mr-2" size={18} />
           Back to Blog
@@ -48,22 +85,18 @@ const BlogPost = () => {
             </span>
             <div className="flex items-center text-muted-foreground text-sm">
               <Calendar size={14} className="mr-1" />
-              {new Date(post.date).toLocaleDateString('en-US', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric'
-              })}
+              {formattedDate}
             </div>
             <div className="flex items-center text-muted-foreground text-sm">
               <Clock size={14} className="mr-1" />
               {post.readTime}
             </div>
           </div>
-          
+
           <h1 className="text-4xl lg:text-5xl font-bold text-foreground mb-6 leading-tight">
             {post.title}
           </h1>
-          
+
           <p className="text-xl text-muted-foreground leading-relaxed">
             {post.excerpt}
           </p>
@@ -71,13 +104,13 @@ const BlogPost = () => {
 
         {/* Article Content */}
         <article className="prose prose-lg max-w-none">
-          <div 
+          <div
             className="text-foreground leading-relaxed"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
         </article>
 
-        {/* Article Footer */}
+        {/* Article Footer CTA */}
         <footer className="mt-16 pt-8 border-t border-border">
           <div className="bg-muted p-8 rounded-lg text-center">
             <h3 className="text-2xl font-bold text-foreground mb-4">
@@ -102,4 +135,3 @@ const BlogPost = () => {
 }
 
 export default BlogPost
-

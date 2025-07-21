@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './App.css'
 import Navbar from './components/Navbar'
@@ -20,6 +21,29 @@ import TermsOfService from './pages/TermsOfService'
 import AffiliateDisclosure from './pages/AffiliateDisclosure'
 
 function App() {
+  useEffect(() => {
+    // Inject Google Analytics
+    const gaScript = document.createElement('script')
+    gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-520MY3HP7F'
+    gaScript.async = true
+    document.head.appendChild(gaScript)
+
+    const gaInit = document.createElement('script')
+    gaInit.innerHTML = `
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-520MY3HP7F');
+    `
+    document.head.appendChild(gaInit)
+
+    // Inject Google Search Console meta tag
+    const metaTag = document.createElement('meta')
+    metaTag.name = 'google-site-verification'
+    metaTag.content = 'G-520MY3HP7F' // Replace with actual Search Console value if different
+    document.head.appendChild(metaTag)
+  }, [])
+
   return (
     <Router>
       <div className="min-h-screen bg-background text-foreground">
