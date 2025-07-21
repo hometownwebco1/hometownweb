@@ -1,7 +1,10 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Calendar, Clock, ArrowRight } from 'lucide-react'
 
 const Blog = () => {
+  const [activeCategory, setActiveCategory] = useState('All')
+
   const blogPosts = [
     {
       slug: 'why-every-local-business-needs-website',
@@ -47,6 +50,10 @@ const Blog = () => {
 
   const categories = ['All', 'Business Strategy', 'Web Design', 'Best Practices', 'Pricing', 'Getting Started']
 
+  const filteredPosts = activeCategory === 'All'
+    ? blogPosts
+    : blogPosts.filter(post => post.category === activeCategory)
+
   return (
     <div className="min-h-screen py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -65,8 +72,9 @@ const Blog = () => {
           {categories.map((category, index) => (
             <button
               key={index}
+              onClick={() => setActiveCategory(category)}
               className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                index === 0
+                activeCategory === category
                   ? 'bg-primary text-primary-foreground'
                   : 'bg-muted text-muted-foreground hover:bg-primary/10 hover:text-primary'
               }`}
@@ -78,7 +86,7 @@ const Blog = () => {
 
         {/* Blog Posts Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {blogPosts.map((post, index) => (
+          {filteredPosts.map((post, index) => (
             <article
               key={index}
               className="bg-background border border-border rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-200"
@@ -93,7 +101,7 @@ const Blog = () => {
                     {post.readTime}
                   </div>
                 </div>
-                
+
                 <h2 className="text-xl font-bold text-foreground mb-3 leading-tight">
                   <Link
                     to={`/blog/${post.slug}`}
@@ -102,11 +110,11 @@ const Blog = () => {
                     {post.title}
                   </Link>
                 </h2>
-                
+
                 <p className="text-muted-foreground mb-4 leading-relaxed">
                   {post.excerpt}
                 </p>
-                
+
                 <div className="flex items-center justify-between">
                   <div className="flex items-center text-muted-foreground text-sm">
                     <Calendar size={14} className="mr-1" />
@@ -116,7 +124,7 @@ const Blog = () => {
                       day: 'numeric'
                     })}
                   </div>
-                  
+
                   <Link
                     to={`/blog/${post.slug}`}
                     className="inline-flex items-center text-primary hover:text-primary/80 font-medium text-sm transition-colors"
@@ -156,4 +164,3 @@ const Blog = () => {
 }
 
 export default Blog
-

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Mail, Phone, MapPin, Send, CheckCircle } from 'lucide-react'
+import { Mail, MapPin, Send, CheckCircle } from 'lucide-react'
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -19,11 +19,9 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    // In a real application, you would send this data to your backend
     console.log('Form submitted:', formData)
     setIsSubmitted(true)
-    
-    // Reset form after 3 seconds
+
     setTimeout(() => {
       setIsSubmitted(false)
       setFormData({
@@ -58,13 +56,13 @@ const Contact = () => {
   return (
     <div className="min-h-screen py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
+        {/* SEO-Optimized Header */}
         <div className="text-center mb-16">
           <h1 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            Contact Us
+            Contact Hometown Web Co
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Ready to get your business online? Let's talk about how we can help you grow.
+            We're here to help local businesses across the U.S. build a strong online presence.
           </p>
         </div>
 
@@ -159,9 +157,8 @@ const Contact = () => {
                   Get In Touch
                 </h2>
                 <p className="text-muted-foreground leading-relaxed mb-8">
-                  We're here to help your business succeed online. Whether you need 
-                  a new website, want to improve your current one, or have questions 
-                  about our services, we'd love to hear from you.
+                  Whether you need a brand-new website or a refresh of your current one,
+                  Hometown Web Co supports small business owners nationwide with simple, results-driven web solutions.
                 </p>
               </div>
 
@@ -181,26 +178,13 @@ const Contact = () => {
 
                 <div className="flex items-start space-x-4">
                   <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg flex-shrink-0">
-                    <Phone className="text-primary" size={24} />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-foreground mb-1">Call Us</h3>
-                    <p className="text-muted-foreground">(555) 123-4567</p>
-                    <p className="text-sm text-muted-foreground mt-1">
-                      Monday - Friday, 9 AM - 6 PM EST
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4">
-                  <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg flex-shrink-0">
                     <MapPin className="text-primary" size={24} />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-foreground mb-1">Location</h3>
-                    <p className="text-muted-foreground">United States</p>
+                    <h3 className="font-semibold text-foreground mb-1">Nationwide Service</h3>
+                    <p className="text-muted-foreground">Headquartered in the U.S.</p>
                     <p className="text-sm text-muted-foreground mt-1">
-                      Serving local businesses nationwide
+                      Supporting local businesses coast to coast
                     </p>
                   </div>
                 </div>
@@ -213,19 +197,19 @@ const Contact = () => {
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start space-x-2">
                     <span className="text-primary font-bold">1.</span>
-                    <span>We'll review your information and contact you within 24 hours</span>
+                    <span>We review your request and respond within 24 hours</span>
                   </li>
                   <li className="flex items-start space-x-2">
                     <span className="text-primary font-bold">2.</span>
-                    <span>We'll schedule a free consultation to discuss your needs</span>
+                    <span>We schedule a free consultation</span>
                   </li>
                   <li className="flex items-start space-x-2">
                     <span className="text-primary font-bold">3.</span>
-                    <span>We'll create a custom proposal tailored to your business</span>
+                    <span>You receive a tailored proposal</span>
                   </li>
                   <li className="flex items-start space-x-2">
                     <span className="text-primary font-bold">4.</span>
-                    <span>If you're happy, we'll start building your online presence</span>
+                    <span>We build your online presence</span>
                   </li>
                 </ul>
               </div>
@@ -238,4 +222,5 @@ const Contact = () => {
 }
 
 export default Contact
+
 

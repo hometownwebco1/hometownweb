@@ -22,10 +22,15 @@ const Navbar = () => {
     <nav className="bg-background border-b border-border sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <img src={logo} alt="HomeTown Web Co" className="h-10 w-auto" />
-          </Link>
+          {/* Logo + Company Name */}
+          <div className="flex items-center space-x-4">
+            <Link to="/" className="flex items-center">
+              <img src={logo} alt="Hometown Web Co Logo" className="h-10 w-auto" />
+            </Link>
+            <span className="hidden md:inline text-lg font-bold text-foreground ml-1">
+              Hometown Web Co
+            </span>
+          </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
@@ -80,4 +85,3 @@ const Navbar = () => {
 }
 
 export default Navbar
-
