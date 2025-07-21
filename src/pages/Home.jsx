@@ -29,14 +29,14 @@ const Home = () => {
           <div className="text-center">
             {/* Logo */}
             <div className="flex justify-center mb-8">
-              <img src={logo} alt="HomeTown Web Co" className="h-24 w-auto" />
+              <img src={logo} alt="HomeTown Web Co logo" className="h-24 w-auto" />
             </div>
-            
-            {/* Main Heading */}
+
+            {/* Main SEO H1 Heading */}
             <h1 className="text-4xl lg:text-6xl font-bold text-foreground mb-6">
-              Helping Hometown Businesses Get Online
+              Hometown Website Design for Small Business Growth
             </h1>
-            
+
             {/* CTA Button */}
             <div className="mb-12">
               <Link
@@ -47,7 +47,7 @@ const Home = () => {
                 <ArrowRight className="ml-2" size={20} />
               </Link>
             </div>
-            
+
             {/* Welcome Paragraph */}
             <div className="max-w-3xl mx-auto">
               <p className="text-lg text-muted-foreground leading-relaxed">
@@ -73,7 +73,7 @@ const Home = () => {
               the online presence it needs to thrive.
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {services.map((service, index) => {
               const IconComponent = service.icon
@@ -95,7 +95,7 @@ const Home = () => {
               )
             })}
           </div>
-          
+
           <div className="text-center mt-12">
             <Link
               to="/services"
@@ -132,4 +132,3 @@ const Home = () => {
 }
 
 export default Home
-

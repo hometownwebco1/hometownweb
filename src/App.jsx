@@ -15,6 +15,10 @@ import WebsiteManagement from './pages/services/WebsiteManagement'
 import DigitalMarketing from './pages/services/DigitalMarketing'
 import EmailMarketing from './pages/services/EmailMarketing'
 
+import PrivacyPolicy from './pages/PrivacyPolicy'
+import TermsOfService from './pages/TermsOfService'
+import AffiliateDisclosure from './pages/AffiliateDisclosure'
+
 function App() {
   return (
     <Router>
@@ -35,6 +39,11 @@ function App() {
             <Route path="/services/website-management" element={<WebsiteManagement />} />
             <Route path="/services/digital-marketing" element={<DigitalMarketing />} />
             <Route path="/services/email-marketing" element={<EmailMarketing />} />
+
+            {/* Legal pages */}
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms-of-service" element={<TermsOfService />} />
+            <Route path="/affiliate-disclosure" element={<AffiliateDisclosure />} />
           </Routes>
         </main>
         <Footer />
