@@ -12,8 +12,8 @@ import BlogPost from './pages/BlogPost'
 
 import WebsiteDesign from './pages/services/WebsiteDesign'
 import WebsiteManagement from './pages/services/WebsiteManagement'
-import SeoOptimization from './pages/services/SeoOptimization'
-import LocalListings from './pages/services/LocalListings'
+import DigitalMarketing from './pages/services/DigitalMarketing'
+import EmailMarketing from './pages/services/EmailMarketing'
 
 function App() {
   return (
@@ -30,11 +30,11 @@ function App() {
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/contact" element={<Contact />} />
 
-            {/* NEW: Individual service detail pages */}
+            {/* Individual service detail pages */}
             <Route path="/services/website-design" element={<WebsiteDesign />} />
             <Route path="/services/website-management" element={<WebsiteManagement />} />
-            <Route path="/services/seo-optimization" element={<SeoOptimization />} />
-            <Route path="/services/local-listings" element={<LocalListings />} />
+            <Route path="/services/digital-marketing" element={<DigitalMarketing />} />
+            <Route path="/services/email-marketing" element={<EmailMarketing />} />
           </Routes>
         </main>
         <Footer />
