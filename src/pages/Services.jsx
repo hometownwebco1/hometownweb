@@ -7,6 +7,7 @@ const Services = () => {
       icon: Globe,
       title: 'Website Design',
       description: 'Beautiful, professional websites that represent your business perfectly and attract more customers.',
+      path: '/services/website-design',
       features: [
         'Custom design tailored to your brand',
         'Mobile-responsive layouts',
@@ -20,6 +21,7 @@ const Services = () => {
       icon: Settings,
       title: 'Website Management',
       description: 'Keep your website updated, secure, and running smoothly with our ongoing maintenance services.',
+      path: '/services/website-management',
       features: [
         'Regular security updates',
         'Content updates and changes',
@@ -33,6 +35,7 @@ const Services = () => {
       icon: TrendingUp,
       title: 'Digital Marketing',
       description: 'Get found online with SEO, social media, and targeted advertising that brings real results.',
+      path: '/services/digital-marketing',
       features: [
         'Local SEO optimization',
         'Google My Business setup',
@@ -46,6 +49,7 @@ const Services = () => {
       icon: Mail,
       title: 'Email Marketing',
       description: 'Stay connected with your customers through professional email campaigns that drive sales.',
+      path: '/services/email-marketing',
       features: [
         'Email campaign design',
         'Customer list management',
@@ -89,12 +93,12 @@ const Services = () => {
                     </h3>
                   </div>
                 </div>
-                
+
                 <p className="text-muted-foreground mb-6 leading-relaxed">
                   {service.description}
                 </p>
-                
-                <div className="space-y-3">
+
+                <div className="space-y-3 mb-6">
                   <h4 className="font-semibold text-foreground mb-3">What's Included:</h4>
                   {service.features.map((feature, featureIndex) => (
                     <div key={featureIndex} className="flex items-start space-x-3">
@@ -105,6 +109,14 @@ const Services = () => {
                     </div>
                   ))}
                 </div>
+
+                <Link
+                  to={service.path}
+                  className="inline-flex items-center text-primary hover:text-primary/80 font-medium transition-colors"
+                >
+                  Learn More
+                  <ArrowRight className="ml-2" size={18} />
+                </Link>
               </div>
             )
           })}
@@ -120,7 +132,7 @@ const Services = () => {
               We make getting online simple with our proven step-by-step approach
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {[
               {
@@ -159,14 +171,13 @@ const Services = () => {
           </div>
         </div>
 
-        {/* CTA Section */}
+        {/* CTA */}
         <div className="text-center">
           <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-6">
             Ready to Get Started?
           </h2>
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Let's discuss which services are right for your business and create 
-            a custom plan that fits your needs and budget.
+            Let’s discuss which services are right for your business and build a custom plan that fits your goals.
           </p>
           <Link
             to="/contact"

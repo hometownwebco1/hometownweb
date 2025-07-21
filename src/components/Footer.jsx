@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Mail, Phone, MapPin } from 'lucide-react'
+import { Mail } from 'lucide-react'
 import logo from '../assets/HometownWebCo.png'
 
 const Footer = () => {
@@ -57,22 +57,22 @@ const Footer = () => {
             <h3 className="font-semibold text-foreground mb-4">Services</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/services" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link to="/services/website-design" className="text-muted-foreground hover:text-primary transition-colors">
                   Website Design
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link to="/services/website-management" className="text-muted-foreground hover:text-primary transition-colors">
                   Website Management
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link to="/services/digital-marketing" className="text-muted-foreground hover:text-primary transition-colors">
                   Digital Marketing
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link to="/services/email-marketing" className="text-muted-foreground hover:text-primary transition-colors">
                   Email Marketing
                 </Link>
               </li>
