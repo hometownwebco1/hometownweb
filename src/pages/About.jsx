@@ -60,7 +60,7 @@ const About = () => {
               </p>
             </div>
           </div>
-          
+
           <div className="bg-muted p-8 rounded-lg">
             <h3 className="text-2xl font-bold text-foreground mb-6">
               Why Choose Hometown Web Co?
@@ -74,4 +74,33 @@ const About = () => {
               </li>
               <li className="flex items-start space-x-3">
                 <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                <span clas
+                <span className="text-muted-foreground">
+                  <strong className="text-foreground">Simple Process:</strong> We keep things easy, affordable, and stress-free.
+                </span>
+              </li>
+              <li className="flex items-start space-x-3">
+                <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                <span className="text-muted-foreground">
+                  <strong className="text-foreground">Real Results:</strong> Our sites are built to convert — not just look good.
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Core Values */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+          {values.map((value, index) => (
+            <div key={index} className="p-6 bg-muted rounded-lg shadow-md">
+              <value.icon className="text-primary mx-auto mb-4" size={32} />
+              <h4 className="text-xl font-semibold text-foreground mb-2">{value.title}</h4>
+              <p className="text-muted-foreground text-sm">{value.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default About
