@@ -12,6 +12,25 @@ const WebsiteManagement = () => {
     'Technical support from a team that knows your site'
   ]
 
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Website Management Services",
+    "serviceType": "Website Maintenance and Support",
+    "provider": {
+      "@type": "Organization",
+      "name": "Hometown Web Co",
+      "url": "https://www.hometownwebco.com"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "United States"
+    },
+    "url": "https://www.hometownwebco.com/services/website-management",
+    "description": "Professional website management services including maintenance, security updates, content changes, and performance monitoring.",
+    "mainEntityOfPage": "https://www.hometownwebco.com/services/website-management"
+  }
+
   return (
     <div className="min-h-screen py-20">
       <Helmet>
@@ -21,16 +40,19 @@ const WebsiteManagement = () => {
           content="We handle security updates, performance monitoring, content changes, and ongoing support — so your site runs smooth while you focus on business."
         />
         <link rel="canonical" href="https://www.hometownwebco.com/services/website-management" />
-        <link rel="icon" href="/favicon.ico" />
+        {/* Open Graph */}
         <meta property="og:title" content="Website Management Services | Hometown Web Co" />
         <meta property="og:description" content="We handle security updates, performance monitoring, content changes, and ongoing support — so your site runs smooth while you focus on business." />
         <meta property="og:url" content="https://www.hometownwebco.com/services/website-management" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://www.hometownwebco.com/og-image.jpg" />
+        {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Website Management Services | Hometown Web Co" />
         <meta name="twitter:description" content="We handle security updates, performance monitoring, content changes, and ongoing support — so your site runs smooth while you focus on business." />
         <meta name="twitter:image" content="https://www.hometownwebco.com/og-image.jpg" />
+        {/* Structured Data */}
+        <script type="application/ld+json">{JSON.stringify(schemaData)}</script>
       </Helmet>
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -64,7 +86,7 @@ const WebsiteManagement = () => {
             A website isn’t “done” the day it goes live. It needs regular care — updates, monitoring, and support — to continue delivering results. That’s where we come in.
           </p>
           <p>
-            Our website management service ensures your site stays secure, updated, and running smoothly month after month. 
+            Our website management service ensures your site stays secure, updated, and running smoothly month after month.
             You get peace of mind and a professional team in your corner — without having to lift a finger.
           </p>
         </div>

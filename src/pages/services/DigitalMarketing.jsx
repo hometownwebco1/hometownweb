@@ -12,6 +12,25 @@ const DigitalMarketing = () => {
     'Analytics and performance tracking with monthly insights'
   ]
 
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Digital Marketing Services",
+    "serviceType": "Local SEO, Social Media, Google Business Optimization",
+    "provider": {
+      "@type": "Organization",
+      "name": "Hometown Web Co",
+      "url": "https://www.hometownwebco.com"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "United States"
+    },
+    "url": "https://www.hometownwebco.com/services/digital-marketing",
+    "description": "We help small businesses grow online visibility through local SEO, Google My Business, social media marketing, and performance tracking.",
+    "mainEntityOfPage": "https://www.hometownwebco.com/services/digital-marketing"
+  }
+
   return (
     <div className="min-h-screen py-20">
       <Helmet>
@@ -21,16 +40,19 @@ const DigitalMarketing = () => {
           content="Our digital marketing services help small businesses grow online visibility through SEO, Google My Business, social media, content, and more."
         />
         <link rel="canonical" href="https://www.hometownwebco.com/services/digital-marketing" />
-        <link rel="icon" href="/favicon.ico" />
+        {/* Open Graph */}
         <meta property="og:title" content="Digital Marketing Services | Hometown Web Co" />
         <meta property="og:description" content="Our digital marketing services help small businesses grow online visibility through SEO, Google My Business, social media, content, and more." />
         <meta property="og:url" content="https://www.hometownwebco.com/services/digital-marketing" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://www.hometownwebco.com/og-image.jpg" />
+        {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Digital Marketing Services | Hometown Web Co" />
         <meta name="twitter:description" content="Our digital marketing services help small businesses grow online visibility through SEO, Google My Business, social media, content, and more." />
         <meta name="twitter:image" content="https://www.hometownwebco.com/og-image.jpg" />
+        {/* JSON-LD Schema */}
+        <script type="application/ld+json">{JSON.stringify(schemaData)}</script>
       </Helmet>
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -1,4 +1,6 @@
 User-agent: *
+Disallow: /404
 Allow: /
 
 Sitemap: https://www.hometownwebco.com/sitemap.xml
+Host: https://www.hometownwebco.com

@@ -1,6 +1,45 @@
+import { Helmet } from 'react-helmet'
+
 const AffiliateDisclosure = () => {
   return (
     <div className="max-w-4xl mx-auto px-4 py-20">
+      <Helmet>
+        <title>Affiliate Disclosure | Hometown Web Co</title>
+        <meta
+          name="description"
+          content="Learn about our use of affiliate links and how they support Hometown Web Co. We prioritize transparency and only recommend tools we trust."
+        />
+        <link rel="canonical" href="https://www.hometownwebco.com/affiliate-disclosure" />
+        {/* Open Graph Tags */}
+        <meta property="og:title" content="Affiliate Disclosure | Hometown Web Co" />
+        <meta property="og:description" content="Learn about our use of affiliate links and how they support Hometown Web Co. We prioritize transparency and only recommend tools we trust." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.hometownwebco.com/affiliate-disclosure" />
+        <meta property="og:image" content="https://www.hometownwebco.com/og-image.jpg" />
+        {/* Twitter Card Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Affiliate Disclosure | Hometown Web Co" />
+        <meta name="twitter:description" content="Learn about our use of affiliate links and how they support Hometown Web Co. We prioritize transparency and only recommend tools we trust." />
+        <meta name="twitter:image" content="https://www.hometownwebco.com/og-image.jpg" />
+        {/* JSON-LD Structured Data */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "DisclosurePolicy",
+            "name": "Affiliate Disclosure | Hometown Web Co",
+            "url": "https://www.hometownwebco.com/affiliate-disclosure",
+            "publisher": {
+              "@type": "Organization",
+              "name": "Hometown Web Co",
+              "url": "https://www.hometownwebco.com"
+            },
+            "inLanguage": "en-US",
+            "dateModified": "2025-07-21",
+            "description": "This page discloses our use of affiliate links to support our website and services. We only recommend products and services we trust."
+          })}
+        </script>
+      </Helmet>
+
       <h1 className="text-4xl font-bold mb-6 text-foreground">Affiliate Disclosure</h1>
 
       <p className="text-muted-foreground mb-6">

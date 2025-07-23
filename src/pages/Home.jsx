@@ -49,7 +49,12 @@ const Home = () => {
       <section className="bg-background py-20 lg:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="flex justify-center mb-8">
-            <img src={logo} alt="Hometown Web Co logo" className="h-24 w-auto" />
+            <img
+              src={logo}
+              alt="Hometown Web Co logo - modern website design for small businesses"
+              className="h-24 w-auto"
+              loading="lazy"
+            />
           </div>
           <h1 className="text-4xl lg:text-6xl font-bold text-foreground mb-6">
             Hometown Website Design for Small Business Growth
@@ -88,7 +93,7 @@ const Home = () => {
                   key={index}
                   className="bg-background p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200 border border-border"
                 >
-                  <div className="flex items-center justify-center w-16 h-16 bg-primary/10 rounded-lg mb-6 mx-auto">
+                  <div className="flex items-center justify-center w-16 h-16 bg-primary/10 rounded-lg mb-6 mx-auto" aria-hidden="true">
                     <Icon className="text-primary" size={32} />
                   </div>
                   <h3 className="text-xl font-semibold text-foreground mb-4">
@@ -140,6 +145,7 @@ const Home = () => {
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center justify-center text-primary hover:text-primary/80"
+          aria-label="Visit our Facebook page"
         >
           <Facebook className="mr-2" size={20} />
           Facebook

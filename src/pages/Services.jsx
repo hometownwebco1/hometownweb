@@ -70,6 +70,24 @@ const Services = () => {
     }
   ]
 
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Hometown Web Co Services",
+    "description": "Explore professional web design, SEO, digital marketing, and email services crafted for small local businesses.",
+    "url": "https://www.hometownwebco.com/services",
+    "itemListElement": services.map((service, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "item": {
+        "@type": "Service",
+        "name": service.title,
+        "description": service.description,
+        "url": `https://www.hometownwebco.com${service.path}`
+      }
+    }))
+  }
+
   return (
     <div className="min-h-screen py-20">
       <Helmet>
@@ -79,16 +97,19 @@ const Services = () => {
           content="Explore our professional web services — including design, management, SEO, and email marketing — crafted specifically for small local businesses."
         />
         <link rel="canonical" href="https://www.hometownwebco.com/services" />
-        <link rel="icon" href="/favicon.ico" />
+        {/* Open Graph */}
         <meta property="og:title" content="Our Services | Hometown Web Co" />
         <meta property="og:description" content="Explore our professional web services — including design, management, SEO, and email marketing — crafted specifically for small local businesses." />
         <meta property="og:url" content="https://www.hometownwebco.com/services" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://www.hometownwebco.com/og-image.jpg" />
+        {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Our Services | Hometown Web Co" />
         <meta name="twitter:description" content="Explore our professional web services — including design, management, SEO, and email marketing — crafted specifically for small local businesses." />
         <meta name="twitter:image" content="https://www.hometownwebco.com/og-image.jpg" />
+        {/* Structured Data */}
+        <script type="application/ld+json">{JSON.stringify(schemaData)}</script>
       </Helmet>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -26,27 +26,48 @@ const About = () => {
     }
   ]
 
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "About Hometown Web Co",
+    "description": "Learn about Hometown Web Co — local website designers helping small businesses grow with fast, affordable, and professional sites built for real results.",
+    "url": "https://www.hometownwebco.com/about",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Hometown Web Co",
+      "url": "https://www.hometownwebco.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.hometownwebco.com/logo.png"
+      },
+      "sameAs": [
+        "https://www.facebook.com/profile.php?id=61578313660385"
+      ]
+    }
+  }
+
   return (
     <div className="min-h-screen py-20">
       <Helmet>
-        <title>About Us | Hometown Web Co</title>
+        <title>About Hometown Web Co | Local Website Designers for Small Business</title>
         <meta
           name="description"
-          content="Hometown Web Co builds high-quality websites for small businesses. Learn how our team helps local businesses grow online with professional, affordable design."
+          content="Learn about Hometown Web Co — local website designers helping small businesses grow with fast, affordable, and professional sites built for real results."
         />
         <link rel="canonical" href="https://www.hometownwebco.com/about" />
-        <link rel="icon" href="/favicon.ico" />
         {/* Open Graph */}
-        <meta property="og:title" content="About Us | Hometown Web Co" />
-        <meta property="og:description" content="Hometown Web Co builds high-quality websites for small businesses. Learn how our team helps local businesses grow online with professional, affordable design." />
+        <meta property="og:title" content="About Hometown Web Co | Local Website Designers for Small Business" />
+        <meta property="og:description" content="Learn about Hometown Web Co — local website designers helping small businesses grow with fast, affordable, and professional sites built for real results." />
         <meta property="og:url" content="https://www.hometownwebco.com/about" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://www.hometownwebco.com/og-image.jpg" />
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="About Us | Hometown Web Co" />
-        <meta name="twitter:description" content="Hometown Web Co builds high-quality websites for small businesses. Learn how our team helps local businesses grow online with professional, affordable design." />
+        <meta name="twitter:title" content="About Hometown Web Co | Local Website Designers for Small Business" />
+        <meta name="twitter:description" content="Learn about Hometown Web Co — local website designers helping small businesses grow with fast, affordable, and professional sites built for real results." />
         <meta name="twitter:image" content="https://www.hometownwebco.com/og-image.jpg" />
+        {/* Structured Data */}
+        <script type="application/ld+json">{JSON.stringify(schemaData)}</script>
       </Helmet>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -68,16 +89,16 @@ const About = () => {
             </h2>
             <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
               <p>
-                Hometown Web Co builds custom websites for hometown businesses across the United States. 
+                Hometown Web Co builds custom websites for hometown businesses across the United States.
                 We focus on simplicity, trust, and real-world results — not buzzwords or gimmicks.
               </p>
               <p>
-                Whether you're a family-owned restaurant, a local contractor, or a service provider, 
-                we make it easy to get online and start attracting more customers. 
+                Whether you're a family-owned restaurant, a local contractor, or a service provider,
+                we make it easy to get online and start attracting more customers.
               </p>
               <p>
-                We handle everything: web design, hosting, SEO, and support — so you don’t have to worry 
-                about tech. You get a clean, fast, and mobile-ready website that reflects your business 
+                We handle everything: web design, hosting, SEO, and support — so you don’t have to worry
+                about tech. You get a clean, fast, and mobile-ready website that reflects your business
                 and builds your credibility.
               </p>
             </div>

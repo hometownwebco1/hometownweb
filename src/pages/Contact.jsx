@@ -38,14 +38,35 @@ const Contact = () => {
     }, 3000)
   }
 
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contact Hometown Web Co",
+    "description": "Contact Hometown Web Co for a free website demo and consultation. We help small businesses across the U.S. with professional, conversion-focused websites.",
+    "url": "https://www.hometownwebco.com/contact",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "Hometown Web Co",
+      "url": "https://www.hometownwebco.com",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "woody@hometownwebco.com",
+        "contactType": "customer support",
+        "areaServed": "US",
+        "availableLanguage": "English"
+      },
+      "sameAs": [
+        "https://www.facebook.com/profile.php?id=61578313660385"
+      ]
+    }
+  }
+
   if (isSubmitted) {
     return (
       <div className="min-h-screen py-20 flex items-center justify-center" role="status" aria-live="polite">
         <div className="max-w-md mx-auto text-center">
           <CheckCircle className="text-primary mx-auto mb-4" size={64} />
-          <h2 className="text-3xl font-bold text-foreground mb-4">
-            Thank You!
-          </h2>
+          <h2 className="text-3xl font-bold text-foreground mb-4">Thank You!</h2>
           <p className="text-lg text-muted-foreground mb-6">
             We've received your request. We'll get back to you within 24 hours.
           </p>
@@ -59,9 +80,11 @@ const Contact = () => {
     <div className="min-h-screen py-20">
       <Helmet>
         <title>Contact Us | Hometown Web Co</title>
-        <meta name="description" content="Get in touch with Hometown Web Co for a free consultation or demo. We help local businesses across the U.S. grow online." />
+        <meta
+          name="description"
+          content="Get in touch with Hometown Web Co for a free consultation or demo. We help local businesses across the U.S. grow online."
+        />
         <link rel="canonical" href="https://www.hometownwebco.com/contact" />
-        <link rel="icon" href="/favicon.ico" />
         {/* Open Graph */}
         <meta property="og:title" content="Contact Us | Hometown Web Co" />
         <meta property="og:description" content="Get in touch with Hometown Web Co for a free consultation or demo. We help local businesses across the U.S. grow online." />
@@ -73,14 +96,14 @@ const Contact = () => {
         <meta name="twitter:title" content="Contact Us | Hometown Web Co" />
         <meta name="twitter:description" content="Get in touch with Hometown Web Co for a free consultation or demo. We help local businesses across the U.S. grow online." />
         <meta name="twitter:image" content="https://www.hometownwebco.com/og-image.jpg" />
+        {/* JSON-LD Schema */}
+        <script type="application/ld+json">{JSON.stringify(schemaData)}</script>
       </Helmet>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            Contact Hometown Web Co
-          </h1>
+          <h1 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">Contact Hometown Web Co</h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             We're here to help local businesses across the U.S. build a strong online presence.
           </p>
@@ -90,9 +113,7 @@ const Contact = () => {
           {/* Contact Form */}
           <div>
             <div className="bg-background border border-border rounded-lg p-8">
-              <h2 className="text-2xl font-bold text-foreground mb-6">
-                Request Your Free Website Demo
-              </h2>
+              <h2 className="text-2xl font-bold text-foreground mb-6">Request Your Free Website Demo</h2>
               <form onSubmit={handleSubmit} className="space-y-6" role="form">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
@@ -195,9 +216,7 @@ const Contact = () => {
           <div>
             <div className="space-y-8">
               <div>
-                <h2 className="text-2xl font-bold text-foreground mb-6">
-                  Get In Touch
-                </h2>
+                <h2 className="text-2xl font-bold text-foreground mb-6">Get In Touch</h2>
                 <p className="text-muted-foreground mb-8">
                   Whether you need a new site or a refresh, we help small businesses nationwide with results-driven web solutions.
                 </p>
@@ -211,9 +230,7 @@ const Contact = () => {
                   <div>
                     <h3 className="font-semibold text-foreground mb-1">Email Us</h3>
                     <p className="text-muted-foreground">woody@hometownwebco.com</p>
-                    <p className="text-sm text-muted-foreground mt-1">
-                      Typically replies within 24 hours
-                    </p>
+                    <p className="text-sm text-muted-foreground mt-1">Typically replies within 24 hours</p>
                   </div>
                 </div>
 
@@ -224,9 +241,7 @@ const Contact = () => {
                   <div>
                     <h3 className="font-semibold text-foreground mb-1">Nationwide Service</h3>
                     <p className="text-muted-foreground">Based in the U.S.</p>
-                    <p className="text-sm text-muted-foreground mt-1">
-                      Helping businesses coast to coast
-                    </p>
+                    <p className="text-sm text-muted-foreground mt-1">Helping businesses coast to coast</p>
                   </div>
                 </div>
               </div>
@@ -234,26 +249,13 @@ const Contact = () => {
               <div className="bg-muted p-6 rounded-lg">
                 <h3 className="font-semibold text-foreground mb-3">What Happens Next?</h3>
                 <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li className="flex items-start space-x-2">
-                    <span className="text-primary font-bold">1.</span>
-                    <span>We review your request</span>
-                  </li>
-                  <li className="flex items-start space-x-2">
-                    <span className="text-primary font-bold">2.</span>
-                    <span>We schedule a free consultation</span>
-                  </li>
-                  <li className="flex items-start space-x-2">
-                    <span className="text-primary font-bold">3.</span>
-                    <span>You receive a tailored proposal</span>
-                  </li>
-                  <li className="flex items-start space-x-2">
-                    <span className="text-primary font-bold">4.</span>
-                    <span>We build your online presence</span>
-                  </li>
+                  <li className="flex items-start space-x-2"><span className="text-primary font-bold">1.</span><span>We review your request</span></li>
+                  <li className="flex items-start space-x-2"><span className="text-primary font-bold">2.</span><span>We schedule a free consultation</span></li>
+                  <li className="flex items-start space-x-2"><span className="text-primary font-bold">3.</span><span>You receive a tailored proposal</span></li>
+                  <li className="flex items-start space-x-2"><span className="text-primary font-bold">4.</span><span>We build your online presence</span></li>
                 </ul>
               </div>
 
-              {/* Facebook Link */}
               <div className="text-center pt-6">
                 <p className="text-muted-foreground mb-2">Follow Us:</p>
                 <a

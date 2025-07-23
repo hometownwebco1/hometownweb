@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Calendar, Clock, ArrowRight } from 'lucide-react'
+import { Helmet } from 'react-helmet'
 
 const Blog = () => {
   const [activeCategory, setActiveCategory] = useState('All')
@@ -54,8 +55,46 @@ const Blog = () => {
     ? blogPosts
     : blogPosts.filter(post => post.category === activeCategory)
 
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Hometown Web Co Blog",
+    "description": "Insights and tips to help small businesses grow online. Topics include web design, SEO, digital marketing, and strategy.",
+    "url": "https://www.hometownwebco.com/blog",
+    "hasPart": blogPosts.map((post, index) => ({
+      "@type": "BlogPosting",
+      "headline": post.title,
+      "url": `https://www.hometownwebco.com/blog/${post.slug}`,
+      "datePublished": post.date,
+      "description": post.excerpt,
+      "position": index + 1
+    }))
+  }
+
   return (
     <div className="min-h-screen py-20">
+      <Helmet>
+        <title>Hometown Web Co Blog | Small Business Website Tips & Insights</title>
+        <meta
+          name="description"
+          content="Insights and actionable tips to help small business owners grow online. Topics include SEO, website design, digital marketing, and more."
+        />
+        <link rel="canonical" href="https://www.hometownwebco.com/blog" />
+        {/* Open Graph */}
+        <meta property="og:title" content="Hometown Web Co Blog | Small Business Website Tips & Insights" />
+        <meta property="og:description" content="Insights and tips for growing your local business online — including SEO, web design, digital marketing, and strategy." />
+        <meta property="og:url" content="https://www.hometownwebco.com/blog" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://www.hometownwebco.com/og-image.jpg" />
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Hometown Web Co Blog | Small Business Website Tips & Insights" />
+        <meta name="twitter:description" content="Insights and tips for growing your local business online — including SEO, web design, digital marketing, and strategy." />
+        <meta name="twitter:image" content="https://www.hometownwebco.com/og-image.jpg" />
+        {/* JSON-LD Structured Data */}
+        <script type="application/ld+json">{JSON.stringify(schemaData)}</script>
+      </Helmet>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">

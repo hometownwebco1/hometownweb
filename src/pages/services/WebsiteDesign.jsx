@@ -12,6 +12,25 @@ const WebsiteDesign = () => {
     'Visuals that reflect your unique business identity'
   ]
 
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Website Design Services",
+    "serviceType": "Custom Website Design",
+    "provider": {
+      "@type": "Organization",
+      "name": "Hometown Web Co",
+      "url": "https://www.hometownwebco.com"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "United States"
+    },
+    "url": "https://www.hometownwebco.com/services/website-design",
+    "description": "Professional website design services for small businesses. Mobile-ready, SEO-optimized, fast-loading, and tailored to your brand.",
+    "mainEntityOfPage": "https://www.hometownwebco.com/services/website-design"
+  }
+
   return (
     <div className="min-h-screen py-20">
       <Helmet>
@@ -21,16 +40,19 @@ const WebsiteDesign = () => {
           content="Get a beautiful, professional website built to help your local business grow. Fast, mobile-ready, SEO-optimized design tailored to you."
         />
         <link rel="canonical" href="https://www.hometownwebco.com/services/website-design" />
-        <link rel="icon" href="/favicon.ico" />
+        {/* Open Graph */}
         <meta property="og:title" content="Website Design Services | Hometown Web Co" />
         <meta property="og:description" content="Get a beautiful, professional website built to help your local business grow. Fast, mobile-ready, SEO-optimized design tailored to you." />
         <meta property="og:url" content="https://www.hometownwebco.com/services/website-design" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://www.hometownwebco.com/og-image.jpg" />
+        {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Website Design Services | Hometown Web Co" />
         <meta name="twitter:description" content="Get a beautiful, professional website built to help your local business grow. Fast, mobile-ready, SEO-optimized design tailored to you." />
         <meta name="twitter:image" content="https://www.hometownwebco.com/og-image.jpg" />
+        {/* Structured Data */}
+        <script type="application/ld+json">{JSON.stringify(schemaData)}</script>
       </Helmet>
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">

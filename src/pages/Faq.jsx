@@ -28,22 +28,28 @@ const faqs = [
   }
 ]
 
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+}
+
 export default function FaqPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 py-12">
       <Helmet>
         <title>Frequently Asked Questions | Hometown Web Co</title>
         <meta name="description" content="Get answers to the most common website and digital marketing questions for local businesses. Learn how Hometown Web Co helps you succeed online." />
+        <script type="application/ld+json">
+          {JSON.stringify(schema)}
+        </script>
       </Helmet>
       <h1 className="text-3xl font-bold mb-8">Frequently Asked Questions</h1>
-      <div className="space-y-6">
-        {faqs.map((item, index) => (
-          <div key={index}>
-            <h2 className="text-xl font-semibold text-gray-800">{item.question}</h2>
-            <p className="text-gray-600 mt-1">{item.answer}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  )
-}
+      <div

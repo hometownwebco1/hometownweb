@@ -39,7 +39,10 @@ const BlogPost = () => {
     <div className="min-h-screen py-20">
       <Helmet>
         <title>{post.title} | Hometown Web Co Blog</title>
-        <meta name="description" content={post.excerpt || 'Read our latest post about small business web strategy.'} />
+        <meta
+          name="description"
+          content={post.excerpt || 'Read our latest post about small business web strategy from Hometown Web Co.'}
+        />
         <link rel="canonical" href={`https://www.hometownwebco.com/blog/${post.slug}`} />
         <script type="application/ld+json">
           {JSON.stringify({
@@ -58,7 +61,7 @@ const BlogPost = () => {
               name: 'Hometown Web Co',
               logo: {
                 '@type': 'ImageObject',
-                url: 'https://www.hometownwebco.com/logo.png' // Optional: Replace with real logo path
+                url: 'https://www.hometownwebco.com/logo.png'
               }
             },
             mainEntityOfPage: `https://www.hometownwebco.com/blog/${post.slug}`

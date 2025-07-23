@@ -1,6 +1,44 @@
+import { Helmet } from 'react-helmet'
+
 const TermsOfService = () => {
   return (
     <div className="max-w-4xl mx-auto px-4 py-20">
+      <Helmet>
+        <title>Terms of Service | Hometown Web Co</title>
+        <meta
+          name="description"
+          content="Review the Terms of Service for using Hometown Web Co’s website and digital services. Understand your rights, responsibilities, and legal protections."
+        />
+        <link rel="canonical" href="https://www.hometownwebco.com/terms-of-service" />
+        {/* Open Graph Tags */}
+        <meta property="og:title" content="Terms of Service | Hometown Web Co" />
+        <meta property="og:description" content="Review the Terms of Service for using Hometown Web Co’s website and digital services. Understand your rights, responsibilities, and legal protections." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.hometownwebco.com/terms-of-service" />
+        <meta property="og:image" content="https://www.hometownwebco.com/og-image.jpg" />
+        {/* Twitter Card Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Terms of Service | Hometown Web Co" />
+        <meta name="twitter:description" content="Review the Terms of Service for using Hometown Web Co’s website and digital services. Understand your rights, responsibilities, and legal protections." />
+        <meta name="twitter:image" content="https://www.hometownwebco.com/og-image.jpg" />
+        {/* JSON-LD Structured Data */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "TermsOfService",
+            "name": "Terms of Service | Hometown Web Co",
+            "url": "https://www.hometownwebco.com/terms-of-service",
+            "publisher": {
+              "@type": "Organization",
+              "name": "Hometown Web Co",
+              "url": "https://www.hometownwebco.com"
+            },
+            "inLanguage": "en-US",
+            "dateModified": "2025-07-21"
+          })}
+        </script>
+      </Helmet>
+
       <h1 className="text-4xl font-bold mb-6 text-foreground">Terms of Service</h1>
 
       <p className="text-muted-foreground mb-6">
@@ -72,3 +110,4 @@ const TermsOfService = () => {
 }
 
 export default TermsOfService
+

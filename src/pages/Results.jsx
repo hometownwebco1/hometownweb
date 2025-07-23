@@ -26,6 +26,26 @@ const Results = () => {
     }
   ]
 
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Website Results",
+    "url": "https://www.hometownwebco.com/results",
+    "description": "See how Hometown Web Co builds strategic, high-performing websites that drive real results for local businesses.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Hometown Web Co",
+      "url": "https://www.hometownwebco.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.hometownwebco.com/logo.png"
+      },
+      "sameAs": [
+        "https://www.facebook.com/profile.php?id=61578313660385"
+      ]
+    }
+  }
+
   return (
     <div className="min-h-screen py-20">
       <Helmet>
@@ -35,7 +55,6 @@ const Results = () => {
           content="See how Hometown Web Co builds strategic, high-performing websites that drive real results for local businesses. Discover what sets our work apart."
         />
         <link rel="canonical" href="https://www.hometownwebco.com/results" />
-        <link rel="icon" href="/favicon.ico" />
         {/* Open Graph */}
         <meta property="og:title" content="Website Results | Hometown Web Co" />
         <meta property="og:description" content="See how Hometown Web Co builds strategic, high-performing websites that drive real results for local businesses." />
@@ -47,6 +66,8 @@ const Results = () => {
         <meta name="twitter:title" content="Website Results | Hometown Web Co" />
         <meta name="twitter:description" content="Discover what makes our websites stand out — and why small businesses trust us to help them grow online." />
         <meta name="twitter:image" content="https://www.hometownwebco.com/og-image.jpg" />
+        {/* JSON-LD Structured Data */}
+        <script type="application/ld+json">{JSON.stringify(schemaData)}</script>
       </Helmet>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
