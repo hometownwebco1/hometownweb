@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { Mail, Facebook } from 'lucide-react'
 import logo from '../assets/HometownWebCo.png'
+import Faq from './Faq'
 
 const Footer = () => {
   return (
@@ -55,6 +56,7 @@ const Footer = () => {
               <li><Link to="/services" className="text-muted-foreground hover:text-primary transition-colors">Our Services</Link></li>
               <li><Link to="/results" className="text-muted-foreground hover:text-primary transition-colors">Results</Link></li>
               <li><Link to="/blog" className="text-muted-foreground hover:text-primary transition-colors">Blog</Link></li>
+              <li><Link to="/faq" className="text-muted-foreground hover:text-primary transition-colors">FAQ</Link></li>
               <li><Link to="/privacy-policy" className="text-muted-foreground hover:text-primary transition-colors">Privacy Policy</Link></li>
               <li><Link to="/terms-of-service" className="text-muted-foreground hover:text-primary transition-colors">Terms of Service</Link></li>
               <li><Link to="/affiliate-disclosure" className="text-muted-foreground hover:text-primary transition-colors">Affiliate Disclosure</Link></li>
@@ -71,6 +73,11 @@ const Footer = () => {
               <li><Link to="/services/email-marketing" className="text-muted-foreground hover:text-primary transition-colors">Email Marketing</Link></li>
             </ul>
           </div>
+        </div>
+
+        {/* FAQ Section */}
+        <div className="mt-12">
+          <Faq />
         </div>
 
         {/* Footer Bottom */}
