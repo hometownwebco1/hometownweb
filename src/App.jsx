@@ -19,6 +19,7 @@ import EmailMarketing from './pages/services/EmailMarketing'
 import PrivacyPolicy from './pages/PrivacyPolicy'
 import TermsOfService from './pages/TermsOfService'
 import AffiliateDisclosure from './pages/AffiliateDisclosure'
+import FaqPage from './pages/Faq' // ✅ Added
 
 function App() {
   useEffect(() => {
@@ -57,6 +58,7 @@ function App() {
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/faq" element={<FaqPage />} /> {/* ✅ Added FAQ route */}
 
             {/* Individual service detail pages */}
             <Route path="/services/website-design" element={<WebsiteDesign />} />
