@@ -1,5 +1,6 @@
 
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const industryBenchmarks = {
   retail: 0.15,
@@ -118,18 +119,18 @@ const CustomerAcquisitionCalculator = () => {
       </form>
 
       {result && (
-        <div className="mt-8 p-6 border border-border rounded-lg bg-muted text-foreground space-y-4">
-          <h2 className="text-xl font-bold text-primary">Results</h2>
+        <div className="mt-10 p-6 border border-border rounded-lg bg-muted/30 text-foreground space-y-4 shadow-md">
+          <h2 className="text-2xl font-bold text-primary mb-4 border-b pb-2">Your Results</h2>
           <p><strong>Recommended Monthly Budget:</strong> ${result.recommendedBudget}</p>
           <p><strong>Target Cost Per Acquisition:</strong> ${result.targetCPA}</p>
           <p><strong>Estimated Customers Acquired:</strong> {result.customers} / month</p>
 
           <div>
-            <h3 className="font-semibold mb-1">Recommended Budget Allocation</h3>
+            <h3 className="font-semibold mb-1 mt-6">Recommended Budget Allocation</h3>
             <div className="h-6 w-full bg-gray-200 rounded-full overflow-hidden">
               <div className="flex h-full">
-                <div className="bg-primary h-full" style={{ width: '60%' }} title="Customer Acquisition"></div>
-                <div className="bg-secondary h-full" style={{ width: '25%' }} title="Brand & Content"></div>
+                <div className="bg-blue-600 h-full" style={{ width: '60%' }} title="Customer Acquisition"></div>
+                <div className="bg-indigo-500 h-full" style={{ width: '25%' }} title="Brand & Content"></div>
                 <div className="bg-gray-400 h-full" style={{ width: '15%' }} title="Testing"></div>
               </div>
             </div>
@@ -138,6 +139,16 @@ const CustomerAcquisitionCalculator = () => {
               <span>Brand & Content (25%)</span>
               <span>Testing (15%)</span>
             </div>
+          </div>
+
+          <div className="mt-8 text-center">
+            <p className="text-sm mb-2">Want help turning these numbers into real growth?</p>
+            <Link
+              to="/contact"
+              className="inline-block bg-primary text-white px-5 py-2 rounded font-medium hover:bg-primary/90 transition"
+            >
+              Contact Us Today
+            </Link>
           </div>
         </div>
       )}

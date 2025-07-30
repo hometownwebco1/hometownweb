@@ -32,13 +32,11 @@ const Home = () => {
         />
         <link rel="canonical" href="https://www.hometownwebco.com/" />
         <link rel="icon" href="/favicon.ico" />
-        {/* Open Graph */}
         <meta property="og:title" content="Hometown Web Co | Affordable Website Design for Local Businesses" />
         <meta property="og:description" content="We build professional websites for small businesses that want to grow online. Fast, affordable, and optimized for local success." />
         <meta property="og:url" content="https://www.hometownwebco.com/" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://www.hometownwebco.com/og-image.jpg" />
-        {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Hometown Web Co | Affordable Website Design for Local Businesses" />
         <meta name="twitter:description" content="We build professional websites for small businesses that want to grow online. Fast, affordable, and optimized for local success." />
@@ -49,12 +47,7 @@ const Home = () => {
       <section className="bg-background py-20 lg:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="flex justify-center mb-8">
-            <img
-              src={logo}
-              alt="Hometown Web Co logo - modern website design for small businesses"
-              className="h-24 w-auto"
-              loading="lazy"
-            />
+            <img src={logo} alt="Hometown Web Co logo" className="h-24 w-auto" loading="lazy" />
           </div>
           <h1 className="text-4xl lg:text-6xl font-bold text-foreground mb-6">
             Hometown Website Design for Small Business Growth
@@ -115,6 +108,25 @@ const Home = () => {
               <ArrowRight className="ml-2" size={18} />
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* Calculator Promo Section */}
+      <section className="py-20 bg-background border-t border-border">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+            Not Sure What You Should Be Spending on Marketing?
+          </h2>
+          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+            Use our free calculator to estimate your ideal marketing budget and see how many new customers you could be reaching.
+          </p>
+          <Link
+            to="/calculator"
+            className="inline-flex items-center px-8 py-4 bg-primary text-white font-semibold text-lg rounded-lg hover:bg-primary/90 transition-colors shadow-md"
+          >
+            Try the Free Marketing Calculator
+            <ArrowRight className="ml-2" size={20} />
+          </Link>
         </div>
       </section>
 
