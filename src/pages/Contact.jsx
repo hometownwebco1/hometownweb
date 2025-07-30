@@ -1,3 +1,5 @@
+// src/pages/Contact.jsx
+
 import { useState } from 'react'
 import { Helmet } from 'react-helmet'
 import { Mail, MapPin, Send, CheckCircle, Facebook, Phone } from 'lucide-react'
@@ -28,7 +30,7 @@ const Contact = () => {
     setStatus('submitting')
 
     try {
-      const res = await fetch('/api/send', {
+      const res = await fetch('/api/send-email', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
