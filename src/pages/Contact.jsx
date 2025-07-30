@@ -30,7 +30,7 @@ const Contact = () => {
     setStatus('submitting')
 
     try {
-      const res = await fetch('/api/send-email', {
+      const res = await fetch(`${window.location.origin}/api/send-email`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
@@ -204,7 +204,9 @@ const Contact = () => {
                   <Send className="mr-2" size={20} />
                   {status === 'submitting' ? 'Sending...' : 'Request Free Website Demo'}
                 </button>
-                {status === 'error' && <p className="text-red-600 text-sm mt-2">Something went wrong. Please try again.</p>}
+                {status === 'error' && (
+                  <p className="text-red-600 text-sm mt-2">Something went wrong. Please try again.</p>
+                )}
               </form>
             </div>
           </div>

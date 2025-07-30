@@ -1,4 +1,4 @@
-// /api/send.js
+// /api/send-email.js
 import { Resend } from 'resend';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
@@ -11,7 +11,7 @@ export default async function handler(req, res) {
   const { name, email, businessName, message } = req.body;
 
   try {
-    const data = await resend.emails.send({
+    await resend.emails.send({
       from: 'Woody from Hometown <onboarding@resend.dev>',
       to: 'woody@hometownwebco.com',
       subject: `New Contact Form Submission from ${name}`,
