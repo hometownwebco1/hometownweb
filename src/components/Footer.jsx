@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Mail, Facebook } from 'lucide-react'
+import { Mail, Facebook, Instagram, Youtube } from 'lucide-react'
 import logo from '../assets/HometownWebCo.png'
 import Faq from './Faq'
 
@@ -33,7 +33,7 @@ const Footer = () => {
                   Contact Us
                 </a>
               </div>
-              <div className="pt-2">
+              <div className="pt-2 flex flex-wrap items-center gap-4">
                 <a
                   href="https://www.facebook.com/profile.php?id=61578313660385"
                   target="_blank"
@@ -43,6 +43,26 @@ const Footer = () => {
                 >
                   <Facebook className="mr-1" size={16} />
                   Facebook
+                </a>
+                <a
+                  href="https://www.instagram.com/hometownwebco/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-muted-foreground hover:text-primary transition-colors"
+                  aria-label="Hometown Web Co Instagram"
+                >
+                  <Instagram className="mr-1" size={16} />
+                  Instagram
+                </a>
+                <a
+                  href="https://www.youtube.com/@hometownwebco"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-muted-foreground hover:text-primary transition-colors"
+                  aria-label="Hometown Web Co YouTube"
+                >
+                  <Youtube className="mr-1" size={16} />
+                  YouTube
                 </a>
               </div>
             </div>

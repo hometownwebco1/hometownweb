@@ -1,5 +1,5 @@
 import { Helmet } from 'react-helmet'
-import { Heart, Users, Target, Award, Facebook } from 'lucide-react'
+import { Heart, Users, Target, Award, Facebook, Instagram, Youtube } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
 const About = () => {
@@ -41,7 +41,9 @@ const About = () => {
         "url": "https://www.hometownwebco.com/logo.png"
       },
       "sameAs": [
-        "https://www.facebook.com/profile.php?id=61578313660385"
+        "https://www.facebook.com/profile.php?id=61578313660385",
+        "https://www.instagram.com/hometownwebco/",
+        "https://www.youtube.com/@hometownwebco"
       ]
     }
   }
@@ -145,15 +147,35 @@ const About = () => {
         {/* Social Footer */}
         <div className="mt-20 text-center">
           <p className="text-muted-foreground mb-4">Follow Us:</p>
-          <a
-            href="https://www.facebook.com/profile.php?id=61578313660385"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center text-primary hover:text-primary/80"
-          >
-            <Facebook className="mr-2" size={20} />
-            Facebook
-          </a>
+          <div className="flex justify-center gap-6">
+            <a
+              href="https://www.facebook.com/profile.php?id=61578313660385"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center text-primary hover:text-primary/80"
+            >
+              <Facebook className="mr-2" size={20} />
+              Facebook
+            </a>
+            <a
+              href="https://www.instagram.com/hometownwebco/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center text-primary hover:text-primary/80"
+            >
+              <Instagram className="mr-2" size={20} />
+              Instagram
+            </a>
+            <a
+              href="https://www.youtube.com/@hometownwebco"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center text-primary hover:text-primary/80"
+            >
+              <Youtube className="mr-2" size={20} />
+              YouTube
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -161,4 +183,3 @@ const About = () => {
 }
 
 export default About
-
