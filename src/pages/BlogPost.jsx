@@ -9,12 +9,12 @@ const BlogPost = () => {
 
   if (!post) {
     return (
-      <div className="min-h-screen py-20 flex items-center justify-center">
+      <div className="min-h-screen py-20 flex items-center justify-center bg-site-gradient">
         <div className="text-center">
-          <h1 className="text-4xl font-bold text-foreground mb-4">
+          <h1 className="text-4xl font-bold text-white mb-4">
             Post Not Found
           </h1>
-          <p className="text-muted-foreground mb-8">
+          <p className="text-gray-100 mb-8">
             The blog post you're looking for doesn't exist.
           </p>
           <Link
@@ -36,7 +36,7 @@ const BlogPost = () => {
   })
 
   return (
-    <div className="min-h-screen py-20">
+    <div className="min-h-screen py-20 bg-site-gradient">
       <Helmet>
         <title>{post.title} | Hometown Web Co Blog</title>
         <meta
@@ -86,40 +86,40 @@ const BlogPost = () => {
             <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-sm font-medium rounded-full">
               {post.category}
             </span>
-            <div className="flex items-center text-muted-foreground text-sm">
+            <div className="flex items-center text-gray-100 text-sm">
               <Calendar size={14} className="mr-1" />
               {formattedDate}
             </div>
-            <div className="flex items-center text-muted-foreground text-sm">
+            <div className="flex items-center text-gray-100 text-sm">
               <Clock size={14} className="mr-1" />
               {post.readTime}
             </div>
           </div>
 
-          <h1 className="text-4xl lg:text-5xl font-bold text-foreground mb-6 leading-tight font-sans">
+          <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight font-sans">
             {post.title}
           </h1>
 
-          <p className="text-xl text-muted-foreground leading-relaxed font-sans max-w-3xl mx-auto">
+          <p className="text-xl text-gray-100 leading-relaxed font-sans max-w-3xl mx-auto">
             {post.excerpt}
           </p>
         </header>
 
         {/* Article Content */}
-        <article className="prose max-w-none prose-p:font-sans prose-p:text-lg prose-p:leading-relaxed prose-headings:font-sans prose-headings:text-foreground prose-headings:font-bold prose-headings:tracking-tight prose-li:font-sans prose-li:text-lg prose-li:leading-relaxed prose-a:text-primary">
+        <article className="prose max-w-none bg-white rounded-lg shadow p-8 mb-12 prose-p:font-sans prose-p:text-lg prose-p:leading-relaxed prose-headings:font-sans prose-headings:text-gray-900 prose-headings:font-bold prose-headings:tracking-tight prose-li:font-sans prose-li:text-lg prose-li:leading-relaxed prose-a:text-primary">
           <div
-            className="text-foreground leading-relaxed font-sans"
+            className="text-gray-900 leading-relaxed font-sans"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
         </article>
 
         {/* Article Footer CTA */}
         <footer className="mt-16 pt-8 border-t border-border">
-          <div className="bg-muted p-8 rounded-lg text-center mb-8">
-            <h3 className="text-2xl font-bold text-foreground mb-4 font-sans">
+          <div className="bg-white p-8 rounded-lg text-center mb-8 shadow">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4 font-sans">
               Ready to Get Your Business Online?
             </h3>
-            <p className="text-muted-foreground mb-6 max-w-2xl mx-auto font-sans">
+            <p className="text-gray-700 mb-6 max-w-2xl mx-auto font-sans">
               Let's discuss how we can help your business establish a strong online presence 
               and connect with more customers in your community.
             </p>
@@ -137,7 +137,7 @@ const BlogPost = () => {
               href="https://www.facebook.com/profile.php?id=61578313660385"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center text-primary hover:text-primary/80"
+              className="inline-flex items-center text-white hover:text-primary"
             >
               <Facebook className="mr-2" size={20} />
               Facebook
@@ -146,7 +146,7 @@ const BlogPost = () => {
               href="https://www.instagram.com/hometownwebco/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center text-primary hover:text-primary/80"
+              className="inline-flex items-center text-white hover:text-primary"
             >
               <Instagram className="mr-2" size={20} />
               Instagram
@@ -155,7 +155,7 @@ const BlogPost = () => {
               href="https://www.youtube.com/@hometownwebco"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center text-primary hover:text-primary/80"
+              className="inline-flex items-center text-white hover:text-primary"
             >
               <Youtube className="mr-2" size={20} />
               YouTube
@@ -168,4 +168,3 @@ const BlogPost = () => {
 }
 
 export default BlogPost
-

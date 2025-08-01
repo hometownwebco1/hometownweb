@@ -49,7 +49,7 @@ const Results = () => {
   }
 
   return (
-    <div className="min-h-screen py-20">
+    <div className="min-h-screen py-20 bg-site-gradient">
       <Helmet>
         <title>Website Results | Hometown Web Co</title>
         <meta
@@ -75,10 +75,10 @@ const Results = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
+          <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6">
             Why Our Websites Work
           </h1>
-          <p className="text-xl gradient-text max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-100 max-w-3xl mx-auto leading-relaxed">
             We don’t believe in shortcuts — just solid websites that convert, rank, and perform.
             Here’s why our approach delivers results.
           </p>
@@ -89,15 +89,15 @@ const Results = () => {
           {benefits.map((benefit, index) => {
             const Icon = benefit.icon
             return (
-              <div key={index} className="flex items-start space-x-4">
+              <div key={index} className="flex items-start space-x-4 bg-white p-6 rounded-lg shadow">
                 <div className="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
                   <Icon className="text-primary" size={28} />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-foreground mb-1">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-1">
                     {benefit.title}
                   </h3>
-                  <p className="gradient-text">
+                  <p className="text-gray-700">
                     {benefit.description}
                   </p>
                 </div>
@@ -107,11 +107,11 @@ const Results = () => {
         </div>
 
         {/* CTA Section */}
-        <div className="bg-muted p-12 rounded-lg text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+        <div className="bg-white p-12 rounded-lg text-center shadow mb-20">
+          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
             Be Our Next Success Story
           </h2>
-          <p className="text-lg gradient-text max-w-2xl mx-auto mb-6">
+          <p className="text-lg text-gray-700 max-w-2xl mx-auto mb-6">
             We’re currently taking on a limited number of new projects. Work directly with our founder and get the attention your business deserves — from day one.
           </p>
           <Link
@@ -124,13 +124,13 @@ const Results = () => {
 
         {/* Social Media CTA */}
         <div className="mt-20 text-center">
-          <p className="text-muted-foreground mb-4">Follow Us:</p>
+          <p className="text-gray-100 mb-4">Follow Us:</p>
           <div className="flex justify-center gap-6">
             <a
               href="https://www.facebook.com/profile.php?id=61578313660385"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center text-primary hover:text-primary/80"
+              className="inline-flex items-center justify-center text-white hover:text-primary"
             >
               <Facebook className="mr-2" size={20} />
               Facebook
@@ -139,7 +139,7 @@ const Results = () => {
               href="https://www.instagram.com/hometownwebco/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center text-primary hover:text-primary/80"
+              className="inline-flex items-center justify-center text-white hover:text-primary"
             >
               <Instagram className="mr-2" size={20} />
               Instagram
@@ -148,7 +148,7 @@ const Results = () => {
               href="https://www.youtube.com/@hometownwebco"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center text-primary hover:text-primary/80"
+              className="inline-flex items-center justify-center text-white hover:text-primary"
             >
               <Youtube className="mr-2" size={20} />
               YouTube
