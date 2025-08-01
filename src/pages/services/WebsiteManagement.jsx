@@ -1,5 +1,5 @@
 import { Helmet } from 'react-helmet'
-import { Check, ArrowRight } from 'lucide-react'
+import { Check, ArrowRight, Facebook, Instagram, Youtube } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
 const WebsiteManagement = () => {
@@ -106,9 +106,44 @@ const WebsiteManagement = () => {
             <ArrowRight className="ml-2" size={20} />
           </Link>
         </div>
+
+        {/* Social Media CTA */}
+        <div className="mt-16 text-center">
+          <p className="text-muted-foreground mb-4">Follow Us:</p>
+          <div className="flex justify-center gap-6">
+            <a
+              href="https://www.facebook.com/profile.php?id=61578313660385"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center text-primary hover:text-primary/80"
+            >
+              <Facebook className="mr-2" size={20} />
+              Facebook
+            </a>
+            <a
+              href="https://www.instagram.com/hometownwebco/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center text-primary hover:text-primary/80"
+            >
+              <svg className="mr-2" width={20} height={20} fill="none" viewBox="0 0 24 24"><path fill="currentColor" d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7Zm0 2h10c1.654 0 3 1.346 3 3v10c0 1.654-1.346 3-3 3H7c-1.654 0-3-1.346-3-3V7c0-1.654 1.346-3 3-3Zm5 2c-2.757 0-5 2.243-5 5 0 2.757 2.243 5 5 5 2.757 0 5-2.243 5-5 0-2.757-2.243-5-5-5Zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm6.5 1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Z"/></svg>
+              Instagram
+            </a>
+            <a
+              href="https://www.youtube.com/@hometownwebco"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center text-primary hover:text-primary/80"
+            >
+              <svg className="mr-2" width={20} height={20} fill="none" viewBox="0 0 24 24"><path fill="currentColor" d="M10 15.5V8.5l7 3.5-7 3.5Z" /><path fill="currentColor" d="M21.8 7.8A3.001 3.001 0 0 0 19.8 5.8C18.6 5.2 12 5.2 12 5.2s-6.6 0-7.8.6a3.001 3.001 0 0 0-2 2A31.1 31.1 0 0 0 2 12c0 1.2.1 2.4.2 3.2a3.001 3.001 0 0 0 2 2C5.4 18.8 12 18.8 12 18.8s6.6 0 7.8-.6a3.001 3.001 0 0 0 2-2c.1-.8.2-2 .2-3.2 0-1.2-.1-2.4-.2-3.2ZM10 16v-8l8 4-8 4Z"/></svg>
+              YouTube
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   )
 }
 
 export default WebsiteManagement
+

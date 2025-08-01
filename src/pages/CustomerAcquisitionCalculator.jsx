@@ -1,4 +1,3 @@
-
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
@@ -59,27 +58,27 @@ const CustomerAcquisitionCalculator = () => {
   }
 
   return (
-    <div className="max-w-3xl mx-auto px-4 py-12">
-      <h1 className="text-2xl font-bold mb-6 text-primary">Marketing Budget & Customer Acquisition Calculator</h1>
+    <div className="max-w-3xl mx-auto px-4 py-12 font-sans">
+      <h1 className="text-3xl font-bold mb-6 text-primary">Marketing Budget & Customer Acquisition Calculator</h1>
       <form onSubmit={handleSubmit} className="space-y-6">
         <div>
-          <label className="block text-sm font-medium text-foreground mb-1">Gross Monthly Revenue ($)</label>
+          <label className="block text-base font-medium text-foreground mb-1">Gross Monthly Revenue ($)</label>
           <input
             type="number"
             name="revenue"
             value={formData.revenue}
             onChange={handleChange}
-            className="w-full border border-border rounded px-3 py-2"
+            className="w-full border border-border rounded px-3 py-2 text-base text-foreground bg-background font-sans"
             required
           />
         </div>
         <div>
-          <label className="block text-sm font-medium text-foreground mb-1">Business Growth Strategy</label>
+          <label className="block text-base font-medium text-foreground mb-1">Business Growth Strategy</label>
           <select
             name="growth"
             value={formData.growth}
             onChange={handleChange}
-            className="w-full border border-border rounded px-3 py-2"
+            className="w-full border border-border rounded px-3 py-2 text-base text-foreground bg-background font-sans"
           >
             <option value="maintenance">Maintenance</option>
             <option value="growth">Growth</option>
@@ -87,12 +86,12 @@ const CustomerAcquisitionCalculator = () => {
           </select>
         </div>
         <div>
-          <label className="block text-sm font-medium text-foreground mb-1">Business Type</label>
+          <label className="block text-base font-medium text-foreground mb-1">Business Type</label>
           <select
             name="businessType"
             value={formData.businessType}
             onChange={handleChange}
-            className="w-full border border-border rounded px-3 py-2"
+            className="w-full border border-border rounded px-3 py-2 text-base text-foreground bg-background font-sans"
           >
             <option value="retail">Retail</option>
             <option value="restaurant">Restaurant</option>
@@ -104,29 +103,29 @@ const CustomerAcquisitionCalculator = () => {
           </select>
         </div>
         <div>
-          <label className="block text-sm font-medium text-foreground mb-1">Current Marketing Budget (optional)</label>
+          <label className="block text-base font-medium text-foreground mb-1">Current Marketing Budget (optional)</label>
           <input
             type="number"
             name="currentBudget"
             value={formData.currentBudget}
             onChange={handleChange}
-            className="w-full border border-border rounded px-3 py-2"
+            className="w-full border border-border rounded px-3 py-2 text-base text-foreground bg-background font-sans"
           />
         </div>
-        <button type="submit" className="bg-primary text-white font-semibold px-6 py-2 rounded hover:bg-primary/80 transition">
+        <button type="submit" className="bg-primary text-white font-semibold px-6 py-2 rounded hover:bg-primary/80 transition text-lg font-sans">
           Calculate
         </button>
       </form>
 
       {result && (
-        <div className="mt-10 p-6 border border-border rounded-lg bg-muted/30 text-foreground space-y-4 shadow-md">
-          <h2 className="text-2xl font-bold text-primary mb-4 border-b pb-2">Your Results</h2>
-          <p><strong>Recommended Monthly Budget:</strong> ${result.recommendedBudget}</p>
-          <p><strong>Target Cost Per Acquisition:</strong> ${result.targetCPA}</p>
-          <p><strong>Estimated Customers Acquired:</strong> {result.customers} / month</p>
+        <div className="mt-10 p-6 border border-border rounded-lg bg-muted/30 text-foreground space-y-4 shadow-md font-sans">
+          <h2 className="text-2xl font-bold text-primary mb-4 border-b pb-2 font-sans">Your Results</h2>
+          <p className="text-lg"><strong>Recommended Monthly Budget:</strong> ${result.recommendedBudget}</p>
+          <p className="text-lg"><strong>Target Cost Per Acquisition:</strong> ${result.targetCPA}</p>
+          <p className="text-lg"><strong>Estimated Customers Acquired:</strong> {result.customers} / month</p>
 
           <div>
-            <h3 className="font-semibold mb-1 mt-6">Recommended Budget Allocation</h3>
+            <h3 className="font-semibold mb-1 mt-6 text-base font-sans">Recommended Budget Allocation</h3>
             <div className="h-6 w-full bg-gray-200 rounded-full overflow-hidden">
               <div className="flex h-full">
                 <div className="bg-blue-600 h-full" style={{ width: '60%' }} title="Customer Acquisition"></div>
@@ -134,7 +133,7 @@ const CustomerAcquisitionCalculator = () => {
                 <div className="bg-gray-400 h-full" style={{ width: '15%' }} title="Testing"></div>
               </div>
             </div>
-            <div className="flex justify-between text-xs mt-1 text-muted-foreground">
+            <div className="flex justify-between text-xs mt-1 text-muted-foreground font-sans">
               <span>Customer Acquisition (60%)</span>
               <span>Brand & Content (25%)</span>
               <span>Testing (15%)</span>
@@ -142,10 +141,10 @@ const CustomerAcquisitionCalculator = () => {
           </div>
 
           <div className="mt-8 text-center">
-            <p className="text-sm mb-2">Want help turning these numbers into real growth?</p>
+            <p className="text-base mb-2">Want help turning these numbers into real growth?</p>
             <Link
               to="/contact"
-              className="inline-block bg-primary text-white px-5 py-2 rounded font-medium hover:bg-primary/90 transition"
+              className="inline-block bg-primary text-white px-5 py-2 rounded font-medium hover:bg-primary/90 transition text-base font-sans"
             >
               Contact Us Today
             </Link>
@@ -153,7 +152,7 @@ const CustomerAcquisitionCalculator = () => {
         </div>
       )}
 
-      <div className="mt-12 text-xs text-gray-600 p-4 bg-gray-50 rounded-lg border border-gray-200">
+      <div className="mt-12 text-sm text-muted-foreground p-4 bg-muted rounded-lg border border-border font-sans">
         <h4 className="font-bold mb-2">Legal Disclaimer</h4>
         <p className="mb-2">
           This calculator provides estimates based on industry averages and simplified assumptions. Results may vary significantly.
@@ -170,3 +169,4 @@ const CustomerAcquisitionCalculator = () => {
 }
 
 export default CustomerAcquisitionCalculator
+

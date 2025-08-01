@@ -1,6 +1,6 @@
 import { useParams, Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet'
-import { Calendar, Clock, ArrowLeft, ArrowRight } from 'lucide-react'
+import { Calendar, Clock, ArrowLeft, ArrowRight, Facebook, Instagram, Youtube } from 'lucide-react'
 import { blogPosts } from '../data/blogPosts'
 
 const BlogPost = () => {
@@ -81,8 +81,8 @@ const BlogPost = () => {
         </Link>
 
         {/* Article Header */}
-        <header className="mb-12">
-          <div className="flex items-center gap-4 mb-6">
+        <header className="mb-12 text-center">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
             <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-sm font-medium rounded-full">
               {post.category}
             </span>
@@ -96,30 +96,30 @@ const BlogPost = () => {
             </div>
           </div>
 
-          <h1 className="text-4xl lg:text-5xl font-bold text-foreground mb-6 leading-tight">
+          <h1 className="text-4xl lg:text-5xl font-bold text-foreground mb-6 leading-tight font-sans">
             {post.title}
           </h1>
 
-          <p className="text-xl text-muted-foreground leading-relaxed">
+          <p className="text-xl text-muted-foreground leading-relaxed font-sans max-w-3xl mx-auto">
             {post.excerpt}
           </p>
         </header>
 
         {/* Article Content */}
-        <article className="prose prose-lg max-w-none">
+        <article className="prose max-w-none prose-p:font-sans prose-p:text-lg prose-p:leading-relaxed prose-headings:font-sans prose-headings:text-foreground prose-headings:font-bold prose-headings:tracking-tight prose-li:font-sans prose-li:text-lg prose-li:leading-relaxed prose-a:text-primary">
           <div
-            className="text-foreground leading-relaxed"
+            className="text-foreground leading-relaxed font-sans"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
         </article>
 
         {/* Article Footer CTA */}
         <footer className="mt-16 pt-8 border-t border-border">
-          <div className="bg-muted p-8 rounded-lg text-center">
-            <h3 className="text-2xl font-bold text-foreground mb-4">
+          <div className="bg-muted p-8 rounded-lg text-center mb-8">
+            <h3 className="text-2xl font-bold text-foreground mb-4 font-sans">
               Ready to Get Your Business Online?
             </h3>
-            <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+            <p className="text-muted-foreground mb-6 max-w-2xl mx-auto font-sans">
               Let's discuss how we can help your business establish a strong online presence 
               and connect with more customers in your community.
             </p>
@@ -131,6 +131,36 @@ const BlogPost = () => {
               <ArrowRight className="ml-2" size={20} />
             </Link>
           </div>
+          {/* Social Media Block */}
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-6 mt-8">
+            <a
+              href="https://www.facebook.com/profile.php?id=61578313660385"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center text-primary hover:text-primary/80"
+            >
+              <Facebook className="mr-2" size={20} />
+              Facebook
+            </a>
+            <a
+              href="https://www.instagram.com/hometownwebco/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center text-primary hover:text-primary/80"
+            >
+              <Instagram className="mr-2" size={20} />
+              Instagram
+            </a>
+            <a
+              href="https://www.youtube.com/@hometownwebco"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center text-primary hover:text-primary/80"
+            >
+              <Youtube className="mr-2" size={20} />
+              YouTube
+            </a>
+          </div>
         </footer>
       </div>
     </div>
@@ -138,3 +168,4 @@ const BlogPost = () => {
 }
 
 export default BlogPost
+

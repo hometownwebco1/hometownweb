@@ -78,7 +78,7 @@ const About = () => {
           <h1 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
             About Hometown Web Co — Local Business Website Experts
           </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl gradient-text max-w-3xl mx-auto leading-relaxed">
             We specialize in helping local businesses grow online with affordable, professional web design and digital strategy.
           </p>
         </div>
@@ -89,7 +89,7 @@ const About = () => {
             <h2 className="text-3xl font-bold text-foreground mb-6">
               Who We Are
             </h2>
-            <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
+            <div className="space-y-4 text-lg gradient-text leading-relaxed">
               <p>
                 Hometown Web Co builds custom websites for hometown businesses across the United States.
                 We focus on simplicity, trust, and real-world results — not buzzwords or gimmicks.
@@ -113,19 +113,19 @@ const About = () => {
             <ul className="space-y-4">
               <li className="flex items-start space-x-3">
                 <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                <span className="text-muted-foreground">
+                <span className="gradient-text">
                   <strong className="text-foreground">Local Focus:</strong> We know what small businesses need — and what they don’t.
                 </span>
               </li>
               <li className="flex items-start space-x-3">
                 <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                <span className="text-muted-foreground">
+                <span className="gradient-text">
                   <strong className="text-foreground">Simple Process:</strong> We keep things easy, affordable, and stress-free.
                 </span>
               </li>
               <li className="flex items-start space-x-3">
                 <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                <span className="text-muted-foreground">
+                <span className="gradient-text">
                   <strong className="text-foreground">Real Results:</strong> Our sites are built to convert — not just look good.
                 </span>
               </li>
@@ -139,7 +139,7 @@ const About = () => {
             <div key={index} className="p-6 bg-muted rounded-lg shadow-md">
               <value.icon className="text-primary mx-auto mb-4" size={32} />
               <h4 className="text-xl font-semibold text-foreground mb-2">{value.title}</h4>
-              <p className="text-muted-foreground text-sm">{value.description}</p>
+              <p className="gradient-text text-sm">{value.description}</p>
             </div>
           ))}
         </div>

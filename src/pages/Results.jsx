@@ -1,5 +1,5 @@
 import { Helmet } from 'react-helmet'
-import { Globe, TrendingUp, Users, Lightbulb, Target, Wrench, Smile, Facebook } from 'lucide-react'
+import { Globe, TrendingUp, Users, Lightbulb, Target, Wrench, Smile, Facebook, Instagram, Youtube } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
 const Results = () => {
@@ -41,7 +41,9 @@ const Results = () => {
         "url": "https://www.hometownwebco.com/logo.png"
       },
       "sameAs": [
-        "https://www.facebook.com/profile.php?id=61578313660385"
+        "https://www.facebook.com/profile.php?id=61578313660385",
+        "https://www.instagram.com/hometownwebco/",
+        "https://www.youtube.com/@hometownwebco"
       ]
     }
   }
@@ -76,7 +78,7 @@ const Results = () => {
           <h1 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
             Why Our Websites Work
           </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl gradient-text max-w-3xl mx-auto leading-relaxed">
             We don’t believe in shortcuts — just solid websites that convert, rank, and perform.
             Here’s why our approach delivers results.
           </p>
@@ -95,7 +97,7 @@ const Results = () => {
                   <h3 className="text-xl font-semibold text-foreground mb-1">
                     {benefit.title}
                   </h3>
-                  <p className="text-muted-foreground">
+                  <p className="gradient-text">
                     {benefit.description}
                   </p>
                 </div>
@@ -109,7 +111,7 @@ const Results = () => {
           <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
             Be Our Next Success Story
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-6">
+          <p className="text-lg gradient-text max-w-2xl mx-auto mb-6">
             We’re currently taking on a limited number of new projects. Work directly with our founder and get the attention your business deserves — from day one.
           </p>
           <Link
@@ -120,18 +122,38 @@ const Results = () => {
           </Link>
         </div>
 
-        {/* Facebook CTA */}
+        {/* Social Media CTA */}
         <div className="mt-20 text-center">
           <p className="text-muted-foreground mb-4">Follow Us:</p>
-          <a
-            href="https://www.facebook.com/profile.php?id=61578313660385"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center text-primary hover:text-primary/80"
-          >
-            <Facebook className="mr-2" size={20} />
-            Facebook
-          </a>
+          <div className="flex justify-center gap-6">
+            <a
+              href="https://www.facebook.com/profile.php?id=61578313660385"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center text-primary hover:text-primary/80"
+            >
+              <Facebook className="mr-2" size={20} />
+              Facebook
+            </a>
+            <a
+              href="https://www.instagram.com/hometownwebco/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center text-primary hover:text-primary/80"
+            >
+              <Instagram className="mr-2" size={20} />
+              Instagram
+            </a>
+            <a
+              href="https://www.youtube.com/@hometownwebco"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center text-primary hover:text-primary/80"
+            >
+              <Youtube className="mr-2" size={20} />
+              YouTube
+            </a>
+          </div>
         </div>
       </div>
     </div>

@@ -49,7 +49,7 @@ const Home = () => {
           <div className="flex justify-center mb-8">
             <img src={logo} alt="Hometown Web Co logo" className="h-24 w-auto" loading="lazy" />
           </div>
-          <h1 className="text-4xl lg:text-6xl font-bold text-foreground mb-6">
+          <h1 className="text-4xl lg:text-6xl font-bold gradient-text-strong mb-6">
             Hometown Website Design for Small Business Growth
           </h1>
           <div className="mb-12">
@@ -61,7 +61,7 @@ const Home = () => {
               <ArrowRight className="ml-2" size={20} />
             </Link>
           </div>
-          <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+          <p className="text-lg gradient-text leading-relaxed max-w-3xl mx-auto">
             We believe every local business deserves a strong online presence. Whether you're a family restaurant,
             local shop, or service provider, we make it simple and affordable to get your business online and
             connect with more customers in your community.
@@ -131,12 +131,12 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20">
+      <section className="py-20 bg-site-gradient">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-6">
+          <h2 className="text-3xl lg:text-4xl font-bold gradient-text-strong mb-6">
             Ready to Get Your Business Online?
           </h2>
-          <p className="text-lg text-white drop-shadow mb-8 max-w-2xl mx-auto">
+          <p className="text-lg gradient-text mb-8 max-w-2xl mx-auto">
             Let's talk about how we can help your business reach more customers and grow your local presence online.
           </p>
           <Link

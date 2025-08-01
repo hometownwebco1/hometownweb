@@ -6,7 +6,9 @@ import {
   Mail,
   Check,
   ArrowRight,
-  Facebook
+  Facebook,
+  Instagram,
+  Youtube
 } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
@@ -117,7 +119,7 @@ const Services = () => {
           <h1 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
             Our Services
           </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl gradient-text max-w-3xl mx-auto leading-relaxed">
             Comprehensive digital solutions built to help small businesses grow online.
           </p>
         </header>
@@ -139,7 +141,7 @@ const Services = () => {
                   </h2>
                 </div>
 
-                <p className="text-muted-foreground mb-6 leading-relaxed">
+                <p className="gradient-text mb-6 leading-relaxed">
                   {service.description}
                 </p>
 
@@ -148,7 +150,7 @@ const Services = () => {
                   {service.features.map((feature, featureIndex) => (
                     <div key={featureIndex} className="flex items-start space-x-3">
                       <Check className="text-primary mt-0.5 flex-shrink-0" size={16} />
-                      <span className="text-muted-foreground text-sm">
+                      <span className="gradient-text text-sm">
                         {feature}
                       </span>
                     </div>
@@ -173,7 +175,7 @@ const Services = () => {
             <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
               Our Process
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg gradient-text max-w-2xl mx-auto">
               We make getting online simple with our step-by-step approach.
             </p>
           </div>
@@ -208,7 +210,7 @@ const Services = () => {
                 <h3 className="text-xl font-semibold text-foreground mb-2">
                   {item.title}
                 </h3>
-                <p className="text-muted-foreground text-sm">
+                <p className="gradient-text text-sm">
                   {item.description}
                 </p>
               </div>
@@ -220,7 +222,7 @@ const Services = () => {
           <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-6">
             Ready to Get Started?
           </h2>
-          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+          <p className="text-lg gradient-text mb-8 max-w-2xl mx-auto">
             Let’s talk about your goals and how we can help. Schedule a free consultation today.
           </p>
           <Link
@@ -234,15 +236,35 @@ const Services = () => {
 
         <div className="text-center">
           <p className="text-muted-foreground mb-4">Follow Us:</p>
-          <a
-            href="https://www.facebook.com/profile.php?id=61578313660385"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center text-primary hover:text-primary/80"
-          >
-            <Facebook className="mr-2" size={20} />
-            Facebook
-          </a>
+          <div className="flex justify-center gap-6">
+            <a
+              href="https://www.facebook.com/profile.php?id=61578313660385"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center text-primary hover:text-primary/80"
+            >
+              <Facebook className="mr-2" size={20} />
+              Facebook
+            </a>
+            <a
+              href="https://www.instagram.com/hometownwebco/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center text-primary hover:text-primary/80"
+            >
+              <Instagram className="mr-2" size={20} />
+              Instagram
+            </a>
+            <a
+              href="https://www.youtube.com/@hometownwebco"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center text-primary hover:text-primary/80"
+            >
+              <Youtube className="mr-2" size={20} />
+              YouTube
+            </a>
+          </div>
         </div>
       </div>
     </div>
