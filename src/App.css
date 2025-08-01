@@ -138,3 +138,8 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+/* ========= CUSTOM GRADIENT CLASS ========= */
+.bg-site-gradient {
+  background: linear-gradient(120deg, #fff8ed 0%, #e55a3c 50%, #213147 100%);
+}

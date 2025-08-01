@@ -52,7 +52,7 @@ function App() {
 
   return (
     <Router>
-      <div className="min-h-screen bg-background text-foreground">
+      <div className="min-h-screen bg-site-gradient text-foreground">
         <Navbar />
         <main>
           <Routes>
