@@ -4,12 +4,16 @@ import { BarChart2 } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
 const LeadValueCalculator = () => {
-  // Add state ONLY
   const [form, setForm] = useState({
     closeRate: '',
     avgSale: '',
     leads: ''
   })
+
+  const handleChange = (e) => {
+    const { name, value } = e.target
+    setForm({ ...form, [name]: value })
+  }
 
   return (
     <div className="min-h-screen bg-site-gradient py-20">
@@ -27,10 +31,11 @@ const LeadValueCalculator = () => {
             <input
               type="number"
               name="leads"
+              value={form.leads}
+              onChange={handleChange}
               className="w-full px-5 py-4 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary text-lg bg-white shadow-inner"
               min="0"
               placeholder="e.g. 25"
-              // DO NOT add value/onChange yet!
             />
           </div>
           <div>
