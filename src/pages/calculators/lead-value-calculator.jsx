@@ -1,8 +1,16 @@
+import { useState } from 'react'
 import { Helmet } from 'react-helmet'
 import { BarChart2 } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
 const LeadValueCalculator = () => {
+  // Add state ONLY
+  const [form, setForm] = useState({
+    closeRate: '',
+    avgSale: '',
+    leads: ''
+  })
+
   return (
     <div className="min-h-screen bg-site-gradient py-20">
       <Helmet>
@@ -22,6 +30,7 @@ const LeadValueCalculator = () => {
               className="w-full px-5 py-4 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary text-lg bg-white shadow-inner"
               min="0"
               placeholder="e.g. 25"
+              // DO NOT add value/onChange yet!
             />
           </div>
           <div>
