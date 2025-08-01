@@ -56,6 +56,8 @@ const LeadValueCalculator = () => {
             <input
               type="number"
               name="avgSale"
+              value={form.avgSale}
+              onChange={handleChange}
               className="w-full px-5 py-4 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary text-lg bg-white shadow-inner"
               min="0"
               placeholder="e.g. 1200"
@@ -79,4 +81,3 @@ const LeadValueCalculator = () => {
 }
 
 export default LeadValueCalculator
-
