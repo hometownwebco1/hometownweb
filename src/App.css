@@ -156,3 +156,38 @@ body {
   color: #fff !important;
   text-shadow: 0 4px 16px rgba(33,49,71,0.28), 0 2px 6px rgba(33,49,71,0.10);
 }
+
+/* ========== HIGH-CONTRAST CARD TEXT FIX ========== */
+/* Forces readable text on any card, muted, or white box */
+.bg-background,
+.bg-card,
+.bg-muted {
+  --tw-prose-body: oklch(0.36 0.13 35); /* deep burnt orange */
+  --tw-prose-headings: oklch(0.36 0.13 35);
+  --tw-prose-lead: oklch(0.36 0.13 35);
+  --tw-prose-links: oklch(0.6 0.15 35);
+  --tw-prose-bold: oklch(0.36 0.13 35);
+  --tw-prose-counters: oklch(0.36 0.13 35);
+  --tw-prose-bullets: oklch(0.6 0.15 35);
+  --tw-prose-hr: oklch(0.36 0.13 35);
+  --tw-prose-quotes: oklch(0.36 0.13 35);
+  --tw-prose-quote-borders: oklch(0.6 0.15 35);
+  --tw-prose-captions: oklch(0.36 0.13 35);
+  --tw-prose-code: oklch(0.36 0.13 35);
+  --tw-prose-pre-code: oklch(0.36 0.13 35);
+  --tw-prose-pre-bg: #f5f5f5;
+  --tw-prose-th-borders: oklch(0.36 0.13 35);
+  --tw-prose-td-borders: oklch(0.36 0.13 35);
+}
+.bg-background .text-muted-foreground,
+.bg-card .text-muted-foreground,
+.bg-muted .text-muted-foreground {
+  color: oklch(0.36 0.13 35) !important;
+  opacity: 1 !important;
+}
+.bg-background .text-white,
+.bg-card .text-white,
+.bg-muted .text-white {
+  color: oklch(0.36 0.13 35) !important;
+  opacity: 1 !important;
+}
