@@ -1,8 +1,6 @@
-// src/pages/Contact.jsx
-
 import { useState } from 'react'
 import { Helmet } from 'react-helmet'
-import { Mail, MapPin, Send, CheckCircle, Facebook, Phone } from 'lucide-react'
+import { Mail, MapPin, Send, CheckCircle, Facebook, Phone, Instagram, Youtube } from 'lucide-react'
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -77,7 +75,9 @@ const Contact = () => {
         "availableLanguage": "English"
       },
       "sameAs": [
-        "https://www.facebook.com/profile.php?id=61578313660385"
+        "https://www.facebook.com/profile.php?id=61578313660385",
+        "https://www.instagram.com/hometownwebco/",
+        "https://www.youtube.com/@hometownwebco"
       ]
     }
   }
@@ -88,17 +88,17 @@ const Contact = () => {
         <div className="max-w-md mx-auto text-center">
           <CheckCircle className="text-primary mx-auto mb-4" size={64} />
           <h2 className="text-3xl font-bold text-foreground mb-4">Thank You!</h2>
-          <p className="text-lg text-muted-foreground mb-6">
+          <p className="text-lg text-white drop-shadow mb-6">
             We've received your request. We'll get back to you within 24 hours.
           </p>
-          <p className="text-muted-foreground">You’ll be redirected shortly...</p>
+          <p className="text-white/80">You’ll be redirected shortly...</p>
         </div>
       </div>
     )
   }
 
   return (
-    <div className="min-h-screen py-20">
+    <div className="min-h-screen py-20 bg-site-gradient">
       <Helmet>
         <title>Contact Us | Hometown Web Co</title>
         <meta name="description" content="Get in touch with Hometown Web Co for a free consultation or demo. We help local businesses across the U.S. grow online." />
@@ -107,8 +107,8 @@ const Contact = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h1 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">Contact Hometown Web Co</h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <h1 className="text-4xl lg:text-5xl font-bold text-white drop-shadow mb-6">Contact Hometown Web Co</h1>
+          <p className="text-xl text-white/90 drop-shadow max-w-3xl mx-auto leading-relaxed">
             We're here to help local businesses across the U.S. build a strong online presence.
           </p>
         </div>
@@ -212,14 +212,14 @@ const Contact = () => {
           </div>
 
           <div className="space-y-8">
-            <h2 className="text-2xl font-bold text-foreground">Get In Touch</h2>
+            <h2 className="text-2xl font-bold text-white drop-shadow">Get In Touch</h2>
             <div className="flex items-start space-x-4">
               <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
                 <Phone className="text-primary" size={24} />
               </div>
               <div>
-                <h3 className="font-semibold text-foreground mb-1">Call Us</h3>
-                <p className="text-muted-foreground">(910) 477-4389</p>
+                <h3 className="font-semibold text-white mb-1">Call Us</h3>
+                <p className="text-white/80">(910) 477-4389</p>
               </div>
             </div>
             <div className="flex items-start space-x-4">
@@ -227,21 +227,44 @@ const Contact = () => {
                 <Mail className="text-primary" size={24} />
               </div>
               <div>
-                <h3 className="font-semibold text-foreground mb-1">Email</h3>
-                <p className="text-muted-foreground">woody@hometownwebco.com</p>
+                <h3 className="font-semibold text-white mb-1">Email</h3>
+                <p className="text-white/80">woody@hometownwebco.com</p>
               </div>
             </div>
             <div className="text-center pt-6">
-              <p className="text-muted-foreground mb-2">Follow Us:</p>
-              <a
-                href="https://www.facebook.com/profile.php?id=61578313660385"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center text-primary hover:text-primary/80"
-              >
-                <Facebook className="mr-2" size={20} />
-                Facebook
-              </a>
+              <p className="text-white/90 mb-2">Follow Us:</p>
+              <div className="flex justify-center gap-5">
+                <a
+                  href="https://www.facebook.com/profile.php?id=61578313660385"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center text-white hover:text-primary transition-colors"
+                  aria-label="Facebook"
+                >
+                  <Facebook className="mr-2" size={20} />
+                  Facebook
+                </a>
+                <a
+                  href="https://www.instagram.com/hometownwebco/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center text-white hover:text-primary transition-colors"
+                  aria-label="Instagram"
+                >
+                  <Instagram className="mr-2" size={20} />
+                  Instagram
+                </a>
+                <a
+                  href="https://www.youtube.com/@hometownwebco"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center text-white hover:text-primary transition-colors"
+                  aria-label="YouTube"
+                >
+                  <Youtube className="mr-2" size={20} />
+                  YouTube
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -251,3 +274,4 @@ const Contact = () => {
 }
 
 export default Contact
+
