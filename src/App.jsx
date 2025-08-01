@@ -25,8 +25,19 @@ import TermsOfService from './pages/TermsOfService'
 import AffiliateDisclosure from './pages/AffiliateDisclosure'
 import FaqPage from './pages/Faq'
 
-// ✅ New calculator page
-import CustomerAcquisitionCalculator from './pages/CustomerAcquisitionCalculator'
+// Calculators index and individual pages
+import CalculatorsIndex from './pages/calculators/index'
+import CustomerAcquisitionCalculator from './pages/calculators/CustomerAcquisitionCalculator'
+import LocalSeoRoi from './pages/calculators/local-seo-roi'
+import WebsiteCost from './pages/calculators/website-cost'
+import GoogleAdsRoi from './pages/calculators/google-ads-roi'
+import EmailMarketingRoi from './pages/calculators/email-marketing-roi'
+import BreakEven from './pages/calculators/break-even'
+import SocialMediaRoi from './pages/calculators/social-media-roi'
+import LeadValueCalculator from './pages/calculators/lead-value-calculator'
+import ConversionRate from './pages/calculators/conversion-rate'
+import WebsiteTrafficEstimator from './pages/calculators/website-traffic-estimator'
+import LifetimeValue from './pages/calculators/lifetime-value'
 
 function App() {
   useEffect(() => {
@@ -76,8 +87,20 @@ function App() {
             <Route path="/terms-of-service" element={<TermsOfService />} />
             <Route path="/affiliate-disclosure" element={<AffiliateDisclosure />} />
 
-            {/* ✅ Calculator Page */}
-            <Route path="/calculator" element={<CustomerAcquisitionCalculator />} />
+            {/* Calculators Index */}
+            <Route path="/calculators" element={<CalculatorsIndex />} />
+            {/* Individual Calculator Pages */}
+            <Route path="/calculators/customer-acquisition" element={<CustomerAcquisitionCalculator />} />
+            <Route path="/calculators/local-seo-roi" element={<LocalSeoRoi />} />
+            <Route path="/calculators/website-cost" element={<WebsiteCost />} />
+            <Route path="/calculators/google-ads-roi" element={<GoogleAdsRoi />} />
+            <Route path="/calculators/email-marketing-roi" element={<EmailMarketingRoi />} />
+            <Route path="/calculators/break-even" element={<BreakEven />} />
+            <Route path="/calculators/social-media-roi" element={<SocialMediaRoi />} />
+            <Route path="/calculators/lead-value-calculator" element={<LeadValueCalculator />} />
+            <Route path="/calculators/conversion-rate" element={<ConversionRate />} />
+            <Route path="/calculators/website-traffic-estimator" element={<WebsiteTrafficEstimator />} />
+            <Route path="/calculators/lifetime-value" element={<LifetimeValue />} />
           </Routes>
         </main>
         <Footer />

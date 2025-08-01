@@ -13,7 +13,7 @@ const Navbar = () => {
     { name: 'Our Services', path: '/services' },
     { name: 'Results', path: '/results' },
     { name: 'Blog', path: '/blog' },
-    { name: 'Marketing Calculator', path: '/calculator' }, // ✅ NEW
+    { name: 'Marketing Calculators', path: '/calculators' }, // ✅ FIXED
     { name: 'Contact Us', path: '/contact' },
   ]
 
