@@ -33,7 +33,6 @@ import WebsiteCost from './pages/calculators/website-cost'
 import GoogleAdsRoi from './pages/calculators/google-ads-roi'
 import EmailMarketingRoi from './pages/calculators/email-marketing-roi'
 import BreakEven from './pages/calculators/break-even'
-import SocialMediaRoi from './pages/calculators/social-media-roi'
 import LeadValueCalculator from './pages/calculators/lead-value-calculator'
 import ConversionRate from './pages/calculators/conversion-rate'
 import WebsiteTrafficEstimator from './pages/calculators/website-traffic-estimator'
@@ -96,7 +95,6 @@ function App() {
             <Route path="/calculators/google-ads-roi" element={<GoogleAdsRoi />} />
             <Route path="/calculators/email-marketing-roi" element={<EmailMarketingRoi />} />
             <Route path="/calculators/break-even" element={<BreakEven />} />
-            <Route path="/calculators/social-media-roi" element={<SocialMediaRoi />} />
             <Route path="/calculators/lead-value-calculator" element={<LeadValueCalculator />} />
             <Route path="/calculators/conversion-rate" element={<ConversionRate />} />
             <Route path="/calculators/website-traffic-estimator" element={<WebsiteTrafficEstimator />} />
