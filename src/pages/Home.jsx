@@ -136,7 +136,7 @@ const Home = () => {
           <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-6">
             Ready to Get Your Business Online?
           </h2>
-          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+          <p className="text-lg text-white drop-shadow mb-8 max-w-2xl mx-auto">
             Let's talk about how we can help your business reach more customers and grow your local presence online.
           </p>
           <Link
@@ -168,3 +168,4 @@ const Home = () => {
 }
 
 export default Home
+
