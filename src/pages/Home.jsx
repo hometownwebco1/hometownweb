@@ -23,7 +23,7 @@ const Home = () => {
   ]
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-site-gradient">
       <Helmet>
         <title>Hometown Web Co | Affordable Website Design for Local Businesses</title>
         <meta
@@ -44,7 +44,7 @@ const Home = () => {
       </Helmet>
 
       {/* Hero Section */}
-      <section className="bg-background py-20 lg:py-32">
+      <section className="py-20 lg:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="flex justify-center mb-8">
             <img src={logo} alt="Hometown Web Co logo" className="h-24 w-auto" loading="lazy" />
@@ -131,7 +131,7 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-background">
+      <section className="py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-6">
             Ready to Get Your Business Online?
