@@ -49,7 +49,7 @@ const About = () => {
   }
 
   return (
-    <div className="min-h-screen py-20">
+    <div className="min-h-screen py-20 bg-site-gradient">
       <Helmet>
         <title>About Hometown Web Co | Local Website Designers for Small Business</title>
         <meta
@@ -75,10 +75,10 @@ const About = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
+          <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6">
             About Hometown Web Co — Local Business Website Experts
           </h1>
-          <p className="text-xl gradient-text max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-100 max-w-3xl mx-auto leading-relaxed">
             We specialize in helping local businesses grow online with affordable, professional web design and digital strategy.
           </p>
         </div>
@@ -86,10 +86,10 @@ const About = () => {
         {/* Content */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
           <div>
-            <h2 className="text-3xl font-bold text-foreground mb-6">
+            <h2 className="text-3xl font-bold text-white mb-6">
               Who We Are
             </h2>
-            <div className="space-y-4 text-lg gradient-text leading-relaxed">
+            <div className="space-y-4 text-lg text-gray-100 leading-relaxed">
               <p>
                 Hometown Web Co builds custom websites for hometown businesses across the United States.
                 We focus on simplicity, trust, and real-world results — not buzzwords or gimmicks.
@@ -106,27 +106,27 @@ const About = () => {
             </div>
           </div>
 
-          <div className="bg-muted p-8 rounded-lg">
-            <h3 className="text-2xl font-bold text-foreground mb-6">
+          <div className="bg-white p-8 rounded-lg">
+            <h3 className="text-2xl font-bold text-gray-900 mb-6">
               Why Choose Hometown Web Co?
             </h3>
             <ul className="space-y-4">
               <li className="flex items-start space-x-3">
                 <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                <span className="gradient-text">
-                  <strong className="text-foreground">Local Focus:</strong> We know what small businesses need — and what they don’t.
+                <span className="text-gray-900">
+                  <strong className="text-gray-900">Local Focus:</strong> We know what small businesses need — and what they don’t.
                 </span>
               </li>
               <li className="flex items-start space-x-3">
                 <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                <span className="gradient-text">
-                  <strong className="text-foreground">Simple Process:</strong> We keep things easy, affordable, and stress-free.
+                <span className="text-gray-900">
+                  <strong className="text-gray-900">Simple Process:</strong> We keep things easy, affordable, and stress-free.
                 </span>
               </li>
               <li className="flex items-start space-x-3">
                 <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                <span className="gradient-text">
-                  <strong className="text-foreground">Real Results:</strong> Our sites are built to convert — not just look good.
+                <span className="text-gray-900">
+                  <strong className="text-gray-900">Real Results:</strong> Our sites are built to convert — not just look good.
                 </span>
               </li>
             </ul>
@@ -136,23 +136,23 @@ const About = () => {
         {/* Values Section */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
           {values.map((value, index) => (
-            <div key={index} className="p-6 bg-muted rounded-lg shadow-md">
+            <div key={index} className="p-6 bg-white rounded-lg shadow-md">
               <value.icon className="text-primary mx-auto mb-4" size={32} />
-              <h4 className="text-xl font-semibold text-foreground mb-2">{value.title}</h4>
-              <p className="gradient-text text-sm">{value.description}</p>
+              <h4 className="text-xl font-semibold text-gray-900 mb-2">{value.title}</h4>
+              <p className="text-gray-700 text-sm">{value.description}</p>
             </div>
           ))}
         </div>
 
         {/* Social Footer */}
         <div className="mt-20 text-center">
-          <p className="text-muted-foreground mb-4">Follow Us:</p>
+          <p className="text-gray-100 mb-4">Follow Us:</p>
           <div className="flex justify-center gap-6">
             <a
               href="https://www.facebook.com/profile.php?id=61578313660385"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center text-primary hover:text-primary/80"
+              className="inline-flex items-center justify-center text-white hover:text-primary"
             >
               <Facebook className="mr-2" size={20} />
               Facebook
@@ -161,7 +161,7 @@ const About = () => {
               href="https://www.instagram.com/hometownwebco/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center text-primary hover:text-primary/80"
+              className="inline-flex items-center justify-center text-white hover:text-primary"
             >
               <Instagram className="mr-2" size={20} />
               Instagram
@@ -170,7 +170,7 @@ const About = () => {
               href="https://www.youtube.com/@hometownwebco"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center text-primary hover:text-primary/80"
+              className="inline-flex items-center justify-center text-white hover:text-primary"
             >
               <Youtube className="mr-2" size={20} />
               YouTube
