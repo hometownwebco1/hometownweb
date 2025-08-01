@@ -16,7 +16,8 @@ const calculators = [
   {
     icon: Calculator,
     title: "Small Business Marketing Budget Calculator",
-    path: "/calculators/CustomerAcquisitionCalculator",
+    // matches file: CustomerAcquisitionCalculator.jsx
+    path: "/calculators/customer-acquisition",
     description: "Estimate your marketing budget, target CPA, and new customer potential based on your goals and industry.",
     linkTo: "/services/digital-marketing"
   },
@@ -51,6 +52,7 @@ const calculators = [
   {
     icon: BarChart3,
     title: "Lead Value Calculator",
+    // matches file: lead-value-calculator.jsx
     path: "/calculators/lead-value-calculator",
     description: "See what each new lead is actually worth to your business (and how much you can pay for them).",
     linkTo: "/services/digital-marketing"
