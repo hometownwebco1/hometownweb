@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet'
-import { ArrowRight, Globe, Settings, TrendingUp, Mail, Facebook } from 'lucide-react'
+import { ArrowRight, Globe, Settings, TrendingUp, Mail, Facebook, Instagram, Youtube } from 'lucide-react'
 import logo from '../assets/HometownWebCo.png'
 
 const Home = () => {
@@ -149,23 +149,44 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Footer Social Link */}
+      {/* Footer Social Links */}
       <footer className="py-10 bg-muted text-center">
         <p className="text-muted-foreground mb-4">Follow Us:</p>
-        <a
-          href="https://www.facebook.com/profile.php?id=61578313660385"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center justify-center text-primary hover:text-primary/80"
-          aria-label="Visit our Facebook page"
-        >
-          <Facebook className="mr-2" size={20} />
-          Facebook
-        </a>
+        <div className="flex justify-center gap-6">
+          <a
+            href="https://www.facebook.com/profile.php?id=61578313660385"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center text-primary hover:text-primary/80"
+            aria-label="Visit our Facebook page"
+          >
+            <Facebook className="mr-2" size={20} />
+            Facebook
+          </a>
+          <a
+            href="https://www.instagram.com/hometownwebco/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center text-primary hover:text-primary/80"
+            aria-label="Visit our Instagram page"
+          >
+            <Instagram className="mr-2" size={20} />
+            Instagram
+          </a>
+          <a
+            href="https://www.youtube.com/@hometownwebco"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center text-primary hover:text-primary/80"
+            aria-label="Visit our YouTube channel"
+          >
+            <Youtube className="mr-2" size={20} />
+            YouTube
+          </a>
+        </div>
       </footer>
     </div>
   )
 }
 
 export default Home
-
