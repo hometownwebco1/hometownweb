@@ -67,55 +67,59 @@ const CustomerAcquisitionCalculator = () => {
         <title>Marketing Budget & Customer Acquisition Calculator | Hometown Web Co</title>
         <meta
           name="description"
-          content="Estimate your recommended marketing budget, target customer acquisition cost (CPA), and potential customers for your small business. Free tool by Hometown Web Co."
+          content="Use our free calculator to estimate your ideal marketing budget, customer acquisition cost (CPA), and monthly new customer potential for your local business. Optimized for contractors, retail, restaurants, healthcare, and small businesses."
         />
         <link rel="canonical" href="https://www.hometownwebco.com/calculator" />
         <meta property="og:title" content="Marketing Budget & Customer Acquisition Calculator | Hometown Web Co" />
-        <meta property="og:description" content="Estimate your recommended marketing budget, target CPA, and new customer potential with our free calculator for local businesses." />
+        <meta property="og:description" content="Estimate your marketing budget, target CPA, and new customer potential with our free calculator for local businesses." />
         <meta property="og:url" content="https://www.hometownwebco.com/calculator" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://www.hometownwebco.com/og-image.jpg" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Marketing Budget & Customer Acquisition Calculator | Hometown Web Co" />
-        <meta name="twitter:description" content="Estimate your recommended marketing budget, target CPA, and new customer potential with our free calculator for local businesses." />
+        <meta name="twitter:description" content="Estimate your marketing budget, target CPA, and new customer potential with our free calculator for local businesses." />
         <meta name="twitter:image" content="https://www.hometownwebco.com/og-image.jpg" />
-        <script type="application/ld+json">{JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "SoftwareApplication",
-          "name": "Marketing Budget & Customer Acquisition Calculator",
-          "operatingSystem": "All",
-          "applicationCategory": "BusinessApplication",
-          "description": "Estimate your small business marketing budget, target CPA, and potential new customers for free.",
-          "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD"
-          },
-          "url": "https://www.hometownwebco.com/calculator",
-          "publisher": {
-            "@type": "Organization",
-            "name": "Hometown Web Co",
-            "url": "https://www.hometownwebco.com"
-          }
-        })}</script>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Marketing Budget & Customer Acquisition Calculator",
+            "operatingSystem": "All",
+            "applicationCategory": "BusinessApplication",
+            "description": "Estimate your small business marketing budget, CPA, and potential new customers for free.",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD"
+            },
+            "url": "https://www.hometownwebco.com/calculator",
+            "publisher": {
+              "@type": "Organization",
+              "name": "Hometown Web Co",
+              "url": "https://www.hometownwebco.com"
+            }
+          })}
+        </script>
       </Helmet>
 
-      {/* SEO intro content */}
-      <div className="max-w-2xl mx-auto bg-white/90 rounded-2xl shadow-xl p-8 mb-8 text-center">
-        <h1 className="text-3xl md:text-4xl font-bold text-primary mb-4 flex justify-center items-center gap-2">
+      {/* SEO-rich Intro Content */}
+      <div className="max-w-2xl mx-auto bg-white/90 rounded-2xl shadow-xl p-8 mb-10 text-center">
+        <h1 className="text-3xl md:text-4xl font-bold text-primary mb-3 flex justify-center items-center gap-2">
           <Calculator className="text-primary" size={32} />
           Small Business Marketing Budget Calculator
         </h1>
-        <p className="text-lg text-gray-700 mb-3">
-          How much should you spend on marketing? Use our free Customer Acquisition Calculator to estimate your ideal marketing budget, target cost per acquisition (CPA), and how many new customers your business could attract each month.
+        <p className="text-lg text-gray-700 mb-2">
+          Struggling to set the right marketing budget? This free calculator estimates your recommended marketing budget, target cost per acquisition (CPA), and how many new customers your business could attract each month.
         </p>
         <p className="text-base text-gray-600">
-          Designed for local businesses, contractors, restaurants, healthcare, retail, and more. 
-          Backed by industry benchmarks—no guesswork, just smarter growth.
+          Built for contractors, service pros, restaurants, healthcare, retail, and more. Enter your numbers below—get instant, actionable results based on real industry benchmarks.
         </p>
+        <div className="mt-4 text-sm text-gray-600">
+          Need expert help? <Link to="/services/digital-marketing" className="text-primary underline hover:text-primary/80">See our digital marketing services.</Link>
+        </div>
       </div>
 
-      {/* Modern calculator card */}
+      {/* Calculator Card */}
       <div className="max-w-xl mx-auto bg-white/90 rounded-2xl shadow-2xl p-10 flex flex-col gap-y-8">
         <form onSubmit={handleSubmit} className="flex flex-col gap-y-6">
           <div>
@@ -231,26 +235,26 @@ const CustomerAcquisitionCalculator = () => {
         )}
       </div>
 
-      {/* FAQ/LSI Section for SEO */}
+      {/* SEO FAQ Section */}
       <div className="max-w-2xl mx-auto mt-14 bg-white rounded-xl p-8 shadow-md">
         <h2 className="text-xl font-bold mb-4">Customer Acquisition Calculator FAQ</h2>
         <div className="space-y-5 text-gray-800">
           <div>
             <strong>How does this calculator work?</strong>
             <p>
-              Our calculator uses proven industry benchmarks for marketing spend and customer acquisition cost (CPA). Just enter your business info to get a smart estimate—no complex math required.
+              Our tool uses proven industry benchmarks and your business’s numbers to provide a marketing budget, CPA, and customer estimate—so you don’t have to guess.
             </p>
           </div>
           <div>
             <strong>Why is cost per acquisition (CPA) important?</strong>
             <p>
-              CPA helps you measure the real value of your marketing. If you know your target CPA, you can spend confidently, knowing you’ll stay profitable as you grow.
+              CPA tells you how much you can afford to spend to win a new customer profitably. If you know your target CPA, you can spend confidently, knowing you’ll stay profitable as you grow.
             </p>
           </div>
           <div>
             <strong>What’s a good marketing budget for my business?</strong>
             <p>
-              Most small businesses spend 5–15% of revenue on marketing. Our tool gives you a custom estimate based on your goals and industry.
+              Most small businesses spend 5–15% of revenue on marketing. Our calculator tailors the estimate to your goals and industry.
             </p>
           </div>
           <div>
@@ -262,12 +266,12 @@ const CustomerAcquisitionCalculator = () => {
         </div>
         <div className="mt-8 text-center">
           <Link to="/services/digital-marketing" className="text-primary underline hover:text-primary/80 text-base">
-            See Our Digital Marketing Services
+            Learn more about our digital marketing services
           </Link>
         </div>
       </div>
 
-      {/* Disclaimer */}
+      {/* Legal Disclaimer */}
       <div className="max-w-2xl mx-auto mt-10 mb-4 text-xs text-gray-500 p-4 bg-gray-100 rounded-xl border border-gray-200">
         <h4 className="font-bold mb-2">Legal Disclaimer</h4>
         <p className="mb-2">
