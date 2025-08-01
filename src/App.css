@@ -110,6 +110,26 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+/* =========================
+   GRADIENT BACKGROUND UPGRADE
+   ========================= */
+
+body {
+  min-height: 100vh;
+  /* Gradient: cream → orange → navy, using brand palette */
+  background: linear-gradient(120deg, #fff8ed 0%, #e55a3c 50%, #213147 100%);
+  /* fallback for older browsers */
+  background-color: #fff8ed;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+}
+
+/* Optional: Dark mode gradient override */
+.dark body {
+  background: linear-gradient(120deg, #23272f 0%, #1d1e21 70%, #213147 100%);
+  background-color: #23272f;
+}
+
+/* Preserve Tailwind theme and custom properties */
 @layer base {
   * {
     @apply border-border outline-ring/50;
