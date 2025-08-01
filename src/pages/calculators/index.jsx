@@ -16,7 +16,7 @@ const calculators = [
   {
     icon: Calculator,
     title: "Small Business Marketing Budget Calculator",
-    path: "/calculators/customer-acquisition",
+    path: "/calculators/CustomerAcquisitionCalculator",
     description: "Estimate your marketing budget, target CPA, and new customer potential based on your goals and industry.",
     linkTo: "/services/digital-marketing"
   },
@@ -51,7 +51,7 @@ const calculators = [
   {
     icon: BarChart3,
     title: "Lead Value Calculator",
-    path: "/calculators/lead-value",
+    path: "/calculators/lead-value-calculator",
     description: "See what each new lead is actually worth to your business (and how much you can pay for them).",
     linkTo: "/services/digital-marketing"
   },
@@ -77,6 +77,13 @@ const calculators = [
     linkTo: "/services/digital-marketing"
   },
   {
+    icon: DollarSign,
+    title: "Profit Margin Calculator",
+    path: "/calculators/profit-margin",
+    description: "Calculate your business profit margin instantly. Know your gross profit and margin, fast.",
+    linkTo: "/services/website-management"
+  },
+  {
     icon: Users,
     title: "Lifetime Value (LTV) Calculator",
     path: "/calculators/lifetime-value",
@@ -99,7 +106,7 @@ export default function Calculators() {
         <title>Free Marketing & Business Calculators for Small Businesses | Hometown Web Co</title>
         <meta
           name="description"
-          content="Discover 10 powerful calculators for small business owners — estimate marketing budget, ROI, lead value, website cost, and more. Built for real-world results."
+          content="Discover 12 powerful calculators for small business owners — estimate marketing budget, ROI, lead value, website cost, and more. Built for real-world results."
         />
         <link rel="canonical" href="https://www.hometownwebco.com/calculators" />
         <meta property="og:title" content="Free Marketing & Business Calculators for Small Businesses | Hometown Web Co" />
@@ -127,7 +134,7 @@ export default function Calculators() {
         <header className="mb-14 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">Free Marketing & Business Calculators for Small Businesses</h1>
           <p className="text-lg md:text-xl text-muted-foreground mb-3 max-w-3xl mx-auto">
-            10 calculators built for local business owners — estimate your marketing budget, ROI, website cost, and more. Get instant answers and make smarter decisions, fast.
+            12 calculators built for local business owners — estimate your marketing budget, ROI, website cost, and more. Get instant answers and make smarter decisions, fast.
           </p>
           <p className="text-base text-muted-foreground max-w-xl mx-auto">
             Contractors, service pros, restaurants, healthcare, retail: this is for you. <Link to="/services/digital-marketing" className="text-primary underline">Need expert help? See our digital marketing services.</Link>

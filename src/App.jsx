@@ -25,7 +25,7 @@ import TermsOfService from './pages/TermsOfService'
 import AffiliateDisclosure from './pages/AffiliateDisclosure'
 import FaqPage from './pages/Faq'
 
-// Calculators index and individual pages
+// Calculators index and individual pages (all 12 exact file names)
 import CalculatorsIndex from './pages/calculators/index'
 import CustomerAcquisitionCalculator from './pages/calculators/CustomerAcquisitionCalculator'
 import LocalSeoRoi from './pages/calculators/local-seo-roi'
@@ -37,6 +37,8 @@ import LeadValueCalculator from './pages/calculators/lead-value-calculator'
 import ConversionRate from './pages/calculators/conversion-rate'
 import WebsiteTrafficEstimator from './pages/calculators/website-traffic-estimator'
 import LifetimeValue from './pages/calculators/lifetime-value'
+import ProfitMargin from './pages/calculators/profit-margin'
+import SocialMediaRoi from './pages/calculators/social-media-roi'
 
 function App() {
   useEffect(() => {
@@ -88,7 +90,8 @@ function App() {
 
             {/* Calculators Index */}
             <Route path="/calculators" element={<CalculatorsIndex />} />
-            {/* Individual Calculator Pages */}
+
+            {/* Individual Calculator Pages (all exact) */}
             <Route path="/calculators/customer-acquisition" element={<CustomerAcquisitionCalculator />} />
             <Route path="/calculators/local-seo-roi" element={<LocalSeoRoi />} />
             <Route path="/calculators/website-cost" element={<WebsiteCost />} />
@@ -99,6 +102,8 @@ function App() {
             <Route path="/calculators/conversion-rate" element={<ConversionRate />} />
             <Route path="/calculators/website-traffic-estimator" element={<WebsiteTrafficEstimator />} />
             <Route path="/calculators/lifetime-value" element={<LifetimeValue />} />
+            <Route path="/calculators/profit-margin" element={<ProfitMargin />} />
+            <Route path="/calculators/social-media-roi" element={<SocialMediaRoi />} />
           </Routes>
         </main>
         <Footer />
@@ -108,3 +113,4 @@ function App() {
 }
 
 export default App
+
