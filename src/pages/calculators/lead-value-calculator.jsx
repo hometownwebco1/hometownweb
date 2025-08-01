@@ -13,10 +13,50 @@ const LeadValueCalculator = () => {
           <BarChart2 className="text-primary" size={32} />
           Lead Value Calculator
         </h1>
-        <p>This is a static render test.</p>
-        <Link to="/services/digital-marketing" className="text-primary underline hover:text-primary/80">
-          See our digital marketing services.
-        </Link>
+        <form className="flex flex-col gap-y-6 max-w-lg mx-auto">
+          <div>
+            <label className="block text-base font-semibold text-gray-800 mb-2">Average Monthly Leads</label>
+            <input
+              type="number"
+              name="leads"
+              className="w-full px-5 py-4 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary text-lg bg-white shadow-inner"
+              min="0"
+              placeholder="e.g. 25"
+            />
+          </div>
+          <div>
+            <label className="block text-base font-semibold text-gray-800 mb-2">Lead-to-Customer Close Rate (%)</label>
+            <input
+              type="number"
+              name="closeRate"
+              className="w-full px-5 py-4 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary text-lg bg-white shadow-inner"
+              min="0"
+              max="100"
+              placeholder="e.g. 35"
+            />
+          </div>
+          <div>
+            <label className="block text-base font-semibold text-gray-800 mb-2">Average Sale Value ($)</label>
+            <input
+              type="number"
+              name="avgSale"
+              className="w-full px-5 py-4 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary text-lg bg-white shadow-inner"
+              min="0"
+              placeholder="e.g. 1200"
+            />
+          </div>
+          <button
+            type="submit"
+            className="w-full py-4 bg-primary text-white font-bold text-lg rounded-xl hover:bg-primary/90 hover:-translate-y-1 hover:shadow-xl transition-all duration-150 flex items-center justify-center gap-2"
+          >
+            Calculate Lead Value
+          </button>
+        </form>
+        <p className="mt-4">
+          <Link to="/services/digital-marketing" className="text-primary underline hover:text-primary/80">
+            See our digital marketing services.
+          </Link>
+        </p>
       </div>
     </div>
   )
