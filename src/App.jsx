@@ -80,7 +80,8 @@ function App() {
           </Routes>
         </main>
         <Footer />
-        <Chatbot /> {/* <-- Only one chatbot instance, placed at the bottom */}
+        {/* IMPORTANT: Chatbot is only loaded ONCE, at the very end of the app */}
+        <Chatbot />
       </div>
     </Router>
   )
