@@ -61,6 +61,20 @@ function App() {
     metaTag.name = 'google-site-verification'
     metaTag.content = 'G-520MY3HP7F'
     document.head.appendChild(metaTag)
+
+    // AIStaffs Chat Widget
+    const chatScript = document.createElement('script');
+    chatScript.type = 'text/javascript';
+    chatScript.id = 'ai_widget';
+    chatScript.src =
+      'https://backend.aistaffs.com/front-end/chat-box/embed.js?type=youAiStaff&staffId=2774&uld=6319&arlId=0&arListId=0&icn=https://reeelapps-app.s3.us-west-2.amazonaws.com/aistaff/hire_staff_img/688e31a91becd.png&webUrl=https://www.hometownwebco.com/&embId=2194';
+    document.head.appendChild(chatScript);
+
+    return () => {
+      // Cleanup if needed
+      const oldScript = document.getElementById('ai_widget');
+      if (oldScript) document.head.removeChild(oldScript);
+    };
   }, [])
 
   return (
@@ -108,6 +122,7 @@ function App() {
             <Route path="/calculators/social-media-roi" element={<SocialMediaRoi />} />
           </Routes>
         </main>
+        <div id="aistaff_chat_box"></div>
         <Footer />
       </div>
     </Router>
