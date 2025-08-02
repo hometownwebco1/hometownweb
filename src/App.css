@@ -1,13 +1,8 @@
-/* === TAILWIND CORE DIRECTIVES: MUST BE FIRST === */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* === OPTIONAL: Animations or Third-Party CSS (if needed) === */
+@import "tailwindcss";
 @import "tw-animate-css";
 
-/* === CUSTOM VARIANTS & THEME === */
 @custom-variant dark (&:is(.dark *));
+
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -115,15 +110,20 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
-/* === GRADIENT BACKGROUND UPGRADE === */
+/* =========================
+   GRADIENT BACKGROUND UPGRADE
+   ========================= */
+
 body {
   min-height: 100vh;
   /* Gradient: cream → orange → navy, using brand palette */
   background: linear-gradient(120deg, #fff8ed 0%, #e55a3c 50%, #213147 100%);
+  /* fallback for older browsers */
   background-color: #fff8ed;
   font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
 }
 
+/* Optional: Dark mode gradient override */
 .dark body {
   background: linear-gradient(120deg, #23272f 0%, #1d1e21 70%, #213147 100%);
   background-color: #23272f;
@@ -145,20 +145,24 @@ body {
 }
 
 /* ========= UNIVERSAL GRADIENT TEXT UTILITY ========= */
+/* Use this on any text or block over a gradient bg for perfect readability */
 .gradient-text {
   color: #fff !important;
   text-shadow: 0 2px 10px rgba(33, 49, 71, 0.19), 0 1px 2px rgba(33, 49, 71, 0.07);
 }
+
+/* For even bolder pop, add this for titles or big CTA */
 .gradient-text-strong {
   color: #fff !important;
   text-shadow: 0 4px 16px rgba(33,49,71,0.28), 0 2px 6px rgba(33,49,71,0.10);
 }
 
 /* ========== HIGH-CONTRAST CARD TEXT FIX ========== */
+/* Forces readable text on any card, muted, or white box */
 .bg-background,
 .bg-card,
 .bg-muted {
-  --tw-prose-body: oklch(0.36 0.13 35);
+  --tw-prose-body: oklch(0.36 0.13 35); /* deep burnt orange */
   --tw-prose-headings: oklch(0.36 0.13 35);
   --tw-prose-lead: oklch(0.36 0.13 35);
   --tw-prose-links: oklch(0.6 0.15 35);
@@ -187,32 +191,40 @@ body {
   color: oklch(0.36 0.13 35) !important;
   opacity: 1 !important;
 }
-
 /* ========== GLOBAL RESPONSIVE FIXES ========== */
+
+/* Ensure content containers adapt cleanly */
 section {
-  padding-left: 1rem;
+  padding-left: 1rem;    /* Tailwind px-4 */
   padding-right: 1rem;
-  padding-top: 3rem;
+  padding-top: 3rem;     /* Tailwind py-12 */
   padding-bottom: 3rem;
 }
+
 @media (min-width: 768px) {
   section {
-    padding-left: 2rem;
+    padding-left: 2rem;  /* md:px-8 */
     padding-right: 2rem;
-    padding-top: 5rem;
+    padding-top: 5rem;   /* md:py-20 */
     padding-bottom: 5rem;
   }
 }
+
+/* Images scale safely and never overflow */
 img {
   max-width: 100%;
   height: auto;
   display: block;
 }
+
+/* Typography scaling and wrapping */
 h1, h2, h3 {
   line-height: 1.2;
   word-break: break-word;
 }
+
 p {
   line-height: 1.6;
   margin-bottom: 1rem;
 }
+
