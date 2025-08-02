@@ -1,9 +1,9 @@
+import { useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import ScrollToTop from './components/ScrollToTop'
 import './App.css'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
-import Chatbot from './components/Chatbot' // ✅ Injects AIStaffs chatbot safely
 
 // Main pages
 import Home from './pages/Home'
@@ -42,10 +42,22 @@ import ProfitMargin from './pages/calculators/profit-margin'
 import SocialMediaRoi from './pages/calculators/social-media-roi'
 
 function App() {
+  useEffect(() => {
+    const script = document.createElement('script')
+    script.src = 'https://backend.aistaffs.com/front-end/chat-box/embed.js?type=youAiStaff&staffId=2774&uld=6319&arlId=0&arListId=0&icn=https://reeelapps-app.s3.us-west-2.amazonaws.com/aistaff/hire_staff_img/688e31a91becd.png&webUrl=https://www.hometownwebco.com/&embId=2194'
+    script.async = true
+    script.id = 'ai_widget'
+    document.body.appendChild(script)
+
+    return () => {
+      const existing = document.getElementById('ai_widget')
+      if (existing) existing.remove()
+    }
+  }, [])
+
   return (
     <Router>
       <ScrollToTop />
-      <Chatbot /> {/* ✅ Loads AIStaffs script once, globally */}
       <div className="min-h-screen bg-site-gradient text-foreground">
         <Navbar />
         <main>
@@ -58,19 +70,13 @@ function App() {
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/faq" element={<FaqPage />} />
-
-            {/* Service detail pages */}
             <Route path="/services/website-design" element={<WebsiteDesign />} />
             <Route path="/services/website-management" element={<WebsiteManagement />} />
             <Route path="/services/digital-marketing" element={<DigitalMarketing />} />
             <Route path="/services/email-marketing" element={<EmailMarketing />} />
-
-            {/* Legal */}
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-service" element={<TermsOfService />} />
             <Route path="/affiliate-disclosure" element={<AffiliateDisclosure />} />
-
-            {/* Calculators */}
             <Route path="/calculators" element={<CalculatorsIndex />} />
             <Route path="/calculators/customer-acquisition" element={<CustomerAcquisitionCalculator />} />
             <Route path="/calculators/local-seo-roi" element={<LocalSeoRoi />} />
