@@ -1,9 +1,9 @@
-import { useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import ScrollToTop from './components/ScrollToTop'
 import './App.css'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import Chatbot from './components/Chatbot'
 
 // Main pages
 import Home from './pages/Home'
@@ -42,19 +42,6 @@ import ProfitMargin from './pages/calculators/profit-margin'
 import SocialMediaRoi from './pages/calculators/social-media-roi'
 
 function App() {
-  useEffect(() => {
-    const script = document.createElement('script')
-    script.src = 'https://backend.aistaffs.com/front-end/chat-box/embed.js?type=youAiStaff&staffId=2774&uld=6319&arlId=0&arListId=0&icn=https://reeelapps-app.s3.us-west-2.amazonaws.com/aistaff/hire_staff_img/688e31a91becd.png&webUrl=https://www.hometownwebco.com/&embId=2194'
-    script.async = true
-    script.id = 'ai_widget'
-    document.body.appendChild(script)
-
-    return () => {
-      const existing = document.getElementById('ai_widget')
-      if (existing) existing.remove()
-    }
-  }, [])
-
   return (
     <Router>
       <ScrollToTop />
@@ -93,6 +80,7 @@ function App() {
           </Routes>
         </main>
         <Footer />
+        <Chatbot /> {/* <-- Only one chatbot instance, placed at the bottom */}
       </div>
     </Router>
   )
