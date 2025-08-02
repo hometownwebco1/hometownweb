@@ -13,7 +13,7 @@ const Navbar = () => {
     { name: 'Our Services', path: '/services' },
     { name: 'Results', path: '/results' },
     { name: 'Blog', path: '/blog' },
-    { name: 'Marketing Calculators', path: '/calculators' }, // ✅ FIXED
+    { name: 'Marketing Calculators', path: '/calculators' },
     { name: 'Contact Us', path: '/contact' },
   ]
 
@@ -26,7 +26,14 @@ const Navbar = () => {
           {/* Logo + Company Name */}
           <div className="flex items-center space-x-4">
             <Link to="/" className="flex items-center">
-              <img src={logo} alt="Hometown Web Co Logo" className="h-10 w-auto" />
+              {/* Logo: Much smaller for nav (h-8 = 2rem) */}
+              <img
+                src={logo}
+                alt="Hometown Web Co Logo"
+                className="h-8 w-auto" // <-- Shrink logo to 2rem high
+                style={{ maxWidth: '42px' }} // Optional: keep extra small
+                draggable={false}
+              />
             </Link>
             <span className="hidden md:inline text-lg font-bold text-foreground ml-1">
               Hometown Web Co
@@ -55,6 +62,7 @@ const Navbar = () => {
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="text-foreground hover:text-primary transition-colors"
+              aria-label="Toggle menu"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
