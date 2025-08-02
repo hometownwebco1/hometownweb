@@ -3,7 +3,6 @@ import ScrollToTop from './components/ScrollToTop'
 import './App.css'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
-import Chatbot from './components/Chatbot'
 
 // Main pages
 import Home from './pages/Home'
@@ -80,13 +79,9 @@ function App() {
           </Routes>
         </main>
         <Footer />
-        {/* IMPORTANT: Chatbot is only loaded ONCE, at the very end of the app */}
-        <Chatbot />
       </div>
     </Router>
   )
 }
 
 export default App
-
-
