@@ -45,9 +45,9 @@ function App() {
   return (
     <Router>
       <ScrollToTop />
-      <div className="min-h-screen bg-site-gradient text-foreground">
+      <div className="min-h-screen bg-site-gradient text-foreground flex flex-col">
         <Navbar />
-        <main>
+        <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
@@ -80,7 +80,7 @@ function App() {
           </Routes>
         </main>
         <Footer />
-        {/* IMPORTANT: Chatbot is only loaded ONCE, at the very end of the app */}
+        {/* Chatbot is rendered once, outside the layout, safe for all routes */}
         <Chatbot />
       </div>
     </Router>
