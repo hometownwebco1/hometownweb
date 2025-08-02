@@ -43,10 +43,7 @@ const Home = () => {
       {/* Hero Section */}
       <section className="py-16 md:py-24 px-4 text-center">
         <div className="max-w-7xl mx-auto">
-          <div className="flex justify-center mb-6">
-            <img src={logo} alt="Hometown Web Co logo" className="h-20 w-auto" loading="lazy" />
-          </div>
-          <h1 className="text-3xl md:text-5xl font-bold gradient-text-strong mb-6">
+          <h1 className="text-3xl md:text-5xl font-bold gradient-text-strong mb-6 mt-4">
             Hometown Website Design for Small Business Growth
           </h1>
           <p className="text-base md:text-lg gradient-text max-w-2xl mx-auto mb-8">
