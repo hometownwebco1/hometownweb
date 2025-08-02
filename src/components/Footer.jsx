@@ -15,6 +15,8 @@ const Footer = () => {
                 src={logo}
                 alt="Hometown Web Co logo - Website Design for Local Businesses"
                 className="h-8 w-auto"
+                style={{ maxWidth: '42px' }}   // Keep footer logo capped at a small size
+                draggable={false}
               />
             </Link>
             <p className="text-muted-foreground mb-4 max-w-md">
