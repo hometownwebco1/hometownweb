@@ -40,9 +40,15 @@ const Home = () => {
         <meta name="twitter:image" content="https://www.hometownwebco.com/og-image.jpg" />
       </Helmet>
 
-      {/* Hero Section */}
+      {/* Hero Section with Logo */}
       <section className="py-16 md:py-24 px-4 text-center">
         <div className="max-w-7xl mx-auto">
+          <img
+            src={logo}
+            alt="Hometown Web Co Logo"
+            className="mx-auto mb-6 w-32 h-auto md:w-48"
+            draggable={false}
+          />
           <h1 className="text-3xl md:text-5xl font-bold gradient-text-strong mb-6 mt-4">
             Hometown Website Design for Small Business Growth
           </h1>
