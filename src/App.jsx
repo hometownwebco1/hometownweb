@@ -1,9 +1,9 @@
-import { useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import ScrollToTop from './components/ScrollToTop'
 import './App.css'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import Chatbot from './components/Chatbot' // ✅ Injects AIStaffs chatbot safely
 
 // Main pages
 import Home from './pages/Home'
@@ -20,13 +20,13 @@ import WebsiteManagement from './pages/services/WebsiteManagement'
 import DigitalMarketing from './pages/services/DigitalMarketing'
 import EmailMarketing from './pages/services/EmailMarketing'
 
-// Legal and misc pages
+// Legal pages
 import PrivacyPolicy from './pages/PrivacyPolicy'
 import TermsOfService from './pages/TermsOfService'
 import AffiliateDisclosure from './pages/AffiliateDisclosure'
 import FaqPage from './pages/Faq'
 
-// Calculators index and individual pages (all 12 exact file names)
+// Calculator pages
 import CalculatorsIndex from './pages/calculators/index'
 import CustomerAcquisitionCalculator from './pages/calculators/CustomerAcquisitionCalculator'
 import LocalSeoRoi from './pages/calculators/local-seo-roi'
@@ -42,44 +42,10 @@ import ProfitMargin from './pages/calculators/profit-margin'
 import SocialMediaRoi from './pages/calculators/social-media-roi'
 
 function App() {
-  useEffect(() => {
-    const gaScript = document.createElement('script')
-    gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-520MY3HP7F'
-    gaScript.async = true
-    document.head.appendChild(gaScript)
-
-    const gaInit = document.createElement('script')
-    gaInit.innerHTML = `
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-520MY3HP7F');
-    `
-    document.head.appendChild(gaInit)
-
-    const metaTag = document.createElement('meta')
-    metaTag.name = 'google-site-verification'
-    metaTag.content = 'G-520MY3HP7F'
-    document.head.appendChild(metaTag)
-
-    // AIStaffs Chat Widget
-    const chatScript = document.createElement('script');
-    chatScript.type = 'text/javascript';
-    chatScript.id = 'ai_widget';
-    chatScript.src =
-      'https://backend.aistaffs.com/front-end/chat-box/embed.js?type=youAiStaff&staffId=2774&uld=6319&arlId=0&arListId=0&icn=https://reeelapps-app.s3.us-west-2.amazonaws.com/aistaff/hire_staff_img/688e31a91becd.png&webUrl=https://www.hometownwebco.com/&embId=2194';
-    document.head.appendChild(chatScript);
-
-    return () => {
-      // Cleanup if needed
-      const oldScript = document.getElementById('ai_widget');
-      if (oldScript) document.head.removeChild(oldScript);
-    };
-  }, [])
-
   return (
     <Router>
       <ScrollToTop />
+      <Chatbot /> {/* ✅ Loads AIStaffs script once, globally */}
       <div className="min-h-screen bg-site-gradient text-foreground">
         <Navbar />
         <main>
@@ -93,21 +59,19 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/faq" element={<FaqPage />} />
 
-            {/* Individual service pages */}
+            {/* Service detail pages */}
             <Route path="/services/website-design" element={<WebsiteDesign />} />
             <Route path="/services/website-management" element={<WebsiteManagement />} />
             <Route path="/services/digital-marketing" element={<DigitalMarketing />} />
             <Route path="/services/email-marketing" element={<EmailMarketing />} />
 
-            {/* Legal pages */}
+            {/* Legal */}
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-service" element={<TermsOfService />} />
             <Route path="/affiliate-disclosure" element={<AffiliateDisclosure />} />
 
-            {/* Calculators Index */}
+            {/* Calculators */}
             <Route path="/calculators" element={<CalculatorsIndex />} />
-
-            {/* Individual Calculator Pages (all exact) */}
             <Route path="/calculators/customer-acquisition" element={<CustomerAcquisitionCalculator />} />
             <Route path="/calculators/local-seo-roi" element={<LocalSeoRoi />} />
             <Route path="/calculators/website-cost" element={<WebsiteCost />} />
@@ -122,7 +86,6 @@ function App() {
             <Route path="/calculators/social-media-roi" element={<SocialMediaRoi />} />
           </Routes>
         </main>
-        <div id="aistaff_chat_box"></div>
         <Footer />
       </div>
     </Router>
