@@ -9,6 +9,7 @@ import {
   Youtube
 } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import bksScreenshot from '../assets/bks-screenshot.png' // <-- Update this path if needed
 
 const Results = () => {
   const benefits = [
@@ -94,7 +95,7 @@ const Results = () => {
       <section className="my-10">
         <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-lg flex flex-col md:flex-row items-center gap-8 p-6 md:p-10">
           <img
-            src="https://www.bksconcrete.com/logo.png"
+            src={bksScreenshot}
             alt="BKS Concrete Website Screenshot"
             className="w-32 h-32 md:w-40 md:h-40 object-contain rounded-lg shadow"
           />
