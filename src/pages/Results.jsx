@@ -90,6 +90,33 @@ const Results = () => {
         </div>
       </section>
 
+      {/* Featured Recent Site Build */}
+      <section className="my-10">
+        <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-lg flex flex-col md:flex-row items-center gap-8 p-6 md:p-10">
+          <img
+            src="https://www.bksconcrete.com/logo.png"
+            alt="BKS Concrete Website Screenshot"
+            className="w-32 h-32 md:w-40 md:h-40 object-contain rounded-lg shadow"
+          />
+          <div className="flex-1 text-left">
+            <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">
+              Featured Recent Build: BKS Concrete
+            </h2>
+            <p className="text-gray-700 mb-3">
+              BKS Concrete is a leading concrete contractor in the Triangle, NC area. Their new website showcases their work, brings in high-quality leads, and is built for search visibility and mobile-first usability.
+            </p>
+            <a
+              href="https://www.bksconcrete.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-5 py-2 bg-primary text-primary-foreground font-semibold rounded hover:bg-primary/90 transition"
+            >
+              View Live Site
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Benefits Grid */}
       <section>
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
