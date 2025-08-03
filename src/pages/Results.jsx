@@ -104,7 +104,7 @@ const Results = () => {
               Featured Recent Build: BKS Concrete
             </h2>
             <p className="text-gray-700 mb-3">
-              BKS Concrete is a leading concrete contractor in the Triangle, NC area. Their new website showcases their work, brings in high-quality leads, and is built for search visibility and mobile-first usability.
+              BKS Concrete is a leading concrete contractor in the Charlotte, NC area. Their new website showcases their work, brings in high-quality leads, and is built for search visibility and mobile-first usability.
             </p>
             <a
               href="https://www.bksconcrete.com/"
