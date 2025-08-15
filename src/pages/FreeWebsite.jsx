@@ -11,7 +11,7 @@ export default function FreeWebsite() {
         Yours to keep, with hosting available if you need it. Spots are limited each month.
       </p>
 
-      {/* QUICK VALUE (lightweight, keeps energy high) */}
+      {/* QUICK VALUE */}
       <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-3xl mx-auto text-center">
         <div className="rounded-lg bg-white/70 backdrop-blur p-4 shadow-sm">
           <p className="font-semibold">Mobile-friendly design</p>
@@ -31,7 +31,7 @@ export default function FreeWebsite() {
         </div>
       </div>
 
-      {/* FORM CARD (centered, elevated) */}
+      {/* FORM CARD */}
       <div className="mt-10 max-w-2xl mx-auto bg-white rounded-xl shadow-xl p-6 md:p-8">
         <iframe
           src="https://api.leadconnectorhq.com/widget/form/dtw5NqzbfTxYr2e0JIBH"
@@ -53,9 +53,9 @@ export default function FreeWebsite() {
         <script src="https://link.msgsndr.com/js/form_embed.js"></script>
       </div>
 
-      {/* UPGRADE HOOK (subtle, centered) */}
-      <p className="mt-6 text-center text-sm text-muted-foreground">
-        Want more? Upgrade within 7 days with hosting for <span className="font-semibold">$249</span>:
+      {/* UPGRADE HOOK */}
+      <p className="mt-6 text-center text-lg font-bold text-foreground">
+        Want more? Upgrade within 7 days with hosting for <span className="text-primary">$249</span>: 
         +2 pages, basic SEO, Terms, Privacy, and social links.
       </p>
     </div>
