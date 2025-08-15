@@ -11,6 +11,8 @@ const Navbar = () => {
     { name: 'Home', path: '/' },
     { name: 'About Us', path: '/about' },
     { name: 'Our Services', path: '/services' },
+    // >>> Added: Prominent Free Website tab
+    { name: 'Free Website', path: '/free-website', highlight: true },
     { name: 'Results', path: '/results' },
     { name: 'Blog', path: '/blog' },
     { name: 'Marketing Calculators', path: '/calculators' },
@@ -30,8 +32,8 @@ const Navbar = () => {
               <img
                 src={logo}
                 alt="Hometown Web Co Logo"
-                className="h-8 w-auto" // <-- Shrink logo to 2rem high
-                style={{ maxWidth: '42px' }} // Optional: keep extra small
+                className="h-8 w-auto"
+                style={{ maxWidth: '42px' }}
                 draggable={false}
               />
             </Link>
@@ -42,19 +44,36 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                to={item.path}
-                className={`text-sm font-medium transition-colors hover:text-primary ${
-                  isActive(item.path)
-                    ? 'text-primary border-b-2 border-primary pb-1'
-                    : 'text-foreground'
-                }`}
-              >
-                {item.name}
-              </Link>
-            ))}
+            {navItems.map((item) => {
+              const active = isActive(item.path)
+              if (item.highlight) {
+                // Prominent button style for Free Website
+                return (
+                  <Link
+                    key={item.name}
+                    to={item.path}
+                    className={`text-sm font-semibold px-3 py-1 rounded-md transition-colors ${
+                      active
+                        ? 'bg-primary text-primary-foreground'
+                        : 'bg-primary/90 text-primary-foreground hover:bg-primary'
+                    }`}
+                  >
+                    {item.name}
+                  </Link>
+                )
+              }
+              return (
+                <Link
+                  key={item.name}
+                  to={item.path}
+                  className={`text-sm font-medium transition-colors hover:text-primary ${
+                    active ? 'text-primary border-b-2 border-primary pb-1' : 'text-foreground'
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              )
+            })}
           </div>
 
           {/* Mobile menu button */}
@@ -73,18 +92,37 @@ const Navbar = () => {
         {isOpen && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 bg-background border-t border-border">
-              {navItems.map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.path}
-                  onClick={() => setIsOpen(false)}
-                  className={`block px-3 py-2 text-base font-medium transition-colors hover:text-primary ${
-                    isActive(item.path) ? 'text-primary bg-muted' : 'text-foreground'
-                  }`}
-                >
-                  {item.name}
-                </Link>
-              ))}
+              {navItems.map((item) => {
+                const active = isActive(item.path)
+                if (item.highlight) {
+                  return (
+                    <Link
+                      key={item.name}
+                      to={item.path}
+                      onClick={() => setIsOpen(false)}
+                      className={`block px-3 py-2 text-base font-semibold rounded-md transition-colors ${
+                        active
+                          ? 'bg-primary text-primary-foreground'
+                          : 'bg-primary/90 text-primary-foreground hover:bg-primary'
+                      }`}
+                    >
+                      {item.name}
+                    </Link>
+                  )
+                }
+                return (
+                  <Link
+                    key={item.name}
+                    to={item.path}
+                    onClick={() => setIsOpen(false)}
+                    className={`block px-3 py-2 text-base font-medium transition-colors ${
+                      active ? 'text-primary bg-muted' : 'text-foreground hover:text-primary'
+                    }`}
+                  >
+                    {item.name}
+                  </Link>
+                )
+              })}
             </div>
           </div>
         )}
