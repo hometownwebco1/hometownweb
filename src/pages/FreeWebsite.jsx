@@ -56,7 +56,7 @@ export default function FreeWebsite() {
       {/* UPGRADE HOOK */}
       <p className="mt-6 text-center text-lg font-bold text-foreground">
         Want more? Upgrade within 7 days with hosting for <span className="text-primary">$249</span>: 
-        +2 pages, basic SEO, Terms, Privacy, and social links.
+        2 extra pages, basic SEO, Terms, Privacy, and social links are all included
       </p>
     </div>
   );
