@@ -1,8 +1,15 @@
 export default function FreeWebsite() {
   return (
     <div style={{ padding: "2rem" }}>
-      <h1>Get a Professional Website for $0</h1>
-      <p>3 pages done-for-you (Home, Services, Contact). Yours to keep. Hosting optional. Limited spots each month.</p>
+      <h1 style={{ fontSize: "2rem", fontWeight: "700", marginBottom: "0.5rem" }}>
+        Get a Professional Website — For $0
+      </h1>
+      <p style={{ fontSize: "1.125rem", lineHeight: "1.6", maxWidth: "700px" }}>
+        We’ll design and launch a polished 3-page site for your business
+        (Home, Services, Contact) that works seamlessly on desktop and mobile.
+        Yours to keep, with hosting available if you need it. 
+        Spots are limited each month, so reserve yours today.
+      </p>
       <div style={{ marginTop: "2rem" }}>
         <iframe
           src="https://api.leadconnectorhq.com/widget/form/dtw5NqzbfTxYr2e0JIBH"
