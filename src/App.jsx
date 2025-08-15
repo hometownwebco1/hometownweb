@@ -40,6 +40,10 @@ import LifetimeValue from './pages/calculators/lifetime-value'
 import ProfitMargin from './pages/calculators/profit-margin'
 import SocialMediaRoi from './pages/calculators/social-media-roi'
 
+// Added: Free Website pages
+import FreeWebsite from './pages/FreeWebsite'
+import ThankYouFreeWebsite from './pages/ThankYouFreeWebsite'
+
 function App() {
   return (
     <Router>
@@ -76,6 +80,10 @@ function App() {
             <Route path="/calculators/lifetime-value" element={<LifetimeValue />} />
             <Route path="/calculators/profit-margin" element={<ProfitMargin />} />
             <Route path="/calculators/social-media-roi" element={<SocialMediaRoi />} />
+
+            {/* Added routes */}
+            <Route path="/free-website" element={<FreeWebsite />} />
+            <Route path="/thank-you-free-website" element={<ThankYouFreeWebsite />} />
           </Routes>
         </main>
         <Footer />
@@ -85,3 +93,4 @@ function App() {
 }
 
 export default App
+
