@@ -8,36 +8,18 @@
     <link rel="canonical" href="https://www.hometownwebco.com/" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 
-    <!-- Chatbase Chatbot -->
-    <script>
-      (function(){
-        if(!window.chatbase || window.chatbase("getState")!=="initialized"){
-          window.chatbase=(...arguments)=>{
-            if(!window.chatbase.q){window.chatbase.q=[]}
-            window.chatbase.q.push(arguments)
-          };
-          window.chatbase=new Proxy(window.chatbase,{
-            get(target,prop){
-              if(prop==="q"){return target.q}
-              return(...args)=>target(prop,...args)
-            }
-          })
-        }
-        const onLoad=function(){
-          const script=document.createElement("script");
-          script.src="https://www.chatbase.co/embed.min.js";
-          script.id="Psr4MY6cVqjCrguFL1Nf6";
-          script.domain="www.chatbase.co";
-          document.body.appendChild(script)
-        };
-        if(document.readyState==="complete"){onLoad()}
-        else{window.addEventListener("load",onLoad)}
-      })();
+    <!-- GHL Chat Widget -->
+    <script
+      src="https://widgets.leadconnectorhq.com/loader.js"
+      data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
+      data-widget-id="68a77aefd9f018c1a7ade8fb">
     </script>
-    <!-- End Chatbase Chatbot -->
+    <!-- End GHL Chat Widget -->
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
+
+
