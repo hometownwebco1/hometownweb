@@ -1,6 +1,48 @@
+import { Helmet } from 'react-helmet'
+
 export default function FreeWebsite() {
   return (
     <div className="mx-auto max-w-5xl px-4 py-12">
+      <Helmet>
+        <title>Get a Professional Website — For $0 | Hometown Web Co</title>
+        <meta name="description" content="We’ll design and launch a polished 3‑page site you keep forever. Mobile‑friendly, lead‑ready, done‑for‑you setup. Limited spots each month." />
+        <link rel="canonical" href="https://www.hometownwebco.com/free-website" />
+        <meta property="og:title" content="Get a Professional Website — For $0 | Hometown Web Co" />
+        <meta property="og:description" content="We’ll design and launch a polished 3‑page site you keep forever. Mobile‑friendly, lead‑ready, done‑for‑you setup. Limited spots each month." />
+        <meta property="og:url" content="https://www.hometownwebco.com/free-website" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://www.hometownwebco.com/og-image.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Get a Professional Website — For $0 | Hometown Web Co" />
+        <meta name="twitter:description" content="We’ll design and launch a polished 3‑page site you keep forever. Mobile‑friendly, lead‑ready, done‑for‑you setup. Limited spots each month." />
+        <meta name="twitter:image" content="https://www.hometownwebco.com/og-image.jpg" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "Get a Professional Website — For $0",
+          "url": "https://www.hometownwebco.com/free-website",
+          "description": "We’ll design and launch a polished 3‑page site you keep forever. Mobile‑friendly, lead‑ready, done‑for‑you setup. Limited spots each month."
+        })}</script>
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "Free Website Design",
+          "url": "https://www.hometownwebco.com/free-website",
+          "provider": {
+            "@type": "Organization",
+            "name": "Hometown Web Co",
+            "url": "https://www.hometownwebco.com"
+          },
+          "areaServed": "US",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+          }
+        })}</script>
+      </Helmet>
+
       {/* HERO */}
       <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-center">
         Get a Professional Website — For $0
@@ -55,7 +97,7 @@ export default function FreeWebsite() {
 
       {/* UPGRADE HOOK */}
       <p className="mt-6 text-center text-lg font-bold text-foreground">
-        Want more? Upgrade within 7 days with hosting for $249: 2 extra pages, basic SEO, Terms, Privacy, and social links are all included.
+        Want more? Upgrade within 7 days with hosting for $249: additional pages, basic SEO, Terms, Privacy, and social links are all included.
       </p>
     </div>
   );
