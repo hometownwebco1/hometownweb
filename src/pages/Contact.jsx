@@ -100,8 +100,33 @@ const Contact = () => {
   return (
     <div className="min-h-screen py-20 bg-site-gradient">
       <Helmet>
-        <title>Contact Us | Hometown Web Co</title>
-        <meta name="description" content="Get in touch with Hometown Web Co for a free consultation or demo. We help local businesses across the U.S. grow online." />
+        <title>Contact Hometown Web Co — Websites That Win Local Search</title>
+        <meta
+          name="description"
+          content="Questions or ready to start? Contact Hometown Web Co. We build fast, lead-ready sites for local businesses—and we’ll even build your starter site for $0."
+        />
+        <link rel="canonical" href="https://www.hometownwebco.com/contact" />
+
+        {/* Open Graph */}
+        <meta property="og:title" content="Contact Hometown Web Co — Websites That Win Local Search" />
+        <meta
+          property="og:description"
+          content="Questions or ready to start? Contact Hometown Web Co. We build fast, lead-ready sites for local businesses—and we’ll even build your starter site for $0."
+        />
+        <meta property="og:url" content="https://www.hometownwebco.com/contact" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://www.hometownwebco.com/og-image.jpg" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Contact Hometown Web Co — Websites That Win Local Search" />
+        <meta
+          name="twitter:description"
+          content="Questions or ready to start? Contact Hometown Web Co. We build fast, lead-ready sites for local businesses—and we’ll even build your starter site for $0."
+        />
+        <meta name="twitter:image" content="https://www.hometownwebco.com/og-image.jpg" />
+
+        {/* Structured Data */}
         <script type="application/ld+json">{JSON.stringify(schemaData)}</script>
       </Helmet>
 
@@ -274,4 +299,3 @@ const Contact = () => {
 }
 
 export default Contact
-
