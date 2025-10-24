@@ -6,7 +6,9 @@ import {
   Smile,
   Facebook,
   Instagram,
-  Youtube
+  Youtube,
+  Home,     // for Oak City badge
+  Hammer    // for Boles badge
 } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import bksScreenshot from '../assets/bks-screenshot.png'
@@ -62,27 +64,32 @@ const Results = () => {
     ]
   }
 
-  // Helper for consistent card styling in dark theme
-  const Card = ({ children }) => (
-    <div className="rounded-xl border border-border bg-white/5 backdrop-blur-sm shadow-sm">{children}</div>
-  )
-
-  const CardImage = ({ src, alt }) => (
-    <div className="shrink-0">
-      <img
-        src={src}
-        alt={alt}
-        className="w-24 h-24 md:w-28 md:h-28 object-contain rounded-lg border border-border/60 bg-black/20"
-        loading="lazy"
-      />
+  // Brand-aligned square badge: orange gradient, soft glow, centered icon
+  const SiteBadge = ({ Icon, label }) => (
+    <div
+      className="w-24 h-24 md:w-28 md:h-28 rounded-lg shadow-md grid place-items-center"
+      style={{
+        background:
+          'linear-gradient(135deg, rgba(255,132,60,1) 0%, rgba(204,72,36,1) 100%)',
+        boxShadow:
+          '0 10px 18px rgba(0,0,0,0.25), inset 0 0 0 1px rgba(255,255,255,0.25)'
+      }}
+      aria-label={label}
+    >
+      <Icon className="text-white" size={34} strokeWidth={2.5} />
     </div>
   )
 
+  // Shared card shell — matches About page (white cards on orange gradient)
+  const Card = ({ children }) => (
+    <div className="bg-white p-8 rounded-lg shadow-md">{children}</div>
+  )
+
   const ctaBtn =
-    "inline-block px-5 py-2 rounded font-semibold bg-primary text-foreground hover:bg-primary/90 transition"
+    'inline-block px-5 py-2 rounded font-semibold bg-primary text-white hover:opacity-90 transition'
 
   return (
-    <div className="min-h-screen bg-site-gradient text-foreground">
+    <div className="min-h-screen py-20 bg-site-gradient">
       <Helmet>
         <title>Website Results | Hometown Web Co</title>
         <meta
@@ -90,6 +97,7 @@ const Results = () => {
           content="Discover what makes our websites stand out — strategic design, local SEO, and conversions that matter."
         />
         <link rel="canonical" href="https://www.hometownwebco.com/results" />
+        {/* Open Graph */}
         <meta property="og:title" content="Website Results | Hometown Web Co" />
         <meta
           property="og:description"
@@ -98,168 +106,157 @@ const Results = () => {
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.hometownwebco.com/results" />
         <meta property="og:image" content="https://www.hometownwebco.com/og-image.jpg" />
+        {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Website Results | Hometown Web Co" />
         <meta name="twitter:description" content="Discover what makes our websites stand out — and why small businesses trust us to help them grow online." />
         <meta name="twitter:image" content="https://www.hometownwebco.com/og-image.jpg" />
+        {/* Structured Data */}
         <script type="application/ld+json">{JSON.stringify(schemaPage)}</script>
         <script type="application/ld+json">{JSON.stringify(schemaBreadcrumbs)}</script>
       </Helmet>
 
       {/* Header */}
-      <section className="py-12 md:py-16">
-        <div className="max-w-6xl mx-auto px-4">
-          <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight">
+      <section className="px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6">
             Real Results for Small Businesses
           </h1>
-          <p className="mt-3 text-foreground/80 max-w-2xl">
+          <p className="text-xl text-gray-100 max-w-3xl mx-auto leading-relaxed">
             Built to rank. Built to convert. Here’s how we turn websites into real lead engines.
           </p>
         </div>
       </section>
 
-      {/* Benefits */}
-      <section className="py-6">
-        <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {/* Benefits (white tiles like About values) */}
+      <section className="px-4 sm:px-6 lg:px-8 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {benefits.map(({ icon: Icon, title, description }) => (
-            <div key={title} className="rounded-xl border border-border bg-white/5 p-6">
-              <Icon className="text-primary mb-3" />
-              <h3 className="font-semibold">{title}</h3>
-              <p className="text-sm text-foreground/80 mt-1">{description}</p>
+            <div key={title} className="p-6 bg-white rounded-lg shadow-md">
+              <Icon className="text-primary mx-auto mb-4" size={32} />
+              <h4 className="text-xl font-semibold text-gray-900 mb-2 text-center">{title}</h4>
+              <p className="text-gray-700 text-sm text-center">{description}</p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* Featured: BKS Concrete */}
-      <section className="my-8">
-        <div className="max-w-4xl mx-auto px-4">
-          <Card>
-            <div className="flex flex-col md:flex-row items-center gap-6 p-6 md:p-8">
-              <CardImage src={bksScreenshot} alt="BKS Concrete website screenshot" />
-              <div className="flex-1 text-left">
-                <h2 className="text-xl md:text-2xl font-bold mb-2">Featured Build: BKS Concrete</h2>
-                <p className="text-foreground/80 mb-3">
-                  BKS Concrete’s site showcases their work, loads fast, and is structured for search visibility and
-                  mobile-first usability.
-                </p>
-                <a href="https://www.bksconcrete.com/" target="_blank" rel="noopener noreferrer" className={ctaBtn}>
-                  View Live Site
-                </a>
-              </div>
+      <section className="px-4 sm:px-6 lg:px-8 space-y-12">
+        {/* BKS Concrete (uses provided screenshot) */}
+        <Card>
+          <div className="flex flex-col md:flex-row items-center gap-6">
+            <img
+              src={bksScreenshot}
+              alt="BKS Concrete website screenshot"
+              className="w-28 h-28 object-contain rounded-lg border border-gray-200 bg-gray-50"
+              loading="lazy"
+            />
+            <div className="flex-1 text-left">
+              <h2 className="text-2xl font-bold text-gray-900 mb-2">Featured Build: BKS Concrete</h2>
+              <p className="text-gray-700 mb-4">
+                Portfolio-forward structure, fast load, and clear service pages designed for search visibility and mobile-first usability.
+              </p>
+              <a href="https://www.bksconcrete.com/" target="_blank" rel="noopener noreferrer" className={ctaBtn}>
+                View Live Site
+              </a>
             </div>
-          </Card>
-        </div>
-      </section>
+          </div>
+        </Card>
 
-      {/* Featured: Raleigh Bookkeeping */}
-      <section className="my-8">
-        <div className="max-w-4xl mx-auto px-4">
-          <Card>
-            <div className="flex flex-col md:flex-row items-center gap-6 p-6 md:p-8">
-              <CardImage src={rbkScreenshot} alt="Raleigh Bookkeeping website screenshot" />
-              <div className="flex-1 text-left">
-                <h2 className="text-xl md:text-2xl font-bold mb-2">Featured Build: Raleigh Bookkeeping</h2>
-                <p className="text-foreground/80 mb-3">
-                  Clean structure, clear services, and trust-building content designed for small-business decision-makers.
-                </p>
-                <a href="https://www.raleighbookkeeping.com/" target="_blank" rel="noopener noreferrer" className={ctaBtn}>
-                  View Live Site
-                </a>
-              </div>
+        {/* Raleigh Bookkeeping (uses provided screenshot) */}
+        <Card>
+          <div className="flex flex-col md:flex-row items-center gap-6">
+            <img
+              src={rbkScreenshot}
+              alt="Raleigh Bookkeeping website screenshot"
+              className="w-28 h-28 object-contain rounded-lg border border-gray-200 bg-gray-50"
+              loading="lazy"
+            />
+            <div className="flex-1 text-left">
+              <h2 className="text-2xl font-bold text-gray-900 mb-2">Featured Build: Raleigh Bookkeeping</h2>
+              <p className="text-gray-700 mb-4">
+                Clean structure, clear services, and trust-building content for small-business decision-makers.
+              </p>
+              <a href="https://www.raleighbookkeeping.com/" target="_blank" rel="noopener noreferrer" className={ctaBtn}>
+                View Live Site
+              </a>
             </div>
-          </Card>
-        </div>
-      </section>
+          </div>
+        </Card>
 
-      {/* Featured: Oak City Simulator (using Google favicon proxy) */}
-      <section className="my-8">
-        <div className="max-w-4xl mx-auto px-4">
-          <Card>
-            <div className="flex flex-col md:flex-row items-center gap-6 p-6 md:p-8">
-              <CardImage
-                src="https://www.google.com/s2/favicons?sz=128&domain_url=oakcitysimulator.com"
-                alt="Oak City Simulator site icon"
-              />
-              <div className="flex-1 text-left">
-                <h2 className="text-xl md:text-2xl font-bold mb-2">Featured Build: Oak City Simulator Co.</h2>
-                <p className="text-foreground/80 mb-3">
-                  Clear steps, vendor transparency, and a modern layout that guides homeowners through the process.
-                </p>
-                <a href="https://www.oakcitysimulator.com/" target="_blank" rel="noopener noreferrer" className={ctaBtn}>
-                  View Live Site
-                </a>
-              </div>
+        {/* Oak City Simulator — brand tile (no blurry favicon) */}
+        <Card>
+          <div className="flex flex-col md:flex-row items-center gap-6">
+            <SiteBadge Icon={Home} label="Oak City Simulator brand tile" />
+            <div className="flex-1 text-left">
+              <h2 className="text-2xl font-bold text-gray-900 mb-2">Featured Build: Oak City Simulator Co.</h2>
+              <p className="text-gray-700 mb-4">
+                Clear steps, vendor transparency, and a modern layout that guides homeowners through the process.
+              </p>
+              <a href="https://www.oakcitysimulator.com/" target="_blank" rel="noopener noreferrer" className={ctaBtn}>
+                View Live Site
+              </a>
             </div>
-          </Card>
-        </div>
-      </section>
+          </div>
+        </Card>
 
-      {/* Featured: Boles Concrete (using Google favicon proxy) */}
-      <section className="my-8">
-        <div className="max-w-4xl mx-auto px-4">
-          <Card>
-            <div className="flex flex-col md:flex-row items-center gap-6 p-6 md:p-8">
-              <CardImage
-                src="https://www.google.com/s2/favicons?sz=128&domain_url=bolesconcrete.com"
-                alt="Boles Concrete site icon"
-              />
-              <div className="flex-1 text-left">
-                <h2 className="text-xl md:text-2xl font-bold mb-2">Featured Build: Boles Concrete</h2>
-                <p className="text-foreground/80 mb-3">
-                  Residential and commercial concrete with a gallery-forward structure for credibility and clarity.
-                </p>
-                <a href="https://www.bolesconcrete.com/" target="_blank" rel="noopener noreferrer" className={ctaBtn}>
-                  View Live Site
-                </a>
-              </div>
+        {/* Boles Concrete — brand tile (no blurry favicon) */}
+        <Card>
+          <div className="flex flex-col md:flex-row items-center gap-6">
+            <SiteBadge Icon={Hammer} label="Boles Concrete brand tile" />
+            <div className="flex-1 text-left">
+              <h2 className="text-2xl font-bold text-gray-900 mb-2">Featured Build: Boles Concrete</h2>
+              <p className="text-gray-700 mb-4">
+                Residential and commercial concrete with a gallery-forward structure for credibility and clarity.
+              </p>
+              <a href="https://www.bolesconcrete.com/" target="_blank" rel="noopener noreferrer" className={ctaBtn}>
+                View Live Site
+              </a>
             </div>
-          </Card>
-        </div>
+          </div>
+        </Card>
       </section>
 
-      {/* Primary CTA */}
-      <section className="py-12">
-        <div className="max-w-6xl mx-auto px-4 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold">Want results like these?</h2>
-          <p className="text-foreground/80 mt-2">
-            We’ll build you a clean, fast, and search-optimized site that actually drives leads.
-          </p>
-          <Link to="/free-website" className={`${ctaBtn} mt-6`}>
-            Request Free Website Demo
-          </Link>
-        </div>
+      {/* CTA */}
+      <section className="px-4 sm:px-6 lg:px-8 py-16 text-center">
+        <h2 className="text-3xl font-bold text-white">Want results like these?</h2>
+        <p className="text-gray-100 mt-2">
+          We’ll build you a clean, fast, and search-optimized site that actually drives leads.
+        </p>
+        <Link to="/free-website" className={`${ctaBtn} mt-6`}>
+          Request Free Website Demo
+        </Link>
       </section>
 
-      {/* Social CTA */}
-      <section className="text-center pb-10">
-        <p className="text-sm text-foreground/70 mb-4">Follow Us:</p>
-        <div className="flex flex-wrap justify-center gap-6 text-sm">
+      {/* Social Footer */}
+      <section className="px-4 sm:px-6 lg:px-8 pb-12 text-center">
+        <p className="text-gray-100 mb-4">Follow Us:</p>
+        <div className="flex justify-center gap-6">
           <a
             href="https://www.facebook.com/profile.php?id=61578313660385"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center hover:text-primary"
+            className="inline-flex items-center justify-center text-white hover:text-primary"
           >
-            <Facebook className="mr-1" size={18} />
+            <Facebook className="mr-2" size={20} />
             Facebook
           </a>
           <a
             href="https://www.instagram.com/hometownwebco/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center hover:text-primary"
+            className="inline-flex items-center justify-center text-white hover:text-primary"
           >
-            <Instagram className="mr-1" size={18} />
+            <Instagram className="mr-2" size={20} />
             Instagram
           </a>
           <a
             href="https://www.youtube.com/@hometownwebco"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center hover:text-primary"
+            className="inline-flex items-center justify-center text-white hover:text-primary"
           >
-            <Youtube className="mr-1" size={18} />
+            <Youtube className="mr-2" size={20} />
             YouTube
           </a>
         </div>
