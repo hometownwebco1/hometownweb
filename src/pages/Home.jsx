@@ -38,6 +38,20 @@ const Home = () => {
         <meta name="twitter:title" content="Hometown Web Co | Affordable Website Design for Local Businesses" />
         <meta name="twitter:description" content="We build professional websites for small businesses that want to grow online. Fast, affordable, and optimized for local success." />
         <meta name="twitter:image" content="https://www.hometownwebco.com/og-image.jpg" />
+
+        {/* Organization JSON-LD (no physical address; “local anywhere”) */}
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "Hometown Web Co",
+          "url": "https://www.hometownwebco.com",
+          "logo": "https://www.hometownwebco.com/logo.png",
+          "sameAs": [
+            "https://www.facebook.com/profile.php?id=61578313660385",
+            "https://www.instagram.com/hometownwebco/",
+            "https://www.youtube.com/@hometownwebco"
+          ]
+        })}</script>
       </Helmet>
 
       {/* Hero Section with Logo */}
