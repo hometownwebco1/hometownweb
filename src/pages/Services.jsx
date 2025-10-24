@@ -90,6 +90,16 @@ const Services = () => {
     }))
   }
 
+  // Added: Breadcrumbs JSON-LD (discussed change)
+  const schemaBreadcrumbs = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.hometownwebco.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.hometownwebco.com/services" }
+    ]
+  }
+
   return (
     <div className="min-h-screen py-20 bg-site-gradient">
       <Helmet>
@@ -112,6 +122,8 @@ const Services = () => {
         <meta name="twitter:image" content="https://www.hometownwebco.com/og-image.jpg" />
         {/* Structured Data */}
         <script type="application/ld+json">{JSON.stringify(schemaData)}</script>
+        {/* Added: Breadcrumbs JSON-LD */}
+        <script type="application/ld+json">{JSON.stringify(schemaBreadcrumbs)}</script>
       </Helmet>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -272,4 +284,3 @@ const Services = () => {
 }
 
 export default Services
-

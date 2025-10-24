@@ -7,8 +7,8 @@ import {
   Facebook,
   Instagram,
   Youtube,
-  Home,     // for Oak City badge
-  Hammer    // for Boles badge
+  Home as HomeIcon, // for Oak City tile
+  Hammer             // for Boles tile
 } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import bksScreenshot from '../assets/bks-screenshot.png'
@@ -43,24 +43,24 @@ const Results = () => {
   ]
 
   const schemaPage = {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Website Results",
-    "url": "https://www.hometownwebco.com/results",
-    "description":
-      "See how Hometown Web Co builds strategic, high-performing websites for small businesses.",
-    "publisher": {
-      "@type": "Organization",
-      "name": "Hometown Web Co"
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'Website Results',
+    url: 'https://www.hometownwebco.com/results',
+    description:
+      'See how Hometown Web Co builds strategic, high-performing websites for small businesses.',
+    publisher: {
+      '@type': 'Organization',
+      name: 'Hometown Web Co'
     }
   }
 
   const schemaBreadcrumbs = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.hometownwebco.com/" },
-      { "@type": "ListItem", "position": 2, "name": "Results", "item": "https://www.hometownwebco.com/results" }
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.hometownwebco.com/' },
+      { '@type': 'ListItem', position: 2, name: 'Results', item: 'https://www.hometownwebco.com/results' }
     ]
   }
 
@@ -80,7 +80,7 @@ const Results = () => {
     </div>
   )
 
-  // Shared card shell — matches About page (white cards on orange gradient)
+  // Shared card shell — matches About/Home (white cards on orange gradient)
   const Card = ({ children }) => (
     <div className="bg-white p-8 rounded-lg shadow-md">{children}</div>
   )
@@ -109,7 +109,10 @@ const Results = () => {
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Website Results | Hometown Web Co" />
-        <meta name="twitter:description" content="Discover what makes our websites stand out — and why small businesses trust us to help them grow online." />
+        <meta
+          name="twitter:description"
+          content="Discover what makes our websites stand out — and why small businesses trust us to help them grow online."
+        />
         <meta name="twitter:image" content="https://www.hometownwebco.com/og-image.jpg" />
         {/* Structured Data */}
         <script type="application/ld+json">{JSON.stringify(schemaPage)}</script>
@@ -147,9 +150,10 @@ const Results = () => {
           <div className="flex flex-col md:flex-row items-center gap-6">
             <img
               src={bksScreenshot}
-              alt="BKS Concrete website screenshot"
+              alt="BKS Concrete website screenshot by Hometown Web Co"
               className="w-28 h-28 object-contain rounded-lg border border-gray-200 bg-gray-50"
               loading="lazy"
+              sizes="112px"
             />
             <div className="flex-1 text-left">
               <h2 className="text-2xl font-bold text-gray-900 mb-2">Featured Build: BKS Concrete</h2>
@@ -168,9 +172,10 @@ const Results = () => {
           <div className="flex flex-col md:flex-row items-center gap-6">
             <img
               src={rbkScreenshot}
-              alt="Raleigh Bookkeeping website screenshot"
+              alt="Raleigh Bookkeeping website screenshot by Hometown Web Co"
               className="w-28 h-28 object-contain rounded-lg border border-gray-200 bg-gray-50"
               loading="lazy"
+              sizes="112px"
             />
             <div className="flex-1 text-left">
               <h2 className="text-2xl font-bold text-gray-900 mb-2">Featured Build: Raleigh Bookkeeping</h2>
@@ -187,7 +192,7 @@ const Results = () => {
         {/* Oak City Simulator — brand tile (no blurry favicon) */}
         <Card>
           <div className="flex flex-col md:flex-row items-center gap-6">
-            <SiteBadge Icon={Home} label="Oak City Simulator brand tile" />
+            <SiteBadge Icon={HomeIcon} label="Oak City Simulator brand tile" />
             <div className="flex-1 text-left">
               <h2 className="text-2xl font-bold text-gray-900 mb-2">Featured Build: Oak City Simulator Co.</h2>
               <p className="text-gray-700 mb-4">
