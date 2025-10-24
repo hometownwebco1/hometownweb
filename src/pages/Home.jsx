@@ -130,7 +130,8 @@ const Home = () => {
             to="/calculator"
             className="inline-flex items-center px-6 py-3 bg-primary text-white font-medium text-base md:text-lg rounded-lg hover:bg-primary/90 transition-all shadow-md"
           >
-            Try the Free Marketing Calculator
+            {/* Text updated to match top CTA, link unchanged */}
+            Learn More About Our Services
             <ArrowRight className="ml-2" size={18} />
           </Link>
         </div>
@@ -193,3 +194,4 @@ const Home = () => {
 }
 
 export default Home
+
