@@ -24,19 +24,19 @@ const Results = () => {
       icon: Wrench,
       title: 'Technical Reliability',
       description:
-        'All of our sites are fast, secure, and mobile-ready from day one — no hassle or hidden problems.'
+        'All of our sites are fast, secure, and mobile-ready from day one — no hassle for you.'
     },
     {
       icon: Target,
-      title: 'Customer Focused',
+      title: 'Local SEO First',
       description:
-        'Everything we build is aimed at helping your ideal customer take action and connect with you.'
+        'Every page, heading, and image is structured to rank in your market and convert real leads.'
     },
     {
       icon: Smile,
-      title: 'Future-Proof Foundation',
+      title: 'Client-Friendly Editing',
       description:
-        'We use modern, scalable tech stacks so your site grows with your business — not against it.'
+        'We keep content management simple so you can update services, pricing, and galleries without stress.'
     }
   ]
 
@@ -49,46 +49,27 @@ const Results = () => {
       "See how Hometown Web Co builds strategic, high-performing websites that drive real results for local businesses.",
     "publisher": {
       "@type": "Organization",
-      "name": "Hometown Web Co",
-      "url": "https://www.hometownwebco.com",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.hometownwebco.com/logo.png"
-      },
-      "sameAs": [
-        "https://www.facebook.com/profile.php?id=61578313660385",
-        "https://www.instagram.com/hometownwebco/",
-        "https://www.youtube.com/@hometownwebco"
-      ]
+      "name": "Hometown Web Co"
     }
   }
 
   return (
-    <div className="min-h-screen bg-site-gradient text-foreground">
+    <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-900 to-black text-white">
       <Helmet>
         <title>Website Results | Hometown Web Co</title>
         <meta
           name="description"
-          content="See how Hometown Web Co builds strategic, high-performing websites that drive real results for local businesses. Discover what sets our work apart."
+          content="Discover what makes our websites stand out — strategic design, local SEO, and conversions that matter."
         />
         <link rel="canonical" href="https://www.hometownwebco.com/results" />
-        <meta
-          property="og:title"
-          content="Website Results | Hometown Web Co"
-        />
+        <meta property="og:title" content="Website Results | Hometown Web Co" />
         <meta
           property="og:description"
-          content="See how Hometown Web Co builds strategic, high-performing websites that drive real results for local businesses."
-        />
-        <meta
-          property="og:url"
-          content="https://www.hometownwebco.com/results"
+          content="Discover what makes our websites stand out — and why small businesses trust us to help them grow online."
         />
         <meta property="og:type" content="website" />
-        <meta
-          property="og:image"
-          content="https://www.hometownwebco.com/og-image.jpg"
-        />
+        <meta property="og:url" content="https://www.hometownwebco.com/results" />
+        <meta property="og:image" content="https://www.hometownwebco.com/og-image.jpg" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
@@ -107,16 +88,28 @@ const Results = () => {
         </script>
       </Helmet>
 
-      {/* Header Section */}
-      <section className="text-center">
-        <div className="max-w-7xl mx-auto">
-          <h1 className="text-3xl md:text-5xl font-bold text-white mb-6">
-            Why Our Websites Work
+      {/* Header */}
+      <section className="py-12 md:py-16">
+        <div className="max-w-6xl mx-auto px-4">
+          <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight">
+            Real Results for Local Businesses
           </h1>
-          <p className="text-base md:text-xl text-gray-100 max-w-3xl mx-auto leading-relaxed">
-            We don’t believe in shortcuts — just solid websites that convert,
-            rank, and perform. Here’s why our approach delivers results.
+          <p className="mt-3 text-gray-300 max-w-2xl">
+            Built to rank. Built to convert. Here’s how we turn websites into real lead engines.
           </p>
+        </div>
+      </section>
+
+      {/* Benefits */}
+      <section className="py-8">
+        <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {benefits.map(({ icon: Icon, title, description }) => (
+            <div key={title} className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
+              <Icon className="text-primary mb-3" />
+              <h3 className="font-semibold text-white">{title}</h3>
+              <p className="text-sm text-gray-300 mt-1">{description}</p>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -142,7 +135,7 @@ const Results = () => {
               href="https://www.bksconcrete.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-5 py-2 bg-primary text-primary-foreground font-semibold rounded hover:bg-primary/90 transition"
+              className="inline-block px-5 py-2 bg-primary text-foreground font-semibold rounded hover:bg-primary/90 transition"
             >
               View Live Site
             </a>
@@ -172,7 +165,7 @@ const Results = () => {
               href="https://www.raleighbookkeeping.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-5 py-2 bg-primary text-primary-foreground font-semibold rounded hover:bg-primary/90 transition"
+              className="inline-block px-5 py-2 bg-primary text-foreground font-semibold rounded hover:bg-primary/90 transition"
             >
               View Live Site
             </a>
@@ -180,47 +173,72 @@ const Results = () => {
         </div>
       </section>
 
-      {/* Benefits Grid */}
-      <section>
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
-          {benefits.map((benefit, index) => {
-            const Icon = benefit.icon
-            return (
-              <div
-                key={index}
-                className="flex items-start space-x-4 bg-white p-6 rounded-xl shadow-md"
-              >
-                <div className="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center">
-                  <Icon className="text-primary" size={28} />
-                </div>
-                <div>
-                  <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-1">
-                    {benefit.title}
-                  </h3>
-                  <p className="text-sm md:text-base text-gray-700">
-                    {benefit.description}
-                  </p>
-                </div>
-              </div>
-            )
-          })}
+      {/* Featured Site Build: Oak City Simulator */}
+      <section className="my-10">
+        <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-lg flex flex-col md:flex-row items-center gap-8 p-6 md:p-10">
+          <img
+            src="https://www.oakcitysimulator.com/favicon.ico"
+            alt="Oak City Simulator Website Icon"
+            className="w-32 h-32 md:w-40 md:h-40 object-contain rounded-lg shadow"
+          />
+          <div className="flex-1 text-left">
+            <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">
+              Featured Build: Oak City Simulator Co.
+            </h2>
+            <p className="text-gray-700 mb-3">
+              Oak City Simulator Co. designs and installs custom home golf simulators in the Raleigh area.
+              The site focuses on clear steps, vendor transparency, and clean visuals that convert.
+            </p>
+            <a
+              href="https://www.oakcitysimulator.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-5 py-2 bg-primary text-foreground font-semibold rounded hover:bg-primary/90 transition"
+            >
+              View Live Site
+            </a>
+          </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="bg-white rounded-xl text-center shadow">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4">
-            Be Our Next Success Story
-          </h2>
-          <p className="text-base md:text-lg text-gray-700 max-w-2xl mx-auto mb-6">
-            We’re currently taking on a limited number of new projects. Work
-            directly with our founder and get the attention your business
-            deserves — from day one.
+      {/* Featured Site Build: Boles Concrete */}
+      <section className="my-10">
+        <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-lg flex flex-col md:flex-row items-center gap-8 p-6 md:p-10">
+          <img
+            src="https://www.bolesconcrete.com/favicon.ico"
+            alt="Boles Concrete Website Icon"
+            className="w-32 h-32 md:w-40 md:h-40 object-contain rounded-lg shadow"
+          />
+          <div className="flex-1 text-left">
+            <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">
+              Featured Build: Boles Concrete
+            </h2>
+            <p className="text-gray-700 mb-3">
+              Boles Concrete serves Lane County with residential and commercial concrete.
+              The site is optimized for local SEO and showcases real project galleries.
+            </p>
+            <a
+              href="https://www.bolesconcrete.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-5 py-2 bg-primary text-foreground font-semibold rounded hover:bg-primary/90 transition"
+            >
+              View Live Site
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Primary CTA */}
+      <section className="py-12">
+        <div className="max-w-6xl mx-auto px-4 text-center">
+          <h2 className="text-2xl md:text-3xl font-bold">Want results like these?</h2>
+          <p className="text-gray-300 mt-2">
+            We’ll build you a clean, fast, and search-optimized site that actually drives leads.
           </p>
           <Link
-            to="/contact"
-            className="inline-flex items-center px-6 py-3 bg-primary text-primary-foreground font-medium text-base md:text-lg rounded-lg hover:bg-primary/90 transition-all shadow-md"
+            to="/free-website"
+            className="inline-block mt-6 px-6 py-3 bg-primary text-foreground font-semibold rounded hover:bg-primary/90 transition"
           >
             Request Free Website Demo
           </Link>
