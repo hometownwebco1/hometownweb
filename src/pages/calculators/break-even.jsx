@@ -29,6 +29,17 @@ const BreakEvenCalculator = () => {
     setTimeout(() => setShowResult(true), 120)
   }
 
+  // Added: Breadcrumbs JSON-LD
+  const schemaBreadcrumbs = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.hometownwebco.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Calculators", "item": "https://www.hometownwebco.com/calculators" },
+      { "@type": "ListItem", "position": 3, "name": "Break-Even", "item": "https://www.hometownwebco.com/calculators/break-even" }
+    ]
+  }
+
   return (
     <div className="min-h-screen bg-site-gradient py-20">
       <Helmet>
@@ -66,6 +77,8 @@ const BreakEvenCalculator = () => {
             "url": "https://www.hometownwebco.com"
           }
         })}</script>
+        {/* Added: Breadcrumbs JSON-LD */}
+        <script type="application/ld+json">{JSON.stringify(schemaBreadcrumbs)}</script>
       </Helmet>
 
       {/* SEO intro */}

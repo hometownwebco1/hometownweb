@@ -82,6 +82,16 @@ const Contact = () => {
     }
   }
 
+  // Added: Breadcrumbs JSON-LD
+  const schemaBreadcrumbs = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.hometownwebco.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://www.hometownwebco.com/contact" }
+    ]
+  }
+
   if (isSubmitted) {
     return (
       <div className="min-h-screen py-20 flex items-center justify-center" role="status" aria-live="polite">
@@ -128,6 +138,8 @@ const Contact = () => {
 
         {/* Structured Data */}
         <script type="application/ld+json">{JSON.stringify(schemaData)}</script>
+        {/* Added: Breadcrumbs JSON-LD */}
+        <script type="application/ld+json">{JSON.stringify(schemaBreadcrumbs)}</script>
       </Helmet>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

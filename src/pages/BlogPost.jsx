@@ -34,8 +34,7 @@ const BlogPost = () => {
   const title = `${post.title} | Hometown Web Co Blog`
   const description =
     post.excerpt || 'Read our latest post about small business web strategy from Hometown Web Co.'
-  const image =
-    post.imageUrl || post.image || FALLBACK_OG
+  const image = post.imageUrl || post.image || FALLBACK_OG
   const published = post.date
   const modified = post.date
 
@@ -67,6 +66,17 @@ const BlogPost = () => {
   }
   if (post.tags && Array.isArray(post.tags) && post.tags.length) {
     jsonLd.keywords = post.tags.join(', ')
+  }
+
+  // Added: Breadcrumbs JSON-LD
+  const breadcrumbsLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: BASE_URL + '/' },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: BASE_URL + '/blog' },
+      { '@type': 'ListItem', position: 3, name: post.title, item: url }
+    ]
   }
 
   const formattedDate = new Date(post.date).toLocaleDateString('en-US', {
@@ -104,6 +114,7 @@ const BlogPost = () => {
 
         {/* Structured Data */}
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
+        <script type="application/ld+json">{JSON.stringify(breadcrumbsLd)}</script>
       </Helmet>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -47,6 +47,16 @@ const schema = {
   }))
 }
 
+// Added: Breadcrumbs JSON-LD
+const schemaBreadcrumbs = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.hometownwebco.com/" },
+    { "@type": "ListItem", "position": 2, "name": "FAQ", "item": "https://www.hometownwebco.com/faq" }
+  ]
+}
+
 export default function FaqPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 py-12">
@@ -77,8 +87,10 @@ export default function FaqPage() {
         />
         <meta name="twitter:image" content="https://www.hometownwebco.com/og-image.jpg" />
 
-        {/* Structured Data (FAQPage) */}
+        {/* Structured Data */}
         <script type="application/ld+json">{JSON.stringify(schema)}</script>
+        {/* Added: Breadcrumbs JSON-LD */}
+        <script type="application/ld+json">{JSON.stringify(schemaBreadcrumbs)}</script>
       </Helmet>
 
       <h1 className="text-3xl font-bold mb-8">Frequently Asked Questions</h1>
